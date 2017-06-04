@@ -1,4 +1,8 @@
 # paginasWeb
+
+Primeros pasos
+* [code.org](https://studio.code.org/s/minecraft/stage/1/puzzle/1)
+
 Conceptos básicos de paginas web
 
 * [backend con hapi de nodejs] (https://hapijs.com/api)
