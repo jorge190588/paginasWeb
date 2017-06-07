@@ -15,6 +15,8 @@
 * [Dependences inyection](https://elabismodenull.wordpress.com/2017/04/16/4-formas-de-manejar-dependencias-en-nodejs/)
 * [Arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 * [CDN]
+* [Debug applications]
+* [Continuos integration/ Continuos deployment]
 
 
 ## Unit Test
@@ -28,7 +30,6 @@
 
 
 ## Deploy apps
-
 * [With external services as amazon, google cloud and IBM](https://serverless.com/)
 * [Static site publish](https://pages.github.com/), Example: https://github.com/fredym/fredym.github.io/
 * [With docker and nodejs. Static sties publish](https://zeit.co/now)
@@ -36,4 +37,10 @@
 
 ## UX/UI
 
+## Performance
 
+## Logs
+
+## Tools
+
+* [Visual Studio Code]()
