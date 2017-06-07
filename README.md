@@ -4,13 +4,18 @@
 * [code.org](https://studio.code.org/s/minecraft/stage/1/puzzle/1)
 
 ## Basic definitions
-
-* [Hapi package for create a nodejs backend](https://hapijs.com/api)
-* [CRUD](https://es.wikipedia.org/wiki/CRUD)
-* [Inyeccion de dependencias](https://elabismodenull.wordpress.com/2017/04/16/4-formas-de-manejar-dependencias-en-nodejs/)
-* [Arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+* [Backend and FrontEnd]
 * [Code clean]()
 * [Design pattern]()
+* [Components structure]
+* [Routing]
+* [Hapi package for create a nodejs backend](https://hapijs.com/api)
+* [Api best practices]
+* [CRUD](https://es.wikipedia.org/wiki/CRUD)
+* [Dependences inyection](https://elabismodenull.wordpress.com/2017/04/16/4-formas-de-manejar-dependencias-en-nodejs/)
+* [Arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+* [CDN]
+
 
 ## Unit Test
 * [Unit test with Nodejs](https://www.npmjs.com/package/mocha-cucumber)
