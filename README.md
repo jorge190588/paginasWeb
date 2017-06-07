@@ -1,7 +1,7 @@
 # Web Pages
 
 ## First steps
-* [code.org](https://studio.code.org/s/minecraft/stage/1/puzzle/1)
+* [Code.org](https://studio.code.org/s/minecraft/stage/1/puzzle/1)
 
 ## Basic definitions
 * [Backend and FrontEnd]
