@@ -37,9 +37,18 @@
 
 ## UX/UI
 
+### HTML
+
+### CSS
+
+### Media
+
 ## Performance
 * [Amount, Measure and key performance]
+* [Visual Studio Diagnostic Tools]
+
 ## Logs
+* [levels ]
 
 ## Tools
 
