@@ -10,7 +10,7 @@
 * [Components structure with BEM](ttps://en.bem.info/)
 * [Routing]()
 * [Hapi package for create a nodejs backend](https://hapijs.com/api)
-* [Api best practices]
+* [Api best practices]()
 * [CRUD](https://es.wikipedia.org/wiki/CRUD)
 * [Dependences inyection](https://elabismodenull.wordpress.com/2017/04/16/4-formas-de-manejar-dependencias-en-nodejs/)
 * [Arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
@@ -18,6 +18,7 @@
 * [Debug applications]()
 * [Continuos integration/ Continuos deployment]()
 * [Sockets](https://socket.io/)
+* [Mobile first]()
 
 
 ## Unit Test
@@ -32,10 +33,12 @@
 
 
 ## Deploy apps
+### Tools
 * [With external services as amazon, google cloud and IBM](https://serverless.com/)
 * [Static site publish](https://pages.github.com/), Example: https://github.com/fredym/fredym.github.io/
 * [With docker and nodejs. Static sties publish](https://zeit.co/now)
 * [Dynamic site pusblish](https://www.heroku.com)
+* [Jenkins](https://jenkins.io/)
 
 
 ## UX/UI
@@ -57,6 +60,7 @@
 
 ### Performance
 * [Google Analitics]
+* [static code analyzer - SonarQube](https://www.sonarqube.org/)
 
 ## Performance
 * [Amount, Measure and key performance]
@@ -72,6 +76,7 @@
 ### Tools
 * [Datadog](https://www.datadoghq.com)
 * 
+
 ## Tools
 
 * [Visual Studio Code]()
