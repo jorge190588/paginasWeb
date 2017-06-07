@@ -21,6 +21,7 @@
 
 
 ## Unit Test
+* [Manual testing with url and response]
 * [Unit test with Nodejs](https://www.npmjs.com/package/mocha-cucumber)
 * [Unit test with C#](https://www.nuget.org/packages/NUnit/)
 
