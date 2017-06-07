@@ -7,7 +7,7 @@
 * [Backend and FrontEnd]
 * [Code clean]()
 * [Design pattern]()
-* [Components structure]
+* [Components structure with BEM](ttps://en.bem.info/)
 * [Routing]
 * [Hapi package for create a nodejs backend](https://hapijs.com/api)
 * [Api best practices]
@@ -38,9 +38,10 @@
 ## UX/UI
 
 ## Performance
-
+* [Amount, Measure and key performance]
 ## Logs
 
 ## Tools
 
 * [Visual Studio Code]()
+* [Docker]()
