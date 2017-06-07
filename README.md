@@ -4,19 +4,20 @@
 * [Code.org](https://studio.code.org/s/minecraft/stage/1/puzzle/1)
 
 ## Basic definitions
-* [Backend and FrontEnd]
+* [Backend and FrontEnd]()
 * [Code clean]()
 * [Design pattern]()
 * [Components structure with BEM](ttps://en.bem.info/)
-* [Routing]
+* [Routing]()
 * [Hapi package for create a nodejs backend](https://hapijs.com/api)
 * [Api best practices]
 * [CRUD](https://es.wikipedia.org/wiki/CRUD)
 * [Dependences inyection](https://elabismodenull.wordpress.com/2017/04/16/4-formas-de-manejar-dependencias-en-nodejs/)
 * [Arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
-* [CDN]
-* [Debug applications]
-* [Continuos integration/ Continuos deployment]
+* [CDN]()
+* [Debug applications]()
+* [Continuos integration/ Continuos deployment]()
+* [Sockets](https://socket.io/)
 
 
 ## Unit Test
@@ -35,7 +36,12 @@
 * [With docker and nodejs. Static sties publish](https://zeit.co/now)
 * [Dynamic site pusblish](https://www.heroku.com)
 
+
 ## UX/UI
+
+### Devices
+* [Device resolutions - mydevice.io](https://mydevice.io/devices/#sortOthers)
+* [Device resolutions - Material.io](https://material.io/devices/)
 
 ### HTML
 
@@ -43,14 +49,28 @@
 
 ### Media
 
+### Tools
+* [Boostrap]()
+* [Fundation]()
+* [Material Design]()
+
+### Performance
+* [Google Analitics]
+
 ## Performance
 * [Amount, Measure and key performance]
 * [Visual Studio Diagnostic Tools]
 
+
 ## Logs
-* [levels ]
+* [Nlog](https://github.com/NLog/NLog/wiki/Tutorial)
+* [levels - (Error, info, access)]
 
 ## Tools
 
 * [Visual Studio Code]()
 * [Docker]()
+
+## People
+
+## Methodology
