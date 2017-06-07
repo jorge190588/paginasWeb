@@ -63,9 +63,14 @@
 
 
 ## Logs
+
+### Definitions
 * [Nlog](https://github.com/NLog/NLog/wiki/Tutorial)
 * [levels - (Error, info, access)]
 
+### Tools
+* [Datadog](https://www.datadoghq.com)
+* 
 ## Tools
 
 * [Visual Studio Code]()
