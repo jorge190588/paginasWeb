@@ -19,7 +19,7 @@
 
 ## Deploy apps
 
-* [with external services as amazon, google cloud and IBM] (https://serverless.com/)
-* [static site publish] (https://pages.github.com/), Example: https://github.com/fredym/fredym.github.io/
-* [with docker and nodejs. Static sties publish] (https://zeit.co/now)
-* [dynamic site pusblish] (https://www.heroku.com)
+* [with external services as amazon, google cloud and IBM](https://serverless.com/)
+* [static site publish](https://pages.github.com/), Example: https://github.com/fredym/fredym.github.io/
+* [with docker and nodejs. Static sties publish](https://zeit.co/now)
+* [dynamic site pusblish](https://www.heroku.com)
