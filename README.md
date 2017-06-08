@@ -7,7 +7,6 @@
 * [Backend and FrontEnd]()
 * [Code clean]()
 * [Design pattern]()
-* [Components structure with BEM](ttps://en.bem.info/)
 * [Routing]()
 * [Hapi package for create a nodejs backend](https://hapijs.com/api)
 * [Api best practices]()
@@ -48,10 +47,14 @@
 * [Device resolutions - Material.io](https://material.io/devices/)
 
 ### HTML
+* [Components structure with BEM](ttps://en.bem.info/)
 
 ### CSS
+* [Responsive]()
 
-### Media
+### Medias
+* [Image compression GZIP](https://checkgzipcompression.com/)
+* [Image Compression - TiniJPG/PNG](https://tinyjpg.com/)
 
 ### Tools
 * [Boostrap]()
@@ -59,13 +62,31 @@
 * [Material Design]()
 
 ### Performance
+
+### Definitions
+
+* [High performance networking in google chrome](https://www.igvita.com/posa/high-performance-networking-in-google-chrome/)
+* [Mobile web performance anti-patterns](https://www.oreilly.com/ideas/mobile-web-performance-anti-patterns?imm_mid=0edc8b&cmp=em-webops-na-na-newsltr_20170224)
+* [jQuery: Using Only What You Need](http://developer.telerik.com/featured/jquery-using-only-what-you-need/)
+* [Amount, Measure and key performance]
+* [High performance browser networking](https://hpbn.co/)
+* [Usability Engineering 1st Edition](https://www.amazon.com/Usability-Engineering-Jakob-Nielsen/dp/0125184069)
+* [Designing and Engineering Time: The Psychology of Time Perception in Software 1st Edition](https://www.amazon.com/Designing-Engineering-Time-Psychology-Perception/dp/0321509188)
+* [Load Google Fonts Asynchronously For Page Speed](https://www.lockedowndesign.com/load-google-fonts-asynchronously-for-page-speed/)
+
+### Tools 
+
+* [Visual Studio Diagnostic Tools]
 * [Google Analitics]
 * [static code analyzer - SonarQube](https://www.sonarqube.org/)
+* [18 Tips for Website Performance Optimization](https://www.keycdn.com/blog/website-performance-optimization/)
+* [Test a website's performance](http://www.webpagetest.org/)
+* [Yellow Lab  Tools](http://yellowlab.tools/)
+* [Instantly test your website speed](https://www.dotcom-tools.com/website-speed-test.aspx)
+* [Let's test your website speed.](https://www.giftofspeed.com/)
 
-## Performance
-* [Amount, Measure and key performance]
-* [Visual Studio Diagnostic Tools]
-
+### Courses
+* [Website Performance Optimization by Google](https://www.udacity.com/course/website-performance-optimization--ud884)
 
 ## Logs
 
@@ -85,3 +106,4 @@
 ## People
 
 ## Methodology
+* [Scrum](https://www.scrumalliance.org)
