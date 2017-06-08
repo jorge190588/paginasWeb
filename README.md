@@ -110,6 +110,7 @@
 
 * [Visual Studio Code]()
 * [Docker]()
+* [Git](https://github.com/git-school/visualizing-git)
 
 
 ## PEOPLE
