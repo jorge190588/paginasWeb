@@ -1,9 +1,9 @@
 # Web Pages
 
-## First steps
+## FIRST STEPS
 * [Code.org](https://studio.code.org/s/minecraft/stage/1/puzzle/1)
 
-## Basic definitions
+## BASIC DEFINITIONS
 * [Backend and FrontEnd]()
 * [Code clean]()
 * [Design pattern]()
@@ -20,24 +20,26 @@
 * [Mobile first]()
 
 
-## Unit Test
+## UNIT TEST
 * [Manual testing with url and response]
 * [Unit test with Nodejs](https://www.npmjs.com/package/mocha-cucumber)
 * [Unit test with C#](https://www.nuget.org/packages/NUnit/)
 
-## Acceptance Test
+## ACCEPTANCE TEST
 * [Selenium](http://www.seleniumhq.org/)
 * [Sikuli](http://www.sikuli.org/)
 * [Gherkin](https://github.com/cucumber/cucumber/wiki/Gherkin)
 
 
-## Deploy apps
+## DEPLOY APPS
+
 ### Tools
 * [With external services as amazon, google cloud and IBM](https://serverless.com/)
 * [Static site publish](https://pages.github.com/), Example: https://github.com/fredym/fredym.github.io/
 * [With docker and nodejs. Static sties publish](https://zeit.co/now)
 * [Dynamic site pusblish](https://www.heroku.com)
 * [Jenkins](https://jenkins.io/)
+
 
 
 ## UX/UI
@@ -61,7 +63,9 @@
 * [Fundation]()
 * [Material Design]()
 
-### Performance
+
+
+## PERFORMANCE
 
 ### Definitions
 
@@ -88,22 +92,29 @@
 ### Courses
 * [Website Performance Optimization by Google](https://www.udacity.com/course/website-performance-optimization--ud884)
 
-## Logs
+
+
+## LOGS
 
 ### Definitions
+
 * [Nlog](https://github.com/NLog/NLog/wiki/Tutorial)
 * [levels - (Error, info, access)]
 
 ### Tools
-* [Datadog](https://www.datadoghq.com)
-* 
 
-## Tools
+* [Datadog](https://www.datadoghq.com)
+ 
+
+## GENERAL TOOLS
 
 * [Visual Studio Code]()
 * [Docker]()
 
-## People
 
-## Methodology
+## PEOPLE
+
+
+## METHODOLOGY
+
 * [Scrum](https://www.scrumalliance.org)
