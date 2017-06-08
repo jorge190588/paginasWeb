@@ -22,7 +22,7 @@
 
 
 ## UNIT TEST
-* [Manual testing with url and response]
+* [Manual testing with Postman](https://www.getpostman.com/docs/postman/scripts/test_examples)
 * [Unit test with Nodejs](https://www.npmjs.com/package/mocha-cucumber)
 * [Unit test with C#](https://www.nuget.org/packages/NUnit/)
 
