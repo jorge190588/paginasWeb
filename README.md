@@ -50,7 +50,8 @@
 * [Device resolutions - Material.io](https://material.io/devices/)
 
 ### HTML
-* [Components structure with BEM](ttps://en.bem.info/)
+* [Components structure with BEM](https://en.bem.info/)
+* [No me hagas pensar](http://www.disenomovil.mobi/multimedia_un/01_intro_ux/no_me_hagas_pensar_steve%20_krug_2da%20ed.pdf)
 
 ### CSS
 * [Responsive]()
