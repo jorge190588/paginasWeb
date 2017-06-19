@@ -30,6 +30,7 @@
 * [Selenium](http://www.seleniumhq.org/)
 * [Sikuli](http://www.sikuli.org/)
 * [Gherkin](https://github.com/cucumber/cucumber/wiki/Gherkin)
+* [Seledroid emulator](http://selendroid.io/)
 
 
 ## DEPLOY APPS
