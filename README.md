@@ -90,6 +90,7 @@
 * [Test a website's performance on webpagetest](http://www.webpagetest.org/)
 * [Test a website's performance on pingdom](https://tools.pingdom.com)
 * [Test a website's performance on gtmetrix](https://gtmetrix.com)
+* [Test a website's performance on dareboost](https://www.dareboost.com)
 * [Yellow Lab  Tools](http://yellowlab.tools/)
 * [Instantly test your website speed](https://www.dotcom-tools.com/website-speed-test.aspx)
 * [Let's test your website speed.](https://www.giftofspeed.com/)
