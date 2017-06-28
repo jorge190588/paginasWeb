@@ -87,7 +87,9 @@
 * [Google Analitics]
 * [static code analyzer - SonarQube](https://www.sonarqube.org/)
 * [18 Tips for Website Performance Optimization](https://www.keycdn.com/blog/website-performance-optimization/)
-* [Test a website's performance](http://www.webpagetest.org/)
+* [Test a website's performance on webpagetest](http://www.webpagetest.org/)
+* [Test a website's performance on pingdom](https://tools.pingdom.com)
+* [Test a website's performance on gtmetrix](https://gtmetrix.com)
 * [Yellow Lab  Tools](http://yellowlab.tools/)
 * [Instantly test your website speed](https://www.dotcom-tools.com/website-speed-test.aspx)
 * [Let's test your website speed.](https://www.giftofspeed.com/)
