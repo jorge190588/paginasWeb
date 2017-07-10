@@ -123,7 +123,7 @@
 * [Express](https://expressjs.com/)
 
 ## PEOPLE
-
+* [clean coder](http://blog.christoffer.me/9-things-i-learned-from-reading-the-clean-coder-by-robert-c-martin-on-how-professional-developers-conduct-themselves/)
 
 ## METHODOLOGY
 
