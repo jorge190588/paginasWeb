@@ -70,7 +70,8 @@
 * [d3 graphs](https://github.com/d3/d3/wiki/Gallery)
 * [Graphs and network library](http://js.cytoscape.org/)
 
-## PERFORMANCE
+### PERFORMANCE
+ * [load images](http://afarkas.github.io/lazysizes/)
 
 ### Definitions
 
