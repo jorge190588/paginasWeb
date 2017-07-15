@@ -1,20 +1,11 @@
 var express = require('express');
 var app = express();
+var path    = require("path");
 
 app.get('/', function (req, res) {
-   res.send('Inicio');
+	console.log('index page');
+    res.sendFile(path.join(__dirname+'/index.html'));
 })
-
-
-app.get('/contacto/', function (req, res) {
-   res.send('contacto');
-})
-
-
-app.get('/imagenes/', function (req, res) {
-   res.send('imagenes');
-})
-
 
 var server = app.listen(8080, function () {
    var host = server.address().address
