@@ -123,7 +123,7 @@
 * [Visual Studio Code]()
 * [Docker]()
 * [Git](https://github.com/git-school/visualizing-git)
-* [Express](https://expressjs.com/)
+* [Express](https://expressjs.com/), [Manual 1](https://codeforgeek.com/2015/01/render-html-file-expressjs/)
 
 ## PEOPLE
 * [clean coder](http://blog.christoffer.me/9-things-i-learned-from-reading-the-clean-coder-by-robert-c-martin-on-how-professional-developers-conduct-themselves/)
