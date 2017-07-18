@@ -132,3 +132,10 @@
 
 * [Scrum](https://www.scrumalliance.org)
 * [Scrum - mountain goat software](https://www.mountaingoatsoftware.com)
+
+# CASE OF STUDY
+## Making Facebook 2x Faster
+* [What makes Google and Facebook pages load so quickly?](https://www.quora.com/What-makes-Google-and-Facebook-pages-load-so-quickly)
+* [BigPipe: Pipelining web pages for high performance](https://www.facebook.com/notes/facebook-engineering/bigpipe-pipelining-web-pages-for-high-performance/389414033919/)
+* [Making Facebook 2x Faster](https://www.facebook.com/note.php?note_id=307069903919)
+
