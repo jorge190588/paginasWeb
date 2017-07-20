@@ -127,6 +127,7 @@
 
 ## PEOPLE
 * [clean coder](http://blog.christoffer.me/9-things-i-learned-from-reading-the-clean-coder-by-robert-c-martin-on-how-professional-developers-conduct-themselves/)
+* [How to Communicate Effectively at Work With Your Boss](https://blog.hubspot.com/marketing/communicating-effectively-with-your-boss)
 
 ## METHODOLOGY
 
