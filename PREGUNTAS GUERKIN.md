@@ -1,4 +1,4 @@
-# PREGUNTAS GUERKIN
+# PREGUNTAS GHERKIN
 
 1. Como se llama el lenguaje que define la estructura y sintaxis básica para la descripción de pruebas que pueden ser entendidas tanto por clientes como por técnicos.
 	* Gherkin (ok)
@@ -7,7 +7,7 @@
 	* Escenarios (x)
 
      
-*2.	Cuál es la función de Guerkin? 
+2. Cuál es la función de Gherkin? 
 R// Generar pruebas para documentación viva que describe perfectamente como se comporta el sistema enriquecido y manteniendo la documentación.
 
 *3.	El formato de Guerkin fue introducido por la herramienta?
@@ -40,3 +40,7 @@ R// Utilizamos el background para definir precondiciones para cada uno de los es
 
 *11.	Que es el Escenario Outline (Esquema del escenario)?
 R// Es el que nos permite introducir variables en nuestros escenarios y asi simplificar pruebas que requieren los mismos pasos pero que pueden tener datos variados.
+
+
+# Cucumber 
+
