@@ -1,7 +1,11 @@
 # PREGUNTAS GUERKIN
 
-*1.	Como se llama el lenguaje que define la estructura y sintaxis básica para la descripción de pruebas que pueden ser entendidas tanto por clientes como por técnicos.
-    	*R// GUERKIN
+1. Como se llama el lenguaje que define la estructura y sintaxis básica para la descripción de pruebas que pueden ser entendidas tanto por clientes como por técnicos.
+	* Gherkin (ok)
+	* Cucumber(x)
+	* Java (x)
+	* Escenarios (x)
+
      
 *2.	Cuál es la función de Guerkin? 
 R// Generar pruebas para documentación viva que describe perfectamente como se comporta el sistema enriquecido y manteniendo la documentación.
