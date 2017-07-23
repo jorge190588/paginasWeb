@@ -44,34 +44,30 @@ R// Es el que nos permite introducir variables en nuestros escenarios y asi simp
 
 # Cucumber 
 
-1.Como se llama la herramienta que permite ejecutar descripciones funcionales en texto plano como pruebas de software automatizadas.
-*Feature (x)
-*Cucumber (ok)
-*Guerkin (x)
 
+1. Como se llama la herramienta que permite ejecutar descripciones funcionales en texto plano como pruebas de software automatizadas.
+	* Feature (x)
+	* Guerkin(x)
+	* Cucumber (ok)
+	
+2. Sobre que lenguaje de programacion esta escrito Cucumber.
+	* Java (x)
+	* Ruby(ok)
+	* Python (x)
+	
+3. El lenguaje usado por Cucumber que permite hacer las descripciones funcionales se llama.
+	* .Net(x)
+	* C#(x)
+	* Guerkin (ok)
+	
+4. Es un proceso de desarrollo de software que trata de combinar los aspectos puramente tecnicos y los de negocio, de manera que tengamos un marco de trabajo, y un marco de pruebas.
+	* BDD (ok)
+	* DDD(x)
+	* TDD (x)
 
-2.Sobre que lenguaje de programación está escrito Cucumber
-*Java (x)
-*Ruby  (ok)
-*Python (x)
-
-3.El lenguaje usado por Cucumber que permite hacer las  descripciones funcionales se llama
-
-*.NET (x)
-*C# (x)
-*Guerkin (ok)
-
-
-4.Es un proceso de desarrollo de software que trata de combinar los aspectos puramente técnicos y los de negocio, de manera que tengamos un marco de trabajo, y un marco de pruebas se llama
-
-*BDD (ok)
-*DDD (x)
-*TDD (x)
-
-5.Que significa BDD
-
-*Diseño Guiado por el Dominio (x)
-*Desarrollo Dirigido por Pruebas (x)
-*Desarrollo Dirigido por Comportamiento(ok)
-
+5. Que significa BDD.
+	* Diseño Guiado por el Dominio (x)
+	* Desarrollo Dirigido por Comportamiento(ok)
+	* Desarrollo Dirigido por Pruebas (x)
+	
 
