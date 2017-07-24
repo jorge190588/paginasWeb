@@ -47,7 +47,7 @@ R// Es el que nos permite introducir variables en nuestros escenarios y asi simp
 
 1. Como se llama la herramienta que permite ejecutar descripciones funcionales en texto plano como pruebas de software automatizadas.
 	* Feature (x)
-	* Guerkin(x)
+	* Gherkin(x)
 	* Cucumber (ok)
 	
 2. Sobre que lenguaje de programacion esta escrito Cucumber.
@@ -58,7 +58,7 @@ R// Es el que nos permite introducir variables en nuestros escenarios y asi simp
 3. El lenguaje usado por Cucumber que permite hacer las descripciones funcionales se llama.
 	* .Net(x)
 	* C#(x)
-	* Guerkin (ok)
+	* Gherkin (ok)
 	
 4. Es un proceso de desarrollo de software que trata de combinar los aspectos puramente tecnicos y los de negocio, de manera que tengamos un marco de trabajo, y un marco de pruebas.
 	* BDD (ok)
