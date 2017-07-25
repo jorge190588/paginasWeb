@@ -41,7 +41,38 @@ R// Utilizamos el background para definir precondiciones para cada uno de los es
 *11.	Que es el Escenario Outline (Esquema del escenario)?
 R// Es el que nos permite introducir variables en nuestros escenarios y asi simplificar pruebas que requieren los mismos pasos pero que pueden tener datos variados.
 
+12. Aparte de describir las funcionalidades Gherkin nos va a permitir?
+	* Crear una documentación viva a la vez que automatizamos los tests (ok)
+	* Crear interfaces gráficas agradables(x)
+	* Crear funcionalidad a nuestro software(x)
 
+
+13. Cuantos idiomas soporta Gherkin?
+	* 5(x)
+	* solo Ingles(x)
+	* mas de 60(ok)
+
+14 Se escribe una prueba y se verifica que las pruebas fallan. 
+   A continuación, se implementa el código que hace que la prueba pase satisfactoriamente y seguidamente se refactoriza el código escrito.
+   * BDD(x)
+   * TDD(ok)
+   * ABC(x)
+	
+15. Qué significa TDD?
+	* Test Driven Development o Desarrollo Dirigido por Pruebas (ok)
+	* Behaviour Driver Development (x)
+	* Train Desktop Drive (x)
+
+16. TDD está basado en 2 prácticas cuales son?
+	* Escribir los escenarios posibles y tomar decisiones(x)
+	* Refactorizar y escribir las pruebas(x)
+	* Escribir las pruebas primero, y Refactorizar después(ok)
+
+17. BDD es una evolución de?
+	*TDD(ok)
+	*BCD(x)
+	*W3C(x)
+	
 # Cucumber 
 
 
@@ -70,4 +101,33 @@ R// Es el que nos permite introducir variables en nuestros escenarios y asi simp
 	* Desarrollo Dirigido por Comportamiento(ok)
 	* Desarrollo Dirigido por Pruebas (x)
 	
+6. Es un Lenguaje Específico para el Negocio, creable especialmente para las descripciones de comportamiento.	
+	* Cucumber (ok)
+	* Gherkin(x)
+	* BDD (x)
 
+7. Cucumber es una de las herramientas que podemos utilizar para automatizar?
+	* Pruebas en BDD (ok)
+	* Pruebas unitarias (x)
+	* Test de rendimiento (x)
+	
+8. Cucumber nos va permitir ejecutar descripciones funcionales como pruebas de software automatizadas en?
+	* Sintaxis de json (x)
+	* Formato html (x)
+	* Texto Plano (ok)
+	
+9. Cucumber está escrito en Ruby, aunque tiene implementaciones para casi cualquier lenguaje de programación en cuál de los siguientes no tiene implementación?
+	* PHP (x)
+	* CSS (ok)
+	* JAVA (x)
+
+10. Que necesita Cucumber cuando no sabe como ejecutar sus escenarios?
+	* Instrucciones en javascript (x)
+	* Defincion de Pasos (ok)
+	* Interpretar un ciclo (x)
+ 
+ 11. Una de las formas más sencilla de instalar Cucumber para nuestras primeras pruebas es hacerlo en?
+	* NodeJS (ok)
+	* Laravel (x)
+	* Django (x)
+ 
