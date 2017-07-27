@@ -83,7 +83,7 @@
 * [Usability Engineering 1st Edition](https://www.amazon.com/Usability-Engineering-Jakob-Nielsen/dp/0125184069)
 * [Designing and Engineering Time: The Psychology of Time Perception in Software 1st Edition](https://www.amazon.com/Designing-Engineering-Time-Psychology-Perception/dp/0321509188)
 * [Load Google Fonts Asynchronously For Page Speed](https://www.lockedowndesign.com/load-google-fonts-asynchronously-for-page-speed/)
-
+ * [web page testing performance](https://www.slideshare.net/patrickmeenan/web-performance-testing-9694040)
 ### Tools 
 
 * [Visual Studio Diagnostic Tools]
