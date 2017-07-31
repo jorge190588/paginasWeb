@@ -141,3 +141,5 @@
 * [Making Facebook 2x Faster](https://www.facebook.com/note.php?note_id=307069903919)
 * [Site Speed Monitoring in A/B Testing and Feature Ramp-up](https://engineering.linkedin.com/blog/2017/06/site-speed-monitoring-in-a-b-testing-and-feature-ramp-up)
 
+## The Service Worker Lifecycle 
+* [video](https://www.youtube.com/watch?v=TF4AB75PyIc)
