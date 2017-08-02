@@ -129,6 +129,8 @@
 * [clean coder](http://blog.christoffer.me/9-things-i-learned-from-reading-the-clean-coder-by-robert-c-martin-on-how-professional-developers-conduct-themselves/)
 * [How to Communicate Effectively at Work With Your Boss](https://blog.hubspot.com/marketing/communicating-effectively-with-your-boss)
 * [Luis Von Ahn - interview](https://www.youtube.com/watch?v=9g6DVX9i-Fk)
+* [Desition tips](http://image-store.slidesharecdn.com/47cd2b47-a71e-4137-be4c-9944086ee06b-original.jpeg)
+
 
 ## METHODOLOGY
 
