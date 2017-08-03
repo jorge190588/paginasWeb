@@ -1,0 +1,22 @@
+.navbar.navbar-inverse
+    .container-fluid
+      .navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-inverse-collapse')
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='javascript:void(0)') GameApp
+      .navbar-collapse.collapse.navbar-inverse-collapse
+        ul.nav.navbar-nav
+          li.active
+            a(href='javascript:void(0)') Active
+          li
+            a(href='javascript:void(0)') Link                
+        form.navbar-form.navbar-left
+          .form-group
+            input.form-control.col-md-8(type='text', placeholder='Buscar')
+        ul.nav.navbar-nav.navbar-right
+          li
+            a(href='/login') Ya Tienes Cuenta?
+          li
+            a(href='/crearCuenta') Registrate!

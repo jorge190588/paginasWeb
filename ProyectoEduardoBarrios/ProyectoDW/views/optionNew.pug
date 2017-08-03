@@ -1,0 +1,21 @@
+extends template/layout
+block content
+  .container-fluid
+    .jumbotron
+      h2(class='text-center') Selecciona el tipo de juego
+          
+      .centrar-div
+        h3.text-center
+          small
+            code Opciones                        
+        .btn-group-vertical
+          a.btn.btn-raised.btn-info(href='/nuevaEncuesta') Encuesta 
+            i.mdi.mdi-insert-chart
+          a.btn.btn-raised.btn-success(href='/nuevoExamen') Examen 
+            i.mdi.mdi-help-outline
+          a.btn.btn-raised.btn-warning(href='/nuevaDiscusion') Discusión 
+            i.mdi.mdi-chat-bubble-outline
+          a.btn.btn-raised(href='/nuevoRevoltijo') Revoltijo 
+            i.mdi.mdi-extension
+
+          

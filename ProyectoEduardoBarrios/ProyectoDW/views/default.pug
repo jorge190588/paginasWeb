@@ -1,0 +1,22 @@
+extends template/layout
+block content
+  .container-fluid
+    .jumbotron
+      h2(class='text-center') Juegos Anteriores
+      p
+        a(href='/nuevoJuego' class='btn btn-raised btn-info btn-lg') Crea uno nuevo    
+    
+      each datos in data
+        .list-group
+          .list-group-item
+            .row-action-primary
+              i.material-icons folder
+            .row-content
+              .least-content= datos.fechaCreacion
+              h4(class=['list-group-item-heading'])
+                strong= datos.Titulo
+              p.list-group-item-text= datos.Descripcion
+          .list-group-separator    
+      
+      if err != undefined
+        p Error
