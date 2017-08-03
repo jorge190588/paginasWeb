@@ -1,0 +1,40 @@
+extends layout.pug
+block content
+    include templates/nav
+    section(class="app-subirvideo")
+        div.container
+            div.row
+                div(class=['hidden-xs','col-sm-6'])
+                    div(class=['app-datos'])
+                        div(class=['gl-usuario'])
+                            span(class=['glyphicon glyphicon-user'])
+                            span  Usuarios conectados: 2679
+                        div(class=['gl-archivos'])
+                            span(class=['glyphicon glyphicon-upload'])
+                            span  Videos subidos: 2536
+                div(class=['col-xs-12','col-sm-offset-2','col-sm-4'])
+                    a.button.add(href="/agregar", type="button", class=['btn','btn-subirvideo','btn-block','btn-lg']) Subir video
+    div.container
+        div.row
+            div(class=['col-xs-12','col-sm-8','col-md-10'])
+                br
+                article                    
+                    if(data.length)
+                        each video in data
+                            div(class="media")
+                                div(class=["media-left","media-top"])
+                                    a(href="")
+                                        img(class=["media-object"], width="64px",height="64px" src="/favicon.png", alt="breve descripcion")
+                                div(class="media-body")
+                                    h4(class="media-heading") #{video.titulo}
+                                    p #{video.descripcion}
+                                    form(method="post", class="form-inline", action="/eliminar/" + video.id)
+                                        a(class=['btn','btn-primary','btn-sm'], href="/editar/" + video.id) Editar
+                                        input(type="button", class=['btn','btn-danger','btn-sm'], value="Eliminar", onclick="eliminar(this)")
+                        script.
+                            function eliminar(input){
+                                var eliminarOK = confirm("¿Estás seguro de elminar tu publicación?");
+                                return (eliminarOK) ? input.parentNode.submit() : false;
+                            }
+                    else
+                        div(role="alert").alert.alert-info No hay datos que mostrar
