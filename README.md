@@ -111,7 +111,7 @@
 * [Nlog](https://github.com/NLog/NLog/wiki/Tutorial)
 * [levels - (Error, info, access)]
 * [error codes - spanish](https://blog.agetic.gob.bo/2016/07/elegir-un-codigo-de-estado-http-deja-de-hacerlo-dificil/)
-
+* [Error Types.  Operational and Programmer](https://www.joyent.com/node-js/production/design/errors)
 ### Tools
 
 * [Datadog](https://www.datadoghq.com)
