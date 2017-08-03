@@ -15,7 +15,7 @@ class Default{
     editarJuego(juego, Callback)
     {
         //console.log('Juego desde el Modelo '+juego.id+" "+juego.titulo+" "+juego.descripcion+" "+juego.idPreguntas);
-        conn.query('UPDATE juegos SET ? WHERE idJuego = ?',[juego,juego.id], Callback);
+        conn.query('UPDATE juegos SET ? WHERE idJuego = ?',[juego,juego.idJuego], Callback);
     }
 
     eliminarJuego(id, Callback){

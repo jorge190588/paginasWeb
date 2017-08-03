@@ -7,10 +7,10 @@ function cargarDatos(id,titulo,descripcion,cantPreguntas)
     $('#cantidadPreguntas').val(cantPreguntas);
 }
 
-function confirmarEliminacion(id)
+function confirmarEliminacion(input)
 {
     if (window.confirm("Esta seguro que desea eliminar este registro?") == true)
     {
-        window.location = "/eliminar/idJuego/"+id;
+        input.parentNode.submit();
     }
 }

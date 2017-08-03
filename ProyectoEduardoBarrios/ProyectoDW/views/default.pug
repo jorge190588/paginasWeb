@@ -17,7 +17,8 @@ block content
                 strong= datos.Titulo
               p.list-group-item-text= datos.Descripcion
               button(type='button', class=['btn','btn-success','btn-raised'],data-toggle="modal",data-target="#modalEditar", onclick="cargarDatos('"+datos.idJuego+"','"+datos.Titulo+"','"+datos.Descripcion+"','"+datos.idPreguntas+"')") Editar 
-              button(type='button', class=['btn','btn-danger','btn-raised'], onclick="confirmarEliminacion('"+datos.idJuego+"')") Eliminar
+              form(method='post' action='/eliminar/'+datos.idJuego)
+                button(type='button', class=['btn','btn-danger','btn-raised'], onclick="confirmarEliminacion(this)") Eliminar
           .list-group-separator   
  
   div(class=["modal","modal fade"] id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel")

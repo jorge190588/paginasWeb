@@ -46,9 +46,10 @@ class JuegosDefault{
         console.log("Editar Juego POST");
         let juego = 
         {
-            id: request.body.id,
-            titulo: request.body.titulo,
-            descripcion: request.body.descripcion,
+            //Lo que esta del lado izquierdo tiene que ir igual como esta en la db
+            idJuego: request.body.id,
+            Titulo: request.body.titulo,
+            Descripcion: request.body.descripcion,
             idPreguntas: request.body.cantidadPreguntas            
         };
         console.log(juego);
@@ -64,7 +65,7 @@ class JuegosDefault{
     eliminarJuego(request, response, next)
     {
         console.log("Eliminar un Juego POST");
-        let idJuego = request.params.idJuego;
+        let idJuego = request.params.id;
         
         console.log("Id "+idJuego);
         inst.eliminarJuego(idJuego, (error)=>{
