@@ -37,8 +37,43 @@ class JuegosDefault{
             else
             {
                 return next(new Error('Error no se guardo el registro'));
+               }
+        });
+    }
+
+    editarJuego(request,response,next)
+    {
+        console.log("Editar Juego POST");
+        let juego = 
+        {
+            id: request.body.id,
+            titulo: request.body.titulo,
+            descripcion: request.body.descripcion,
+            idPreguntas: request.body.cantidadPreguntas            
+        };
+        console.log(juego);
+        inst.editarJuego(juego, (error)=>{
+            if(!error)
+            {
+                response.redirect('/default');
             }
         });
+        
+    }
+
+    eliminarJuego(request, response, next)
+    {
+        console.log("Eliminar un Juego POST");
+        let idJuego = request.params.idJuego;
+        
+        console.log("Id "+idJuego);
+        inst.eliminarJuego(idJuego, (error)=>{
+            if(!error)
+            {
+                response.redirect('/default');
+            }
+        });
+        
     }
 }
 

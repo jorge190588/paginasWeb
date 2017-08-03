@@ -29,11 +29,13 @@ router.get('/ruta', objController.getAll);
 // crear ruta para juegosDefault 
 const indexDefault = require('../controllers/juegosDefaultController');
 var obj = new indexDefault();
-
+var inst = new indexDefault();
 router.get('/default', obj.getJuegos);
 
 // ruta para nuevoJuegoGET
 router.get('/nuevoJuego', obj.crearJuegoGet);
-router.post('/nuevoOk',obj.crearJuegoPost);
+router.post('/crear',obj.crearJuegoPost);
+router.post('/editar/:id',obj.editarJuego);
+router.post('/eliminar/:id', obj.eliminarJuego);
  
 module.exports = router;

@@ -16,9 +16,38 @@ block content
               h4(class=['list-group-item-heading'])                
                 strong= datos.Titulo
               p.list-group-item-text= datos.Descripcion
-              button(class=['btn','btn-success','btn-raised']) Editar
-              button(class=['btn','btn-danger','btn-raised']) Eliminar
-          .list-group-separator    
+              button(type='button', class=['btn','btn-success','btn-raised'],data-toggle="modal",data-target="#modalEditar", onclick="cargarDatos('"+datos.idJuego+"','"+datos.Titulo+"','"+datos.Descripcion+"','"+datos.idPreguntas+"')") Editar 
+              button(type='button', class=['btn','btn-danger','btn-raised'], onclick="confirmarEliminacion('"+datos.idJuego+"')") Eliminar
+          .list-group-separator   
+ 
+  div(class=["modal","modal fade"] id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel")
+    div(class="modal-dialog")
+      div(class="modal-content")
+        div(class="modal-header")
+          button(type="button" class="close" data-dismiss="modal" aria-hidden="true") ×
+          h4(class="modal-title") Editar Registro 
+            i.material-icons create 
+        
+        div(class="modal-body")
+          form(method='post' action='/editar/'+data[0].idJuego)
+            input(type='hidden',id='idJuego',name='id')
+            div(class=['form-group','has-info'])              
+              label(class='control-label' for='titulo') 
+                i(class=['mdi','mdi-account-circle'])  TITULO
+              input(class='form-control', type='text', name='titulo',id='titulo',autofocus)
+
+            div(class=['form-group','has-info'])
+              label(class='control-label' for='descripcion') 
+                i(class=['mdi','mdi-account-circle'])  DESCRIPCION
+              textarea(class='form-control',name='descripcion' id='descripcion')
+
+            div(class=['form-group','has-info'])
+              label(class='control-label' for='cantidad-preguntas') 
+                i(class=['mdi','mdi-account-circle'])  CANTIDAD DE PREGUNTAS
+              input(class='form-control', type='number', name='cantidadPreguntas' id='cantidadPreguntas')
+                     
+            button(type="button" class="btn btn-raised btn-default" data-dismiss="modal") CERRAR
+            input(type="submit" class="btn btn-raised btn-info" value='EDITAR') 
   
-  script(src='javascripts/ejemplo.js')
+  script(src='javascripts/editar-eliminar.js')
     
