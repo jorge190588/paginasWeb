@@ -1,0 +1,18 @@
+DROP DATABASE IF EXISTS ranking_videos;
+
+CREATE DATABASE IF NOT EXISTS ranking_videos;
+
+USE ranking_videos;
+
+CREATE TABLE videos(
+    id int UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(100) NOT NULL,
+    descripcion TEXT NOT NULL,
+    url VARCHAR(150) NOT NULL
+);
+
+CREATE TABLE auth(
+    id int UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(150) NOT NULL
+);

@@ -1,0 +1,26 @@
+extends layout.pug
+block content
+    include templates/nav
+    div.container
+        div.row
+            div.col-xs-12
+                br
+                ol(class="breadcrumb")
+                    li
+                        a(href="/") Inicio
+                    li.active Edición del video
+                div.row
+                    div(class=['col-xs-12','col-sm-8','col-sm-offset-2'])
+                        form(method="post", action="/actualizar/"+data[0].id)                            
+                            input(type="hidden", name="id", value=data[0].id)
+                            div.form-group
+                                label TÍTULO:
+                                input(type="text", class="form-control", value=data[0].titulo, placeholder="Ingrese el titulo", name="titulo" required)
+                            div.form-group
+                                label DESCRIPCIÓN:
+                                textarea(class="form-control", placeholder="Ingrese la descripción", rows="3" name="descripcion" required) #{data[0].descripcion}
+                            div.form-group
+                                label URL VIDEO:
+                                input(type="text", class="form-control", value=data[0].url placeholder="Id de video youtube", name="urlVideo" required)
+                            input(type="submit", value="Guardar cambios", class=['btn','btn-success','btn-lg'])
+                            a(href="/", class=['btn','btn-primary','btn-lg']) Cancelar

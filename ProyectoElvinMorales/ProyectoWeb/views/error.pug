@@ -1,0 +1,12 @@
+extends layout.pug
+block content
+    div.container
+        div.row
+            div.col-xs-12
+                div.jumbotron
+                    div.container.text-center
+                        h1 Error N° #{error.status}
+                        p= error.statusText
+                        p
+                            a(href="/", class=["btn","btn-info","btn-lg"]) INICIO
+                        //-img(src="/404.png", class=["img-round","img-responsive","img-circle","center-block"], width="50%")
