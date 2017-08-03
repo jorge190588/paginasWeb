@@ -7,20 +7,20 @@ block content
 
       div(class='row')
         div(class=['col-md-6','col-md-offset-3'])
-          form(action='http://localhost:3000/nuevoOk', method='post')
+          form(action='/nuevoOk', method='post')
             div(class=['form-group','label-floating','has-info'])
               label(class='control-label' for='titulo') 
                 i(class=['mdi','mdi-account-circle'])  TITULO
-              input(id='titulo', class='form-control', type='text', name='titulo')
+              input(class='form-control', type='text', name='titulo')
 
             div(class=['form-group','label-floating','has-info'])
               label(class='control-label' for='descripcion') 
                 i(class=['mdi','mdi-account-circle'])  DESCRIPCION
-              input(id='descripcion', class='form-control', type='text', name='descripcion')
+              input(class='form-control', type='text', name='descripcion')
 
             div(class=['form-group','label-floating','has-info'])
               label(class='control-label' for='cantidad-preguntas') 
                 i(class=['mdi','mdi-account-circle'])  CANTIDAD DE PREGUNTAS
-              input(id='cantidad-preguntas', class='form-control', type='number', name='cantidad-preguntas')
+              input(class='form-control', type='number', name='cantidadPreguntas')
             
-            input(type='submit' class=['btn','btn-raised','btn-info'] value='CREAR')
+            input(type='submit', class=['btn','btn-raised','btn-info'], value='CREAR')

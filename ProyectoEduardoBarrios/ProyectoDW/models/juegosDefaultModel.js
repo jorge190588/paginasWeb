@@ -4,12 +4,12 @@ const conn = require('./conexion');
 
 class Default{
     getJuegos(Callback){
-        conn.query('SELECT * FROM juegos', Callback);
+        conn.query('SELECT * FROM juegos ORDER BY idJuego DESC', Callback);
     }
 
     nuevoJuegoPost(juego, Callback)
     {
-        conn.query('INSER INTO juegos SET ?', juego, Callback );
+        conn.query('INSERT INTO juegos SET ?', juego, Callback );
     }
 }
 

@@ -13,10 +13,12 @@ block content
               i.material-icons folder
             .row-content
               .least-content= datos.fechaCreacion
-              h4(class=['list-group-item-heading'])
+              h4(class=['list-group-item-heading'])                
                 strong= datos.Titulo
               p.list-group-item-text= datos.Descripcion
+              button(class=['btn','btn-success','btn-raised']) Editar
+              button(class=['btn','btn-danger','btn-raised']) Eliminar
           .list-group-separator    
-      
-      if err != undefined
-        p Error
+  
+  script(src='javascripts/ejemplo.js')
+    

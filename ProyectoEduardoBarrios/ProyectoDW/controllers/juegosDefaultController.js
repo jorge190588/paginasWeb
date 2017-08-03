@@ -19,27 +19,25 @@ class JuegosDefault{
 
     crearJuegoPost(request, response, next)
     {
-        var juego = 
+        console.log('Crear Juego POST');
+        let juego = 
         {
             titulo: request.body.titulo,
             descripcion: request.body.descripcion,
-            idPreguntas: request.body.cantidad-preguntas,
-            //fechaCreacion: new Date(getDate())
-
-        }
+            idPreguntas: request.body.cantidadPreguntas            
+        };
         
-        console.log(`Propiedades del juego ${juego}`);
+        console.log(juego);
 
-        inst.nuevoJuego(juego, (error)=>{
+        inst.nuevoJuegoPost(juego, (error)=>{
             if(!error)
             {
-                response.render('/default');
+                response.redirect('/default');
             }
-            if(error){
-                throw error;
-                console.log('Este es el error ->> '+error);        
-                response.render('/default',{err : 'Ha ocurrido un error '+error})
-            } 
+            else
+            {
+                return next(new Error('Error no se guardo el registro'));
+            }
         });
     }
 }
