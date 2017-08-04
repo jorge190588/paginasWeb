@@ -4,7 +4,7 @@ block content
     div(class='jumbotron')
       div(class='listRaised')
         h2(class='text-center') Juegos Anteriores
-        
+        //p= new Date(data[0].fechaCreacion)
         each datos in data
           .list-group
             .list-group-item
@@ -15,11 +15,13 @@ block content
                 h4(class=['list-group-item-heading'])                
                   strong= datos.Titulo
                 p.list-group-item-text= datos.Descripcion
-                div(class='col-md-12 alinear-botones')
-                  a(href='#' class=['btn','btn-raised','btn-warning','btn-sm']) CREAR PREGUNTAS
-                  button(type='button', class=['btn','btn-success','btn-raised','btn-sm'],data-toggle="modal",data-target="#modalEditar", onclick="cargarDatos('"+datos.idJuego+"','"+datos.Titulo+"','"+datos.Descripcion+"','"+datos.idPreguntas+"')") Editar 
-                    form(method='post' action='/eliminar/'+datos.idJuego)
-                      button(type='button', class=['btn','btn-danger','btn-raised','btn-sm'], onclick="confirmarEliminacion(this)") Eliminar
+                div(class='pull-right')
+                  a(href='/juegoCreado/'+datos.idJuego, class=['btn','btn-raised','btn-warning','btn-xs']) CREAR PREGUNTAS                  
+                  button(type='button', class=['btn','btn-success','btn-raised','btn-xs'], data-toggle="modal", data-target="#modalEditar", onclick="cargarDatos('"+datos.idJuego+"','"+datos.Titulo+"','"+datos.Descripcion+"','"+datos.idPreguntas+"')") Editar                            
+                div(class='pull-right')
+                  form(method='post' action='/eliminar/'+datos.idJuego)
+                    button(type='button', class=['btn','btn-danger','btn-raised','btn-xs'], onclick="confirmarEliminacion(this)") Eliminar
+                  
                         
             div(class='list-group-separator')
   div(class='fab')

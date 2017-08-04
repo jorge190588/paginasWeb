@@ -21,6 +21,16 @@ div.fab{
     right: 20px;
 }
 
-.alinear-botones{
-    text-align: right;
+.btn-fab.alinear-botones{    
+    margin-left: 35%;
+}
+
+.textoCreandoJuego{
+    margin-left: 7%;
+}
+
+.centrar{
+    margin-left: 47%;
+    padding-top: -5px;
+    padding-bottom: 15px;
 }

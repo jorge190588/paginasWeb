@@ -1,0 +1,24 @@
+extends ../template/layout
+
+block content
+  div(class='container-fluid')
+    div(class='jumbotron')
+      .list-group
+        .list-group-item
+          .row-action-primary
+            i.material-icons folder
+          .row-content
+            .least-content= data[0].fechaCreacion
+            h4(class=['list-group-item-heading'])                
+              strong= data[0].Titulo              
+            p.list-group-item-text= data[0].Descripcion                                                          
+              button(type='button', class=['btn','btn-success','btn-raised','btn-xs','pull-right'],data-toggle="tooltip" data-placement="right" title="Editar" data-original-title="Editar") 
+                i(class='material-icons') create
+      hr
+      div(class='row')                
+        h3(class='text-left textoCreandoJuego') CREANDO JUEGO 
+          br        
+          h3(class='text-center') 
+            span(class="label label-default") Agregar Pregunta
+          button(type='button', class=['btn','btn-warning','btn-raised','centrar'],data-toggle="tooltip" data-placement="right" title="Agregar Pregunta" data-original-title="Agregar Pregunta") 
+            i(class='material-icons') exposure_plus_1
