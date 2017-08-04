@@ -1,0 +1,26 @@
+extends ../template/layout
+
+block content
+  div(class='container-fluid')
+    div(class='jumbotron')
+      h2(class='text-center') Crear un Juego
+
+      div(class='row')
+        div(class=['col-md-6','col-md-offset-3'])
+          form(action='/crear', method='post')
+            div(class=['form-group','label-floating','has-info'])
+              label(class='control-label' for='titulo') 
+                i(class=['mdi','mdi-account-circle'])  TITULO
+              input(class='form-control', type='text', name='titulo')
+
+            div(class=['form-group','label-floating','has-info'])
+              label(class='control-label' for='descripcion') 
+                i(class=['mdi','mdi-account-circle'])  DESCRIPCION
+              input(class='form-control', type='text', name='descripcion')
+
+            div(class=['form-group','label-floating','has-info'])
+              label(class='control-label' for='cantidad-preguntas') 
+                i(class=['mdi','mdi-account-circle'])  CANTIDAD DE PREGUNTAS
+              input(class='form-control', type='number', name='cantidadPreguntas')
+            
+            input(type='submit', class=['btn','btn-raised','btn-info'], value='CREAR')

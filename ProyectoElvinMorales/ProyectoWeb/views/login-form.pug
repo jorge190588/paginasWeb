@@ -1,0 +1,35 @@
+extends layout.pug
+block content
+    div.container
+        div.row
+            div(class="col-xs-12")
+                section(class=['app-principal'])
+                    div.container
+                        h1= title
+                        p Sube tu video para que el UMGteam vea tu trabajo!!
+                if(message)
+                    br
+                    div(role="alert").alert.alert-success 
+                        strong #{message}
+                if(error)
+                    br
+                    div(role="alert").alert.alert-danger 
+                        strong #{error}
+                br
+                div.row
+                    div(class=['col-xs-12','col-sm-8','col-sm-offset-2','col-md-6','col-md-offset-3'])
+                        form(method="post", action="/login")
+                            div.form-group
+                                div.input-group
+                                    span(class=['input-group-addon'])
+                                        span(class=['glyphicon','glyphicon-user'])
+                                    input(type="text", class=['form-control'], id="username", name="username", placeholder="Usuario", required)
+                            div.form-group
+                                div.input-group
+                                    span(class=['input-group-addon'])
+                                        span(class=['glyphicon','glyphicon-asterisk'])
+                                    input(type="password", class=['form-control'], id="password", name="password", placeholder="Contraseña", required)
+                            div(class=['col-sm-6'])
+                                input(type="submit", class=['btn','btn-success','btn-block'] value="Entrar")
+                            div(class=['col-sm-6'])
+                                a(href="/signin", class=['btn','btn-primary','btn-block']) Registrarse

@@ -111,7 +111,7 @@
 * [Nlog](https://github.com/NLog/NLog/wiki/Tutorial)
 * [levels - (Error, info, access)]
 * [error codes - spanish](https://blog.agetic.gob.bo/2016/07/elegir-un-codigo-de-estado-http-deja-de-hacerlo-dificil/)
-
+* [Error Types.  Operational and Programmer](https://www.joyent.com/node-js/production/design/errors)
 ### Tools
 
 * [Datadog](https://www.datadoghq.com)
@@ -128,6 +128,9 @@
 ## PEOPLE
 * [clean coder](http://blog.christoffer.me/9-things-i-learned-from-reading-the-clean-coder-by-robert-c-martin-on-how-professional-developers-conduct-themselves/)
 * [How to Communicate Effectively at Work With Your Boss](https://blog.hubspot.com/marketing/communicating-effectively-with-your-boss)
+* [Luis Von Ahn - interview](https://www.youtube.com/watch?v=9g6DVX9i-Fk)
+* [Desition tips](http://image-store.slidesharecdn.com/47cd2b47-a71e-4137-be4c-9944086ee06b-original.jpeg)
+* [Emotional leadership tips](http://juancarloscasco.emprendedorex.com/10-tips-para-desarrollar-tu-liderazgo-desde-la-gestion-emocional/)
 
 ## METHODOLOGY
 
@@ -141,3 +144,5 @@
 * [Making Facebook 2x Faster](https://www.facebook.com/note.php?note_id=307069903919)
 * [Site Speed Monitoring in A/B Testing and Feature Ramp-up](https://engineering.linkedin.com/blog/2017/06/site-speed-monitoring-in-a-b-testing-and-feature-ramp-up)
 
+## The Service Worker Lifecycle 
+* [video](https://www.youtube.com/watch?v=TF4AB75PyIc)

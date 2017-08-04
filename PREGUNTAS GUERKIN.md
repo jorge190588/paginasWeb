@@ -1,4 +1,4 @@
-# PREGUNTAS GHERKIN
+﻿# PREGUNTAS GHERKIN
 
 1. Como se llama el lenguaje que define la estructura y sintaxis básica para la descripción de pruebas que pueden ser entendidas tanto por clientes como por técnicos.
 	* Gherkin (ok)
@@ -90,7 +90,39 @@
 	*TDD(ok)
 	*BCD(x)
 	*W3C(x)
-	
+
+18. las sentencias de Gherkin son?
+	*feature, Scenario, Given, When, Then.(ok)
+	*feature, Given, Then.(x)
+	*feature, scenario, Given, When, Then, Close.(x)
+	*no tiene sentencias(x)	
+
+19. para que nos sirve el Given?
+	*para explicar que va pasar paso a paso si se cumple el scenario(ok)
+	*para explicar que es gherkin(x)
+	*para aprender a utilizar gherkin(x)
+	*para saber la evolucion de gherkin(x)
+
+20. para que nos sirve el when?
+	*Especifica el conjunto de acciones que lanzan el test.
+	*para aprender a programar(x)
+	*para explicar el feature(x)
+	*para saber que es TDD(x)
+
+21. para que nos sirve el Then?
+	*para indicar el resultado(ok)
+	*para terminar gherkin(x)
+	*para saber que es python(x)
+	*para indicar la hora(x)
+
+22. que significa el termino BDD?
+	*Desarrollo Dirigido por comportamiento(ok)
+	*Designacion Desarrollado por compañeros(x)
+	*Deficiencia Democratica Corporal(x)
+
+
+
+
 # Cucumber 
 
 
@@ -149,3 +181,28 @@
 	* Laravel (x)
 	* Django (x)
  
+12. Es cucumber una herramienta de codigo libre?
+	*verdadero(ok)
+	*falso(x)
+
+13. Para que puedo utilizar cucumber
+	*Para ejecutar descripciones en texto como pruebas de software automatizadas(ok)
+	*para hacer videotutoriales(x)
+	*para aprender a cocinar(x)
+	*para aprender a programar en java(x)
+
+14. En que año fue echo cucumber?
+	*2008(ok)
+	*2005(x)
+	*2007(x)
+	*2016(x)
+
+15. por quien fue creado cucumber?
+	*Aslak Hellesoy(ok)
+	*Steven Jobs
+	*Bill Gate
+	*Silvestre Stallone
+
+16. cucumber es un modelado de colaboracion?
+	*verdadero(ok)
+	*falso(x)

@@ -1,0 +1,22 @@
+extends layout.pug
+
+block content
+    include templates/nav
+    div.container
+        div.row
+            div.col-xs-12
+                br                
+                ol(class="breadcrumb")
+                    li
+                        a(href="/inicio") Inicio
+                    li.active Subir video
+                div.row
+                    div(class=['col-xs-12','col-sm-8','col-sm-offset-2'])
+                        form(method="post", action="/inicio")
+                            div.form-group
+                                input(type="text", class="form-control", placeholder="Ingrese el titulo", name="titulo" required)
+                            div.form-group
+                                textarea(class="form-control", placeholder="Ingrese la descripción", rows="3" name="descripcion" required)
+                            div.form-group
+                                input(type="text", class="form-control", placeholder="Id de video youtube", name="urlVideo" required)
+                            input(type="submit", value="Guardar", class=['btn','btn-success','btn-lg'])

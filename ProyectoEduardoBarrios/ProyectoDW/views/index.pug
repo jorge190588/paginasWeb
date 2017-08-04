@@ -1,0 +1,52 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-material-design.css')
+    link(rel='stylesheet', href='/stylesheets/ripples.css')
+    link(rel='stylesheet', href='/stylesheets/material-icons.css')
+    link(rel='stylesheet', href='/stylesheets/estilos.css')
+  body
+    .container-fluid
+      h1.text-center Aprende Jugando!
+      br
+      .row
+        .col-md-6.col-md-offset-3
+          .panel.panel-info
+            .panel-heading
+              h3.panel-title.text-center
+                b PIN DEL JUEGO
+            .panel-body
+              form(action='', method='post')
+                .form-group.label-floating.has-success
+                  label.control-label(for='focusedInput') 
+                    i.mdi.mdi-fiber-pin  INGRESE EL PIN
+                  input#focusedInput.form-control(type='text', name='pin')
+                .form-group.label-floating.has-success
+                  label.control-label(for='focusedInput') 
+                    i.mdi.mdi-fingerprint  INGRESE SU CARNE
+                  input#focusedInput.form-control(type='text', name='carne')
+                .form-group.label-floating.has-success
+                  label.control-label(for='focusedInput') 
+                    i.mdi.mdi-face  INGRESE SU NOMBRE
+                  input#focusedInput.form-control(type='text', name='nombre')
+                  button.btn.btn-raised.btn-success(type='submit') ENTRAR
+        .col-md-6.col-md-offset-3
+          p.parrafoIndex.text-center
+            | Crea un juego gratis aquí 
+            br
+            a(href='/default') Ir
+    footer.navbar-fixed-bottom
+      hr
+      p © 2017 Proyecto Desarrollo-Web, UMG / Eduardo Barrios.
+
+    script(src='/javascripts/jquery.js')
+    script(src='/javascripts/bootstrap.js')
+    script(src='/javascripts/material.js')
+    script(src='/javascripts/ripples.js')
+    script.
+      $.material.init();
