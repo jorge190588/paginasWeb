@@ -1,25 +1,30 @@
 extends template/layout
 block content
-  .container-fluid
-    .jumbotron
-      h2(class='text-center') Juegos Anteriores
-      p
-        a(href='/nuevoJuego' class='btn btn-raised btn-info btn-lg') Crea uno nuevo    
-    
-      each datos in data
-        .list-group
-          .list-group-item
-            .row-action-primary
-              i.material-icons folder
-            .row-content
-              .least-content= datos.fechaCreacion
-              h4(class=['list-group-item-heading'])                
-                strong= datos.Titulo
-              p.list-group-item-text= datos.Descripcion
-              button(type='button', class=['btn','btn-success','btn-raised'],data-toggle="modal",data-target="#modalEditar", onclick="cargarDatos('"+datos.idJuego+"','"+datos.Titulo+"','"+datos.Descripcion+"','"+datos.idPreguntas+"')") Editar 
-              form(method='post' action='/eliminar/'+datos.idJuego)
-                button(type='button', class=['btn','btn-danger','btn-raised'], onclick="confirmarEliminacion(this)") Eliminar
-          .list-group-separator   
+  div(class='container-fluid')
+    div(class='jumbotron')
+      div(class='listRaised')
+        h2(class='text-center') Juegos Anteriores
+        
+        each datos in data
+          .list-group
+            .list-group-item
+              .row-action-primary
+                i.material-icons folder
+              .row-content
+                .least-content= datos.fechaCreacion
+                h4(class=['list-group-item-heading'])                
+                  strong= datos.Titulo
+                p.list-group-item-text= datos.Descripcion
+                div(class='col-md-12 alinear-botones')
+                  a(href='#' class=['btn','btn-raised','btn-warning','btn-sm']) CREAR PREGUNTAS
+                  button(type='button', class=['btn','btn-success','btn-raised','btn-sm'],data-toggle="modal",data-target="#modalEditar", onclick="cargarDatos('"+datos.idJuego+"','"+datos.Titulo+"','"+datos.Descripcion+"','"+datos.idPreguntas+"')") Editar 
+                    form(method='post' action='/eliminar/'+datos.idJuego)
+                      button(type='button', class=['btn','btn-danger','btn-raised','btn-sm'], onclick="confirmarEliminacion(this)") Eliminar
+                        
+            div(class='list-group-separator')
+  div(class='fab')
+    a(href="/nuevoJuego" class="btn btn-info btn-fab")
+      i(class="material-icons") create              
  
   div(class=["modal","modal fade"] id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel")
     div(class="modal-dialog")

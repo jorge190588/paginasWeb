@@ -14,3 +14,13 @@ footer{
     margin-left:45%;
 }
 
+div.fab{
+    position: fixed;
+    z-index: 1;
+    bottom: 20px;
+    right: 20px;
+}
+
+.alinear-botones{
+    text-align: right;
+}
