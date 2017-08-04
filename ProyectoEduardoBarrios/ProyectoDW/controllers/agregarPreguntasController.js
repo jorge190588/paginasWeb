@@ -12,6 +12,11 @@ class addPreguntas
             }
         });
     }
+
+    nuevaPreguntaGet(req, res, next)
+    {
+        res.render('juego/insertarNuevaPregunta', {title : 'Nueva pregunta'});
+    }
 }
 
 module.exports = addPreguntas;

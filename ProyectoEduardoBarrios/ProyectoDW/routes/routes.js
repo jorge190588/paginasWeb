@@ -43,5 +43,5 @@ const addPreguntas = require('../controllers/agregarPreguntasController');
 var inst = new addPreguntas();
 
 router.get('/juegoCreado/:id',inst.getOneGame);
- 
+router.get('/agregarPregunta/:id',inst.nuevaPreguntaGet);
 module.exports = router;

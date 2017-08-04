@@ -8,6 +8,11 @@ class addPreguntas{
         conn.query('SELECT * FROM juegos WHERE idJuego = ?',idJuego ,Callback);
     }
 
+    nuevoPreguntaPost(pregunta, Callback)
+    {
+        conn.query('INSERT INTO preguntas SET ?', pregunta, Callback );
+    }
+
 }
 
 module.exports = addPreguntas;

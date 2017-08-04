@@ -20,5 +20,6 @@ block content
           br        
           h3(class='text-center') 
             span(class="label label-default") Agregar Pregunta
-          button(type='button', class=['btn','btn-warning','btn-raised','centrar'],data-toggle="tooltip" data-placement="right" title="Agregar Pregunta" data-original-title="Agregar Pregunta") 
-            i(class='material-icons') exposure_plus_1
+          a(href='/agregarPregunta/'+data[0].idJuego)  
+            button(type='button', class=['btn','btn-warning','btn-raised','centrar'],data-toggle="tooltip" data-placement="right" title="Agregar Pregunta" data-original-title="Agregar Pregunta") 
+              i(class='material-icons') exposure_plus_1
