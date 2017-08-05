@@ -19,37 +19,55 @@ html
         color: #FE9A2E;
         }
   body
+    .row
+      .col-md-1.col-md-offset-0
+        h3 DENIS ROSALES
+        ul.nav.nav-pills.nav-stacked
+          li.active(role='presentation')
+            a(href='#') INICIO
+          li(role='presentation')
+            a(href='#') Perfil
+          li(role='presentation')
+            a(href='#') cerrar sesion
     .container
-      .container
-        .row
-          .col-md-6.col-md-offset-3
-            h1.text-center
-              | BIENVENIDOS AL JUEGO DE PREGUNTAS
-              br
-              br
-        h2
-          strong
-            | INSTRUCCIONES DEL JUEGO
+      .row
+        .col-md-6.col-md-offset-3
+          h1.text-center
+            | BIENVENIDOS AL JUEGO DE PREGUNTAS
             br
-        ul
-          strong
-            li Es un juego de preguntas rapidas
-            li asignado con un tiempo especifico
-            li
-              | debes de contestar si es VERDADERO o FALSO
+            br
+      .row
+        .col-md-12.col-md-offset-1
+          h2
+            strong
+              | INSTRUCCIONES DEL JUEGO
               br
-              br
-              br
-        p
-          button.btn.btn-lg.btn-success(type='button', data-toggle='modal', data-target='#myModal')
-            | asignarme al juego 
-            span.glyphicon.glyphicon-pencil(aria-hidden='true')
-          button.btn.btn-lg.btn-danger(type='button') retirarme del juego
-          button.btn.btn-lg.btn-warning(type='button') iniciar el juego
-        .panel.panel-primary
-          .panel-heading GAME PLAYERS
-          .panel-body
-            p#nombre
+          ul
+            strong
+              li Es un juego de preguntas rapidas
+              li asignado con un tiempo especifico
+              li
+                | debes de contestar si es VERDADERO o FALSO
+                br
+                br
+                br
+      .row
+        .col-md-10.col-md-offset-1
+          p
+            button.btn.btn-lg.btn-success(type='button', data-toggle='modal', data-target='#myModal')
+              | asignarme al juego 
+              span.glyphicon.glyphicon-pencil(aria-hidden='true')
+            button.btn.btn-lg.btn-danger(type='button')
+              | retirarme del juego 
+              span.glyphicon.glyphicon-remove(aria-hidden='true')
+            button.btn.btn-lg.btn-primary(type='button')
+              | iniciar el juego 
+              span.glyphicon.glyphicon-play(aria-hidden='true')
+          br
+          .panel.panel-primary
+            .panel-heading GAME PLAYERS
+            .panel-body
+              p#nombre
     // Modal
     #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
       .modal-dialog(role='document')
