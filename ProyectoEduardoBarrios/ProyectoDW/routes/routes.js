@@ -29,7 +29,7 @@ router.get('/ruta', objController.getAll);
 // crear ruta para juegosDefault 
 const indexDefault = require('../controllers/juegosDefaultController');
 var obj = new indexDefault();
-var inst = new indexDefault();
+
 router.get('/default', obj.getJuegos);
 
 // ruta para nuevoJuegoGET
@@ -37,5 +37,11 @@ router.get('/nuevoJuego', obj.crearJuegoGet);
 router.post('/crear',obj.crearJuegoPost);
 router.post('/editar/:id',obj.editarJuego);
 router.post('/eliminar/:id', obj.eliminarJuego);
- 
+
+// ruta mvc para agregar Preguntas
+const addPreguntas = require('../controllers/agregarPreguntasController');
+var inst = new addPreguntas();
+
+router.get('/juegoCreado/:id',inst.getOneGame);
+router.get('/agregarPregunta/:id',inst.nuevaPreguntaGet);
 module.exports = router;

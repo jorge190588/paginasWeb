@@ -5,7 +5,7 @@
 
 ## BASIC DEFINITIONS
 * [Backend and FrontEnd]()
-* [Code clean]()
+* [Clean code - spanish book](https://drive.google.com/file/d/0BzN9B489_64CeUt4MGJPR21PZkE/view?usp=sharing)
 * [Design pattern]()
 * [Routing]()
 * [Hapi package for create a nodejs backend](https://hapijs.com/api)
