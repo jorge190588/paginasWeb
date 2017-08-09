@@ -80,3 +80,12 @@ npm start
     And: debe mostrar un campo para el video
     And: debe mostrar un boton con la etiqueta "Guardar"
 ```
+
+```
+6. Feature: Dar click en el boton "Guardar"
+* Given: un usuario entra a la pagina de Agregar nuevo video
+* When: hace click en el boton de "Guardar"
+    And: llena los campos requeridos
+    And: guarda el video
+* Then: el video subido debe mostrarse en la pagina de inicio
+```
