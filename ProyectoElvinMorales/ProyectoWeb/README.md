@@ -18,3 +18,8 @@ npm start
 * [Bootstrap 3](http://getbootstrap.com/)
 * [Pug](https://www.npmjs.com/package/pug)
 * ...
+
+## Herramientas Utilizadas
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [Nodemon](https://www.npmjs.com/package/nodemon)
+* [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
