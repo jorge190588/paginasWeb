@@ -2,11 +2,6 @@
 
 # Cronograma
 
-## Release 1. 
-
-* Crear un juego y jugar con 1 jugador.
-* Fecha:
-
 
 # Fases
 
