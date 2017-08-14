@@ -44,4 +44,5 @@ var inst = new addPreguntas();
 
 router.get('/juegoCreado/:id',inst.getOneGame);
 router.get('/agregarPregunta/:id',inst.nuevaPreguntaGet);
+router.post('/crearPregunta',inst.nuevaPreguntaPost);
 module.exports = router;
