@@ -5,12 +5,29 @@ class addPreguntas
 {
     getOneGame(req, res, next){
         var idJuego = req.params.id;
-        console.log("Id "+idJuego);
-        inst.getOneGameModel(idJuego,(error, data) =>{
+        //console.log("Id "+idJuego);
+        inst.getOneGameQuestionsModel(idJuego,(error, data) =>{            
             if(!error){            
-                res.render('juego/agregarPreguntas',{data : data});
+                if(data.length < 1){
+                    console.log("Data viene vacío :(");
+                    inst.getOneGameModel(idJuego,(error,data)=>{
+                        res.render('juego/agregarPreguntas',{data : data});
+                    });                    
+                }                    
+                else{
+                    console.log("Data NO viene vacio :)");
+                    res.render('juego/agregarPreguntas',{data : data});
+                }                
             }
         });
+
+        /*inst.getPreguntasDeJuegos(idJuego,(err,data)=>{
+            if(!err)
+            {
+                res.render("juego/agregarPreguntas",{preguntas : data});
+            }
+        });*/
+
     }
 
     nuevaPreguntaGet(req, res, next)
@@ -50,17 +67,21 @@ class addPreguntas
             if(!err){
                 res.redirect('/juegoCreado/'+pregunta.idJuego);                    
             }         
-        });
-        
-        
-        
+        });        
+    }
 
-        /*inst.nuevaPreguntaPost(pregunta,respuestas,respCorrectas,(error)=>{
-            if(!error)
+    // este metodo solo es test 
+    getPreguntas(req,res,next)
+    {
+        var idJuego = 5;
+        inst.getPreguntasDeJuegos(idJuego,(err,data)=>{
+            if(!err)
             {
-                res.redirect('/juegoCreado/'+pregunta.idJuego);
+                console.log(data);
+                //console.log("Id del juego en Controller ->> "+idJuego)
+                res.render("juego/prueba",{data : data});
             }
-        });*/
+        });
     }
 }
 
