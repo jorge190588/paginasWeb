@@ -23,8 +23,7 @@ class JuegosDefault{
         let juego = 
         {
             titulo: request.body.titulo,
-            descripcion: request.body.descripcion,
-            idPreguntas: request.body.cantidadPreguntas            
+            descripcion: request.body.descripcion            
         };
         
         console.log(juego);
@@ -49,8 +48,7 @@ class JuegosDefault{
             //Lo que esta del lado izquierdo tiene que ir igual como esta en la db
             idJuego: request.body.id,
             Titulo: request.body.titulo,
-            Descripcion: request.body.descripcion,
-            idPreguntas: request.body.cantidadPreguntas            
+            Descripcion: request.body.descripcion        
         };
         console.log(juego);
         inst.editarJuego(juego, (error)=>{

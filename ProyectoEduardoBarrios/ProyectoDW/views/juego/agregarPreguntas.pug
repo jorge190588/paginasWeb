@@ -32,13 +32,16 @@ block content
           div(class="panel-heading")           
             div(class="row")
               div(class="col-md-5")
-                  h4() Pregunta
+                  h4
+                    strong Pregunta
               
               div(class="col-md-3")
-                  h4() Limite de Tiempo
+                  h4 
+                    strong Limite de Tiempo
               
               div(class=["col-md-4"])
-                h4(class="pull-right") Opciones
+                h4(class="pull-right") 
+                  strong Opciones
 
           div(class="panel-body")
             div(class="row")
@@ -56,12 +59,12 @@ block content
 
               div(class="col-md-4")
                 if(datos.pregunta == undefined && datos.limiteTiempo == undefined)
-                  p() No hay Datos
+                  p(class="pull-right") No hay Datos
                 else
                   div(class="btn-group-vertical pull-right")
-                    a.btn.btn-raised.btn-danger(href='/nuevaEncuesta') 
-                      i(class='material-icons') delete
-                    a.btn.btn-raised.btn-info(href='/nuevoExamen') 
+                    a.btn.btn-raised.btn-default(href='#',data-toggle="tooltip" data-placement="right" title="Ver" data-original-title="Ver") 
+                      i(class='material-icons') remove_red_eye
+                    a.btn.btn-raised.btn-default(href='#',data-toggle="tooltip" data-placement="right" title="Editar" data-original-title="Editar") 
                       i(class='material-icons') create
                     
                   //button(class=["btn","btn-raised","btn-xs","btn-danger","pull-right"],data-toggle="tooltip" data-placement="right" title="Borrar" data-original-title="Borrar")
