@@ -1,0 +1,20 @@
+extends template/layout
+block content
+    div.container
+        div.row
+            div.col-xs-12
+                div.page-header
+                    h1= title
+                    a(href='/nuevo', class=['btn','btn-success','btn-lg']) CREAR JUEGO
+                if data.length != 0
+                    each quiz in data
+                        div(class=['col-xs-12','col-sm-6'])
+                            div.jumbotron
+                                h1 #{quiz.nombre}
+                                p #{quiz.descripcion}
+                                a(href='/preguntas', class=['btn','btn-primary']) CREAR LAS PREGUNTAS
+                                a(href='/editar/'+quiz.id, class=['btn','btn-warning']) EDITAR
+                                a(href='#', class=['btn','btn-danger']) ELIMINAR
+                else
+                    p.alert.alert-dange No hay registros en la base de datos
+                    

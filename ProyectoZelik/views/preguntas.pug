@@ -1,0 +1,20 @@
+extends template/layout
+block content
+    div.container
+        div.row
+            div.col-xs-12
+                div.page-header
+                    h1= title
+            div.col-xs-12.col-sm-6.col-sm-offset-3
+                form(method='post', action='/nuevo')
+                    div.form-group
+                        label Ingrese el titulo
+                        input(type="text", name='titulo', placeholder='Ingrese el titulo', class=['form-control'], required)
+                    div.form-group
+                        label Ingrese la descripcion
+                        textarea(name='descripcion', cols='12', rows='4' placeholder='Ingrese una descripcion', class=['form-control'], required)
+                    div.form-group
+                        label Ingrese la cantidad de preguntas:
+                        input(type='number', name='cant_preguntas', class='form-control', required)
+                    button(type='submit', class=['btn','btn-success']) GUARDAR
+                    a(href='/', class=['btn','btn-warning']) CANCELAR

@@ -1,0 +1,21 @@
+extends template/layout
+block content
+    div.container
+        div.row
+            div.col-xs-12
+                div.page-header
+                    h1= title
+            div.col-xs-12.col-sm-6.col-sm-offset-3
+                form(method='post', action='/editar/'+data[0].id)
+                    input(type='hidden', name='id', value=data[0].id)
+                    div.form-group
+                        label Ingrese el nuevo titulo
+                        input(type="text", name='titulo', value=data[0].nombre, placeholder='Ingrese el titulo', class=['form-control'], required)
+                    div.form-group
+                        label Ingrese la nueva descripcion
+                        textarea(name='descripcion', cols='12', rows='4', placeholder='Ingrese una descripcion', class=['form-control'], required) #{data[0].descripcion}
+                    div.form-group
+                        label Ingrese la nueva cantidad de preguntas:
+                        input(type='number', name='cant_preguntas', value=data[0].cantidad_preguntas, class='form-control', required)
+                    button(type='submit', class=['btn','btn-success']) GUARDAR CAMBIOS
+                    a(href='/', class=['btn','btn-warning']) CANCELAR
