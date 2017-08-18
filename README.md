@@ -147,7 +147,7 @@
 ## The Service Worker Lifecycle 
 * [video](https://www.youtube.com/watch?v=TF4AB75PyIc)
 * [First progresive app](https://developers.google.com/web/fundamentals/getting-started/codelabs/your-first-pwapp/?hl=es-419)
-
+* [Efects to progressive web apps](https://medium.com/mobify-design-team/designing-for-the-appearance-of-speed-aaabc7f568c2)
 
 # STORAGE
 
