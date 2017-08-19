@@ -1,0 +1,11 @@
+extends layout
+     
+block content
+	section
+		form(action='/actualizar', method='post')
+			input(type='hidden', name='id', value=juego.id)
+			label Nombre:
+			input(name='nombre', value=juego.nombre)
+			label Tipo:
+			input(name='tipo', value=juego.ciudad)
+			input(type='submit', value='Actualizar')

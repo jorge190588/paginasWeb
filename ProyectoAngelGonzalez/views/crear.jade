@@ -1,0 +1,44 @@
+extends layout
+     
+block content
+	section
+		p Crea Tu Juego!
+
+		form(action='/nueva', method='post')
+			label Nombre:
+			input(name='nombre')
+			label Tipo:
+			input(name='tipo')
+			br
+			br
+			input(type='submit', value='Guardar')
+	
+		
+	section
+		if juegos.length == 0
+			p No existen juegos en la base de datos
+		else
+		p Juegos Disponibles
+			table
+
+				tr
+					th Juego
+					th Tipo 
+					th
+				for juego in juegos
+					tr
+						td=juego.nombre
+						td=juego.tipo
+						td
+							a(href='/editar/#{juego.id}')
+								img(src='/img/edit.png', alt='Editar')
+						td
+						td
+						td
+							a(href='/borrar/#{juego.id}')
+								img(src='/img/delete.png', alt="Borrar')
+
+						td
+						td
+							a(href='/parrafo')
+								img(src='/img/agregar.png', alt="Agregar parrafo')

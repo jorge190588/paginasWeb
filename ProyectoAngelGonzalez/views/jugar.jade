@@ -1,0 +1,25 @@
+extends layout
+     
+block content
+	section
+		if juegos.length == 0
+			p No existen juegos en la base de datos
+		else
+		p Juegos Disponibles
+			table
+
+				tr
+					th Juego
+					th Tipo 
+					th
+				for juego in juegos
+					tr
+						td=juego.nombre
+						td=juego.tipo
+						td
+						td
+						td
+						td
+							a(href='/editar/#{juego.id}')
+								img(src='/img/jugar.png', alt='Editar')
+						
