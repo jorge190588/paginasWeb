@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    script(type='text/javascript', src='https://code.jquery.com/jquery-2.1.1.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title CREAR USUARIO
+    .container
+      style.
+        body{
+        background-image:url('imagenes/fondocolores.gif');
+        background-position: center;
+        }
+  body
+    .container
+      h3.center
+        font(color='#FE2E2E') REGISTRATE GRATIS
+      p.center
+        font(color='#2E64FE') Registrate para poder disfrutar del juego cierto o falso!!!
+      .row
+        .input-field.col.s6
+          i.material-icons.prefix account_circle
+          input#Usuario.validate(type='text', style='color:#FFFF00')
+          label(for='usuario') Usuario
+      .row
+        .input-field.col.s6
+          i.material-icons.prefix email
+          input#email.validate(type='email', style='color:#FFFF00')
+          label(for='email', data-error='email incorrecto', data-success='email valido') Email
+      .row
+        .input-field.col.s6
+          i.material-icons.prefix lock
+          input#password.validate(type='password', style='color:#FFFF00')
+          label(for='password') Password
+      .row
+        a(href='/mipagina/vistas/listaJuegos.html')
+          button.btn.btn-primary(type='button') CREAR USUARIO
+    script(type='text/javascript', src='https://code.jquery.com/jquery-2.1.1.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js')

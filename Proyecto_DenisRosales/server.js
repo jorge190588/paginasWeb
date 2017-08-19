@@ -6,7 +6,7 @@ app.use(express.static('public'));
 
 //ruta
 app.get('/',function(req, res){
-    res.render('index');
+    res.render('crearUsuario');
 });
 
 app.listen(8081,function(err){
