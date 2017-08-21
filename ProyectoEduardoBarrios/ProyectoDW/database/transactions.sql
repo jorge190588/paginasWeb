@@ -69,3 +69,46 @@ CALL sp_GetPreguntasRespuestas(3);
 DROP PROCEDURE sp_TransaccionGetPreguntasRespuestas;
 
 truncate table preguntas
+
+select * from participantes
+
+insert into participantes (nombre,carne,idJuego) values ('Juan','12334',1) 
+
+DELIMITER $$
+CREATE PROCEDURE sp_ingresarParticipante
+(
+	IN Nombre varchar(100),
+	IN Carne varchar(20),
+    IN IdJuego int
+)
+BEGIN
+	 DECLARE EXIT HANDLER FOR SQLEXCEPTION
+	 BEGIN
+	 SHOW ERRORS LIMIT 1;
+	 ROLLBACK;
+	 END; 
+	 
+     DECLARE EXIT HANDLER FOR SQLWARNING
+	 BEGIN
+	 SHOW WARNINGS LIMIT 1;
+	 ROLLBACK;
+	 END;
+		
+	START TRANSACTION;    
+		SELECT @Juego := (SELECT J.idJuego FROM juegos J WHERE J.idJuego = IdJuego);
+        INSERT INTO participantes(nombre,carne,idJuego) SELECT Nombre,Carne,@Juego WHERE @Juego > 0;			
+		
+		/*FILAS AFECTADAS*/
+        SELECT ROW_COUNT() AS rc;
+    COMMIT; 
+END $$
+
+DROP PROCEDURE sp_ingresarParticipante;
+CALL sp_ingresarParticipante('Nichols3','Williams2',100);
+
+
+
+
+SELECT @Juego := (SELECT J.idJuego FROM juegos J WHERE J.idJuego = 100);
+INSERT INTO participantes(nombre,carne,idJuego) SELECT 'nichols','111',@Juego WHERE @Juego > 0;			
+SELECT ROW_COUNT()
