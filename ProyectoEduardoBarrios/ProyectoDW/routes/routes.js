@@ -9,6 +9,7 @@ var home = new homeController();
 /* GET homeController. mvc */
 router.get('/', home.IndexGet);
 router.post('/irJuego', home.IndexPost);
+router.get('/juegoEnEspera',home.JuegoEnEspera);
 //router.get('/default', controllers.homeController.default);
 //router.get('/nuevo', controllers.homeController.new);
 
@@ -53,7 +54,7 @@ router.post('/crearPregunta',inst.nuevaPreguntaPost);
 const juego = require('../controllers/jugarController');
 var jugar = new juego();
 
-router.get('/jugar',jugar.Index);
+router.get('/jugar/:id',jugar.Index);
 
 // ruta de prueba
 router.get('/pruebaPreguntas',inst.getPreguntas);

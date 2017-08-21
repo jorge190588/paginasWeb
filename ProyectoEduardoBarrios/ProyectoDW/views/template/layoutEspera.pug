@@ -1,0 +1,36 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-material-design.css')
+    link(rel='stylesheet', href='/stylesheets/ripples.css')
+    link(rel='stylesheet', href='/stylesheets/material-icons.css')
+    link(rel='stylesheet', href='/stylesheets/estilos.css')
+body
+              
+  block content
+
+  footer.navbar-fixed-bottom
+    //hr
+    p © 2017 Proyecto Desarrollo-Web, UMG / Eduardo Barrios.
+
+    script(src='/javascripts/jquery.js')
+    script(src='/javascripts/bootstrap.js')
+    script(src='/javascripts/material.js')
+    script(src='/javascripts/ripples.js')
+    script(src='https://cdn.jsdelivr.net/jquery.loadingoverlay/latest/loadingoverlay.min.js')
+    script(src='https://cdn.jsdelivr.net/jquery.loadingoverlay/latest/loadingoverlay_progress.min.js')
+    script.
+      $.material.init();
+    
+    script.
+        $.LoadingOverlay("show");
+
+        // Hide it after 3 seconds
+        setTimeout(function(){
+            $.LoadingOverlay("hide");
+        }, 10000);

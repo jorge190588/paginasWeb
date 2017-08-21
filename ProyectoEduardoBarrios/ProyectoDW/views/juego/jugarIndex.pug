@@ -7,4 +7,17 @@ block content
       div(class="row")
         div(class="col-md-12")
           h2(class="text-center") Participantes
+        
+        div(class="col-md-6 col-md-offset-3")
+          table(class="table")
+            thead
+              tr
+                th(class="text-center active") CARNE
+                th(class="text-center active") NOMBRE
 
+          
+            tbody
+              each datos in data
+                tr
+                  td(class="text-center")= datos.carne
+                  td(class="text-center")= datos.nombre

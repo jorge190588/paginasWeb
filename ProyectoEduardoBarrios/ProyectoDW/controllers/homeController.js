@@ -26,11 +26,16 @@ class Index{
                     
                 }
                 else{
-                    res.redirect("/jugar");
+                    res.redirect("/juegoEnEspera");
                     //console.log('correcto');
                 }
             }
         });
+    }
+
+    JuegoEnEspera(req,res,next)
+    {
+        res.render('juego/juegoEnEspera',{title:'Esperando'});
     }
 
     default(req,res,next){

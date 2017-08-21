@@ -3,7 +3,14 @@ var modelo = new Model();
 
 class Jugar{
     Index(request, response, next){
-        response.render('juego/jugarIndex',{title : 'Iniciar Juego'});
+        var idJuego = request.params.id;
+        //console.log("Id del juego REQUEST.PARAMS.ID "+idJuego);
+        modelo.jugarIndexGetParticipantes(idJuego,(error,data)=>{
+            if(!error)
+            {
+                response.render('juego/jugarIndex',{data : data});
+            }            
+        });        
     }
 }
 

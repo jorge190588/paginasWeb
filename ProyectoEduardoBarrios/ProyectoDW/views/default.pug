@@ -16,7 +16,7 @@ block content
                   strong= datos.Titulo
                 p.list-group-item-text= datos.Descripcion
                 div(class='pull-right')
-                  a(href='/jugar', class=['btn','btn-raised','btn-primary','btn-xs']) JUGAR                  
+                  a(href='/jugar/'+datos.idJuego, class=['btn','btn-raised','btn-primary','btn-xs']) JUGAR                  
                   a(href='/juegoCreado/'+datos.idJuego, class=['btn','btn-raised','btn-warning','btn-xs']) PREGUNTAS                  
                   button(type='button', class=['btn','btn-success','btn-raised','btn-xs'], data-toggle="modal", data-target="#modalEditar", onclick="cargarDatos('"+datos.idJuego+"','"+datos.Titulo+"','"+datos.Descripcion+"','"+datos.idPreguntas+"')") Editar                            
                 div(class='pull-right')
