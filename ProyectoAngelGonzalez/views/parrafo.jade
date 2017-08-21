@@ -1,0 +1,60 @@
+extends layout
+     
+block content
+	section
+		p Ingresa Parrafos una pregunta y respuestas!
+
+		form(action='/nuevaparrafo', method='post')
+			label Párrafo:
+			input(name='parrafo')
+			label Pregunta:
+			input(name='pregunta')
+			br
+			br
+			label Respuesta1:
+			input(name='respuesta1')
+			label Respuesta2:
+			input(name='respuesta2')
+			br
+			br
+			label Codigo:
+			input(name='idjuego')
+			br
+			br
+			input(type='submit', value='Guardar')
+	
+		
+	section
+		if parrafos.length == 0
+			p No existen parrafos en la base de datos
+		else
+		p Parrafos Disponibles
+			table
+
+				tr
+					th Parrafo
+					th Pregunta
+					th Respuesta
+					th Respuesta 
+					th CodigoJuego
+					th
+				for juego in parrafos
+					tr
+						td=juego.parrafo
+						td=juego.pregunta
+						td=juego.respuesta1
+						td=juego.respuesta2
+						td=juego.idjuego
+						td
+							a(href='/editar/#{juego.id}')
+								img(src='/img/edit.png', alt='Editar')
+						td
+						td
+						td
+							a(href='/borrar/#{juego.id}')
+								img(src='/img/delete.png', alt="Borrar')
+
+						td
+						td
+							a(href='/borrar/#{juego.id}')
+								img(src='/img/agregar.png', alt="Agregar preguntas')

@@ -1,0 +1,60 @@
+doctype html
+html
+  head
+    title NUEVO JUEGO
+    link(href='/css/bootstrap.min.css', rel='stylesheet')
+    .container
+      style.
+        body{
+        background-image:url('imagenes/fondocolores.gif');
+        background-position: center;
+        }
+        h1{
+        color: #FFFF00;
+        }
+        h3{
+        color: #FF8000;
+        }
+        label{
+        color: #FF8000;
+        }
+        label1{
+        color: #0000FF;
+        }
+  body
+    .container
+      h1.text-center ESCRIBE TUS PREGUNTAS
+      .row
+        .col-md-6.col-md-offset-3
+          h3.text-center Escribe una pregunta a la vez
+          .form-group
+            label.control-label(for='i2') Cual es tu Pregunta?
+            input#i2.form-control(type='txt', placeholder='Escribe aqui tu pregunta')
+            .radio
+              label
+                input(type='radio', name='respuesta', value='option1', checked='')
+                |                             CIERTO
+            .radio
+              label
+                input(type='radio', name='respuesta', value='option1')
+                |                             FALSO
+            button.btn.btn-lg.btn-primary(type='button', data-toggle='modal', data-target='#modalAlerta')
+              | Guardar Pregunta    
+              span.glyphicon.glyphicon-plus(aria-hidden='true')
+      // Modal de alerta
+      #modalAlerta.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+        .modal-dialog(role='document')
+          .modal-content
+            .modal-header
+              button.close(type='button', data-dismiss='modal', aria-label='Close')
+                span(aria-hidden='true') ×
+              h4#myModalLabel.modal-title PREGUNTA INGRESADA CON EXITO
+            .modal-body
+              .form-group
+                label1 Desea ingresar otra Pregunta?
+            .modal-footer
+              a#nuevaPregunta.btn.btn-primary(href='/mipagina/vistas/crearJuego.html', <button='', type='button') SI, Nueva Pregunta
+              a(href='/mipagina/vistas/listaJuegos.html')
+                button#btnTerminarPreguntas.btn.btn-danger(type='button') NO, Terminar Preguntas
+        script(src='/js/jquery.min.js')
+        script(src='/js/bootstrap.min.js')
