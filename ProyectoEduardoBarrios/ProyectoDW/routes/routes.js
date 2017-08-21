@@ -4,8 +4,11 @@ var router = express.Router();
 // archivo para autocargar todos los controladores 
 var controllers = require('../controllers');
 
-/* GET homeController. */
-router.get('/', controllers.homeController.index);
+var homeController = require('../controllers/homeController');
+var home = new homeController();
+/* GET homeController. mvc */
+router.get('/', home.IndexGet);
+router.post('/irJuego', home.IndexPost);
 //router.get('/default', controllers.homeController.default);
 //router.get('/nuevo', controllers.homeController.new);
 
@@ -45,6 +48,12 @@ var inst = new addPreguntas();
 router.get('/juegoCreado/:id',inst.getOneGame);
 router.get('/agregarPregunta/:id',inst.nuevaPreguntaGet);
 router.post('/crearPregunta',inst.nuevaPreguntaPost);
+
+// ruta mvc para jugar
+const juego = require('../controllers/jugarController');
+var jugar = new juego();
+
+router.get('/jugar',jugar.Index);
 
 // ruta de prueba
 router.get('/pruebaPreguntas',inst.getPreguntas);

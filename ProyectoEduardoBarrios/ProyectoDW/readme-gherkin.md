@@ -44,7 +44,7 @@
 		el último juego creado.
 
 
-5.Feature: Mostrar un listado de juegos que están almacenados en la base de datos
+5. Feature: Mostrar un listado de juegos que están almacenados en la base de datos
 * Given: un usuario entra al index de juegos
 * When: no hace nada
 * Then: se debe visualizar el listado de juegos creados y almacenados
