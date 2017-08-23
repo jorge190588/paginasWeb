@@ -19,6 +19,7 @@
 * [Sockets](https://socket.io/)
 * [Mobile first]()
 * [Use variables by value and reference Nodejs](http://orizens.com/wp/topics/javascript-arrays-passing-by-reference-or-by-value/)
+* [Unnecessary variables are bad your code](https://techbeacon.com/why-unnecessary-variables-are-bad-your-code)
 
 
 ## UNIT TEST
