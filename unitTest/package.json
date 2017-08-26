@@ -1,0 +1,11 @@
+{
+  "name": "unitTest",
+  "version": "0.0.0",
+  "description": "",
+  "main": "demo.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "jorgeSantos",
+  "license": "ISC"
+}
