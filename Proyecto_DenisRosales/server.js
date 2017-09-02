@@ -5,9 +5,22 @@ app.set('view engine','pug');
 app.use(express.static('public'));
 
 //ruta
-app.get('/',function(req, res){
+app.get('/login',function(req, res){
+    res.render('login');
+});
+
+app.get('/listaJuegos',function(req, res){
+    res.render('listaJuegos');
+});
+
+app.get('/crearUsuario',function(req, res){
     res.render('crearUsuario');
 });
+
+app.get('/crearJuego',function(req, res){
+    res.render('crearJuego');
+});
+
 
 app.listen(8081,function(err){
     if(err) return console.log('Hubo un error'), process.exit(1);

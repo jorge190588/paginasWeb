@@ -4,11 +4,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "Denis Rosales",
   "license": "MIT",
   "dependencies": {
+    "chai": "^4.1.1",
     "express": "^4.15.3",
     "pug": "^2.0.0-rc.2"
   }

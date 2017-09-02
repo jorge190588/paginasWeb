@@ -35,13 +35,17 @@ html
           i.material-icons.prefix lock
           input#password.validate(type='password', style='color:aqua')
           label(for='password') Password
-      .row
-        a(href='/mipagina/vistas/listaJuegos.html')
-          button.btn.btn-primary(type='button') INICIAR SESION
-        a(href='/mipagina/vistas/crearUsuario.html')
-          button.btn.btn-primary(type='button')
-            | REGISTRATE
-            br
-            | NO TIENES UNA CUENTA?
+      
+      div(class="container-fluid")
+        div(class="row")
+          div(class="col s3")
+            a(href='/listaJuegos')
+              button.btn.btn-primary(type='button') INICIAR SESION
+          div(class="col s3")
+            a(href='/crearUsuario')
+              button.btn.btn-primary(type='button')
+                | REGISTRATE
+                br
+                | NO TIENES UNA CUENTA?
     script(type='text/javascript', src='https://code.jquery.com/jquery-2.1.1.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js')

@@ -20,7 +20,7 @@ html
         }
   nav#menu.navbar.navbar-toggleable-md.navbar-inverse.bg-primary.navbar-fixed-top(role='navigation')
     .container-fluid
-      a.navbar-brand(href='/views/listaJuegos.pug') INICIO
+      a.navbar-brand(href='/listaJuegos') INICIO
       a.navbar-brand(data-toggle='modal', data-target='#nuevojuego') CREAR JUEGO
       form.navbar-form.navbar-left
         .form-group
@@ -38,7 +38,7 @@ html
               a(href='#') otra accion
             li.divider(role='separator')
             li
-              a(href='/mipagina/vistas/login.html') Salir
+              a(href='/login') Salir
   br
   br
   .container
@@ -113,7 +113,7 @@ html
             input#nombreJuego.form-control(type='text', placeholder='Nombre del Juego')
         .modal-footer
           button.btn.btn-danger(type='button', data-dismiss='modal') Cancelar
-          a(href='/mipagina/vistas/crearJuego.html')
+          a(href='/crearJuego')
             button#btnGuardar.btn.btn-primary(type='button') Guardar Nombre
     script(src='/js/jquery.min.js')
     script(src='/js/bootstrap.min.js')
