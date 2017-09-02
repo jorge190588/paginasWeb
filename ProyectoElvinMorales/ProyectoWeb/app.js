@@ -1,16 +1,17 @@
 'use strict';
 
-const   express = require('express'),
-        pug     = require('pug'),
-        bodyParser = require('body-parser'),
-        session = require('express-session'),
-        morgan  = require('morgan'),        
-        errors  = require('./middlewares/errors'),
-        auth    = require('./routes/auth-router'),
-        routes  = require('./routes/videos-router'),
-        serveFavicon = require('serve-favicon')(`${__dirname}/public/favicon.png`),
-        publicDir = express.static(`${__dirname}/public`),
-        viewDir = `${__dirname}/views`,
+const   express         = require('express'),
+        pug             = require('pug'),
+        bodyParser      = require('body-parser'),
+        session         = require('express-session'),
+        morgan          = require('morgan'),        
+        errors          = require('./middlewares/errors'),
+        moment          = require('moment'),
+        auth            = require('./routes/auth-router'),
+        routes          = require('./routes/videos-router'),
+        serveFavicon    = require('serve-favicon')(`${__dirname}/public/favicon.png`),
+        publicDir       = express.static(`${__dirname}/public`),
+        viewDir         = `${__dirname}/views`,
         optSession = {
                 secret : 'shhhhhhh',
                 saveUninitialized: true,
@@ -35,5 +36,7 @@ app
         .use(auth)
         .use(routes)
         .use(errors.http404);
+
+moment.locale('es');
 
 module.exports = app;

@@ -1,7 +1,7 @@
 {
-  "name": "crud-nodejs-mysql",
+  "name": "ranking-de-videos",
   "version": "3.0.0",
-  "description": "En este proyecto desarrollaremos un proyecto web REST-MVC con NODEJS, MYSQL y Express",
+  "description": "En este proyecto desarrollaremos un proyecto web con NODEJS, SOCKET.IO, MYSQL y Express",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,9 +13,13 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "express-session": "^1.15.4",
+    "moment": "^2.18.1",
     "morgan": "^1.8.2",
     "mysql": "^2.13.0",
     "pug": "^2.0.0-rc.2",
     "serve-favicon": "^2.4.3"
+  },
+  "engines": {
+    "node": "6.11.0"
   }
 }
