@@ -8,33 +8,62 @@ block content
                     div(class=['app-datos'])
                         div(class=['gl-usuario'])
                             span(class=['glyphicon glyphicon-user'])
-                            span  Usuarios conectados: 2679
+                            span  Usuarios conectados: 
+                                span(id="usuarios_conectados" class="badge")
                         div(class=['gl-archivos'])
                             span(class=['glyphicon glyphicon-upload'])
-                            span  Videos subidos: 2536
+                            span  Publicaciones: 
+                                span(id="videos_subidos" class="badge")
                 div(class=['col-xs-12','col-sm-offset-2','col-sm-4'])
                     a.button.add(href="/agregar", type="button", class=['btn','btn-subirvideo','btn-block','btn-lg']) Subir video
     div.container
         div.row
-            div(class=['col-xs-12','col-sm-8','col-md-10'])
+            div(class=['col-xs-12'])
                 br
-                article                    
-                    if(data.length)
-                        each video in data
-                            div(class="media")
-                                div(class=["media-left","media-top"])
-                                    a(href="")
-                                        img(class=["media-object"], width="64px",height="64px" src="/favicon.png", alt="breve descripcion")
-                                div(class="media-body")
-                                    h4(class="media-heading") #{video.titulo}
-                                    p #{video.descripcion}
-                                    form(method="post", class="form-inline", action="/eliminar/" + video.id)
-                                        a(class=['btn','btn-primary','btn-sm'], href="/editar/" + video.id) Editar
-                                        input(type="button", class=['btn','btn-danger','btn-sm'], value="Eliminar", onclick="eliminar(this)")
-                        script.
-                            function eliminar(input){
-                                var eliminarOK = confirm("¿Estás seguro de elminar tu publicación?");
-                                return (eliminarOK) ? input.parentNode.submit() : false;
-                            }
-                    else
-                        div(role="alert").alert.alert-info No hay datos que mostrar
+                ol(class="breadcrumb")
+                    li
+                        a(href="/inicio") Inicio
+                    li.active #{user}
+                div
+                    //Nav tabs
+                    ul(class=['nav','nav-tabs','nav-justified'])
+                        li(role="presentation", class="active")
+                            a(href="#videos", role="tab", data-toggle="tab") 
+                                span.glyphicon.glyphicon-upload
+                                span 
+                                span Publicaciones
+                        li(role="presentation")
+                            a(href="#notificaciones", role="tab", data-toggle="tab") 
+                                span.glyphicon.glyphicon-bell
+                                span 
+                                span Notificaciones
+                        li(role="presentation")
+                            a(href="#configuraciones", role="tab", data-toggle="tab") 
+                                span.glyphicon.glyphicon-cog
+                                span 
+                                span Configuraciones
+                    //Tab panels
+                    div.tab-content
+                        div(class=['tab-pane','fade','in','active'], id="videos")
+                            br
+                            article                    
+                                if(data.length)
+                                    each video in data
+                                        div(class=["col-sm-4"])
+                                            div(class=["panel","panel-success"])
+                                                div(class=["panel-heading"])
+                                                    h4(class="media-heading") #{video.titulo}
+                                                div(class="panel-body")
+                                                    a(href="")
+                                                        img(class=["media-object","object-left"], width="64px",height="64px" src=`https://i.ytimg.com/vi/${video.url}/0.jpg`, alt="Vista previa")
+                                                    p #{video.descripcion}
+                                                div(class=["panel-footer"])
+                                                    form(method="post", class="form-inline", action="/eliminar/" + video.id)
+                                                        a(class=['btn','btn-primary','btn-sm'], href="/editar/" + video.id) Editar
+                                                        input(type="button", class=['btn','btn-danger','btn-sm'], value="Eliminar", onclick="eliminar(this)")
+                                else
+                                    div(role="alert").alert.alert-info No hay datos que mostrar
+                        div(class=['tab-pane','fade'], id="notificaciones")
+                            h1 Notificaciones
+                        div(class=['tab-pane','fade'], id="configuraciones")
+                            h1 Configuraciones
