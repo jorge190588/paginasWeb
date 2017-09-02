@@ -23,17 +23,26 @@ class AuthController{
 
     logInPost(request, response, next){
         let user = {
-            username : request.body.username,
+            email : request.body.email,
             password : request.body.password
         };
         console.log(user);
         am.getUser(user, (error, data) => {
             if(!error){
-                request.session.username = (data.length != 0) ? user.username : null;
-                console.log(request.session, '---', data);
-                return (request.session.username) 
-                    ? response.redirect('/inicio') 
-                    : response.redirect('/?error=Error en la autenticación verifique sus datos')
+                if(data.length != 0){
+                    request.session.username = (data.length != 0) ? user.email : null;
+                    request.session.id_auth = (data.length != 0) ? data[0].id : null;
+                    //console.log(request.session, '---', data);
+                    if(request.session.username){
+                        response.redirect('/inicio');
+                        socketUsersConnect();
+                        socketGetCountVideos();
+                    }else{
+                        response.redirect('/?error=Error en la autenticación verifique sus datos')
+                    }
+                }else{
+                    response.redirect('/?error=Error en la autenticación verifique sus datos');
+                }
             }
         });
     }
@@ -45,13 +54,15 @@ class AuthController{
     signInPost(request, response, next){
         let user = {
             id : 0,
-            username : request.body.username,
+            name : request.body.name,
+            last_name : request.body.last_name,
+            email : request.body.email,
             password : request.body.password
         };
         console.log(user);
         am.setUser(user, (error) => {
             if(!error){
-                response.redirect(`/?message=El usuario ${user.username} ha sido creado`);
+                response.redirect(`/?message=El registro ha sido creado exitosamente`);
             }
         });
     }

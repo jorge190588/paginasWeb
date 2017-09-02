@@ -8,10 +8,12 @@ block content
                     div(class=['app-datos'])
                         div(class=['gl-usuario'])
                             span(class=['glyphicon glyphicon-user'])
-                            span  Usuarios conectados: 2679
+                            span  Usuarios conectados: 
+                                span(id="usuarios_conectados" class="badge")
                         div(class=['gl-archivos'])
                             span(class=['glyphicon glyphicon-upload'])
-                            span  Videos subidos: 2536
+                            span  Publicaciones: 
+                                span(id="videos_subidos" class="badge")
                 div(class=['col-xs-12','col-sm-offset-2','col-sm-4'])
                     a.button.add(href="/agregar", type="button", class=['btn','btn-subirvideo','btn-block','btn-lg']) Subir video
     div.container
@@ -24,14 +26,96 @@ block content
                     li.active Detalles - #{data[0].titulo}
                 div(class="page-header")
                     h1= data[0].titulo
-                    span.label.label-info
-                        span(class=['glyphicon','glyphicon-eye-open','gl-vistas'])
-                        span  Vistas 
-                        span(class=['badge']) 20
-                div(class=['embed-responsive','embed-responsive-16by9'])
-                    iframe(class=['embed-responsive-item'], src=`https://www.youtube.com/embed/${data[0].url}`)
-                br
-                div(class=['well'])
-                    button(class=['btn','btn-primary','btn-sm'], type="button") Votar 
-                        span(class="badge")  12
-                div(class="well") #{data[0].descripcion}
+                    h3
+                        span.label.label-danger visitas
+                            span(class=['label']) #{data[0].visitas}
+                div.thumbnail
+                    div(class=['embed-responsive','embed-responsive-16by9'])
+                        iframe(class=['embed-responsive-item'], src=`https://www.youtube.com/embed/${data[0].url}`)
+                    div.caption
+                        div.row
+                            div.col-xs-12.col-sm-8
+                                h4
+                                    strong !Valora mi video¡
+                                h3
+                                    strong.msj
+                                if(rating.length != 0)
+                                    h3
+                                        strong.msj !Gracias por tu voto¡ 
+                                            span.label.label-warning #{rating[0].votos}
+                                            span 
+                                            span(class=['glyphicon','glyphicon-star','gl-votos'])
+                                else
+                                    span(class=['star-rating'], id="starRating")
+                                        input(type='hidden', id='id_video', value=data[0].id_video, name="id_video")
+                                        input(type="hidden", id='id_auth', value=id_auth, name="id_auth")
+                                        input(type='radio', name='rating', value='1')
+                                        i
+                                        input(type='radio', name='rating', value='2')
+                                        i
+                                        input(type='radio', name='rating', value='3')
+                                        i
+                                        input(type='radio', name='rating', value='4')
+                                        i
+                                        input(type='radio', name='rating', value='5')
+                                        i
+                            div.col-xs-12.col-sm-4
+                                div.row
+                                    div.col-xs-12.col-sm-8
+                                        h3.text-right
+                                            strong Cantidad de estrellas obtenidas
+                                    div.col-xs-12.col-sm-4
+                                        h1(id='total_votos')
+                                            - var votos = data[0].votos
+                                            if(votos == null)
+                                                span.label.label-success 0
+                                            else
+                                                span.label.label-success #{data[0].votos}
+                div(class="well")
+                    h3
+                        strong #{data[0].name} #{data[0].last_name}
+                    p Fecha Publicación: #{data[0].fecha_publicacion}
+                    strong
+                        p.text-danger Descripción: 
+                    p #{data[0].descripcion}
+                div(class="well")
+                    div.page-header 
+                        h1 Comentarios 
+                            small Escribe un comentario constructivo
+                    //********************Formulario para los comentarios*********************
+                    div.row
+                        div.col-xs-12.col-sm-6.col-sm-offset-3
+                            form(method='post', id="formDataComment")
+                                input(type='hidden', id='id_video_comment', value=data[0].id_video, name="id_video_comment")
+                                input(type="hidden", id='id_auth_comment', value=id_auth, name="id_auth_comment")
+                                div.form-group
+                                    label(for='comment')
+                                    textarea(class='form-control', rows="3", cols="20", name="comment", id="comment")
+                                div(class=['hidden-xs','col-sm-6','col-sm-offset-3'])
+                                    button(type='button', id="btnComentar" class=['btn','btn-primary','btn-block'], disabled) Comentar
+                                div(class=['hidden-lg','hidden-sm'])
+                                    button(type='button', id="btnComentar_xs" class=['btn','btn-primary','btn-block'], disabled) Comentar
+
+                    //********************Fin de Formulario para los comentarios****************
+                    
+                    //********************Lista de comentarios**********************
+                    br.hidden-xs
+                    br.hidden-xs
+                    br
+                    ul(class=['media-list'])
+                        li(class=['media media1'])
+                            div(class=['media-body'])
+                                p
+                                    strong Comentario de 
+                                        span.text-primary Elvin 
+                                        span - #{data[0].fecha_publicacion}
+                                p.well.muro-white Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, cum, ex alias unde repellendus blanditiis perspiciatis! Vero consequuntur temporibus minus tempora quo, nostrum, autem, ratione praesentium ipsa voluptates dolores, sit.
+                        li(class=['media media1'])                            
+                            div(class=['media-body'])
+                                p
+                                    strong Comentario de 
+                                        span.text-primary Elvin 
+                                        span - #{data[0].fecha_publicacion}
+                                p.well.muro-white Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, cum, ex alias unde repellendus blanditiis perspiciatis! Vero consequuntur temporibus minus tempora quo, nostrum, autem, ratione praesentium ipsa voluptates dolores, sit.
+                        
+                    //********************Fin de Lista de comentarios****************
