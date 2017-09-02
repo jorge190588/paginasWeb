@@ -1,36 +1,38 @@
 extends layout.pug
 block content
+    section(class=['app-principal'])
+        div.container
+            h1= title
+            p Sube tu video para que el UMGteam vea tu trabajo!!
     div.container
+        br
         div.row
-            div(class="col-xs-12")
-                section(class=['app-principal'])
-                    div.container
-                        h1= title
-                        p Sube tu video para que el UMGteam vea tu trabajo!!
-                br
-                div.row
-                    div(class=['col-xs-12','col-sm-8','col-sm-offset-2','col-md-6','col-md-offset-3'])
+            div(class=['col-xs-12','col-sm-8','col-sm-offset-2','col-md-6','col-md-offset-3'])
+                div.panel.panel-default
+                    div.panel-body
                         form(method="post", action="/signin")
+                            div.row
+                                div(class=['col-xs-12','col-sm-6'])
+                                    div.form-group
+                                        label Nombre(s)*
+                                        input(type="text",class="form-control", name="name", placeholder="Nombre(s)", required)
+                                div(class=['col-xs-12','col-sm-6'])                                    
+                                    div.form-group
+                                        label Apellido(s)*
+                                        input(type="text",class="form-control", name="last_name", placeholder="Apellido(s)", required)
                             div.form-group
-                                input(type="text",class="form-control", name="name", placeholder="Nombre")
-                            div.form-group
-                                input(type="text",class="form-control", name="lastname", placeholder="Apellido")
-                            div.form-group
+                                label Correo Electrónico*
                                 div.input-group
                                     span(class=['input-group-addon'])
                                         span @
-                                    input(type="text", class=['form-control'], id="username", name="email", placeholder="Correo Electrónico")
+                                    input(type="email", class=['form-control'], id="email", name="email", placeholder="Correo Electrónico")                            
                             div.form-group
-                                div.input-group
-                                    span(class=['input-group-addon'])
-                                        span(class=['glyphicon','glyphicon-user'])
-                                    input(type="text", class=['form-control'], id="username", name="username", placeholder="Usuario", required)
-                            div.form-group
+                                label Contraseña*
                                 div.input-group
                                     span(class=['input-group-addon'])
                                         span(class=['glyphicon','glyphicon-asterisk'])
                                     input(type="password", class=['form-control'], id="password", name="password", placeholder="Contraseña", required)
-                            div(class=['col-sm-6'])
-                                input(type="submit", class=['btn','btn-success','btn-block'] value="Registrarse")
-                            div(class=['col-sm-6'])
-                                a(href="/login", class=['btn','btn-primary','btn-block']) Iniciar Sesión
+                            input(type="submit", class=['btn','btn-success'] value="Registrar")
+                    div.panel-footer
+                        span ¿Ya tienes una cuenta? 
+                        a(href="/login", class=['btn','btn-primary']) Inicia Sesión
