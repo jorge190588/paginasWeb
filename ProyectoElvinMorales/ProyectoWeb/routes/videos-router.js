@@ -14,5 +14,7 @@ router
     .post('/eliminar/:id', vc.delete)
     .get('/detalles/:id', vc.getDetails)
     .get('/perfil', vc.getProfile);
+    .post('/calificar', vc.calificarVideo)
+    .post('/comentar', vc.comentarVideo);
     
 module.exports = router;
