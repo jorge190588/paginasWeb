@@ -4,7 +4,7 @@ const conn = require('./conexion');
 
 class AuthModel{
     getUser(user, cb){
-        conn.query('SELECT * FROM auth WHERE username = ? AND password = ?', [user.username, user.password], cb);
+        conn.query('SELECT * FROM auth WHERE email = ? AND password = ?', [user.email, user.password], cb);
     }
 
     setUser(user, cb){
