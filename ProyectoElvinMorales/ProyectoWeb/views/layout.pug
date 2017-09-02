@@ -6,8 +6,15 @@ html(lang="es")
         meta(name="viewport", content="width=device-width,initial-scale=1")
         title= title
         link(rel="stylesheet", href="/css/bootstrap.min.css")
-        link(rel="stylesheet", href="/estilos.css")
+        link(rel="stylesheet", href="/css/estilos.css")
         script(src="/js/jquery.min.js")
         script(src="/js/bootstrap.min.js")
+        script(src="/js/codigos.js")
+        script(src="/moment/moment.js")
+        script(src="/moment/locale/es.js")
     body
         block content
+
+        footer(class=['app-footer','navbar-fixed-bottom'])
+            div.container
+                p Derechos Reservados @TeamUMG
