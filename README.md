@@ -85,6 +85,8 @@
 * [Designing and Engineering Time: The Psychology of Time Perception in Software 1st Edition](https://www.amazon.com/Designing-Engineering-Time-Psychology-Perception/dp/0321509188)
 * [Load Google Fonts Asynchronously For Page Speed](https://www.lockedowndesign.com/load-google-fonts-asynchronously-for-page-speed/)
  * [web page testing performance](https://www.slideshare.net/patrickmeenan/web-performance-testing-9694040)
+  
+ 
 ### Tools 
 
 * [Visual Studio Diagnostic Tools]
@@ -99,6 +101,8 @@
 * [Yellow Lab  Tools](http://yellowlab.tools/)
 * [Instantly test your website speed](https://www.dotcom-tools.com/website-speed-test.aspx)
 * [Let's test your website speed.](https://www.giftofspeed.com/)
+* [Chrome Dev-tool timeline view](https://chromedevtools.github.io/timeline-viewer/)
+
 
 ### Courses
 * [Website Performance Optimization by Google](https://www.udacity.com/course/website-performance-optimization--ud884)
