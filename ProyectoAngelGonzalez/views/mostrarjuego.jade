@@ -1,0 +1,27 @@
+extends layout
+     
+block content
+	section
+		label ¡BIENVENIDO AL JUEGO!
+		br
+		label Lee el párrafo y da una respuesta correcta a la pregunta. 
+		br
+		br
+		form(action='/actualizar', method='post')
+			input(type='hidden', name='idjuego', value=juego.id)
+			p=juego.parrafo
+			p=juego.pregunta
+			br
+			br
+			p Respuestas:
+			input#opciones_1(type='radio', name='opciones', value='opcion_1')
+			span=juego.respuesta1
+			br
+			input#opciones_2(type='radio', name='opciones', value='opcion_2')
+			span=juego.respuesta2
+			br
+			br
+			br
+			a(href='/mostrarjuego/#{idJuego}/#{siguientePregunta}')
+				img(src='/img/siguiente.png', alt='Siguiente')
+								

@@ -1,0 +1,21 @@
+{
+  "name": "mocha",
+  "version": "1.0.0",
+  "description": "Prueba de Unit Testing",
+  "main": "demo.js",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "express": "^3.0.0rc3",
+    "jade": "^0.27.2",
+    "mysql": "^0.9.6"
+  },
+  "devDependencies": {
+    "mocha": "^3.5.3"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "author": "Angel",
+  "license": "MIT"
+}

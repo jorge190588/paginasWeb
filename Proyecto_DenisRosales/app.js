@@ -21,6 +21,9 @@ app.get('/crearJuego',function(req, res){
     res.render('crearJuego');
 });
 
+app.get('/gameindividual',function(req, res){
+    res.render('gameindividual');
+});
 
 app.listen(8081,function(err){
     if(err) return console.log('Hubo un error'), process.exit(1);
