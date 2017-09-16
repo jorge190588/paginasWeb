@@ -1,6 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
+// ruta para ajax de preguntas y respuestas
+router.get('/ajax/:id',function(req,res){
+      var data = req.params.id;
+      console.log("DATOS POR AJAX EN EL SERVER "+data);            
+      res.send(data);
+});
 // archivo para autocargar todos los controladores 
 var controllers = require('../controllers');
 
@@ -9,7 +15,11 @@ var home = new homeController();
 /* GET homeController. mvc */
 router.get('/', home.IndexGet);
 router.post('/irJuego', home.IndexPost);
-router.get('/juegoEnEspera',home.JuegoEnEspera);
+router.get('/juegoEnEspera/:id',home.JuegoEnEspera);
+
+//ruta en clase
+router.get('/ProcesarJuego/:idJuego/:idPregunta',home.ProcesarJuego);
+//router.get('/ProcesarJuegoSaveResultado/:idJuego/:idPregunta',home.SaveResultadoPregunta);
 //router.get('/default', controllers.homeController.default);
 //router.get('/nuevo', controllers.homeController.new);
 

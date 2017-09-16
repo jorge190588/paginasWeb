@@ -6,6 +6,22 @@ class homeModel{
     {
         conn.query("CALL sp_ingresarParticipante(?,?,?);",[Usuario.nombre,Usuario.carne,Usuario.idJuego],Callback);                
     }
+
+    GetPreguntasRespuestas(idJuego,indiceRegistro,isCorrecta,Callback)
+    {             
+        
+        if(isCorrecta == null || isCorrecta == undefined || isCorrecta == NaN)
+            isCorrecta = 2;
+        else
+            console.log(isCorrecta+" <- modelo");
+        
+        conn.query("CALL sp_getPreguntaRespuestas(?,?,?);",[idJuego,indiceRegistro,isCorrecta],Callback);
+    }
+
+    SaveResultadoPreguta(registro,Callback)
+    {
+        conn.query("INSERT INTO resultados SET ?",registro,Callback);
+    }
 }
 
 module.exports = homeModel;

@@ -8,6 +8,7 @@ class Jugar{
         modelo.jugarIndexGetParticipantes(idJuego,(error,data)=>{
             if(!error)
             {
+                console.log(data);
                 response.render('juego/jugarIndex',{data : data});
             }            
         });        

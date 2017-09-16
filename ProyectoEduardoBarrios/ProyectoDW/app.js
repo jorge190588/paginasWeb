@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 
 var index = require('./routes/routes');
 var users = require('./routes/users');
@@ -21,6 +22,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+//app.use(session({secret: '123456', resave: true, saveUninitialized: true}));
 
 app.use('/', index);
 app.use('/users', users);
@@ -43,4 +47,22 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// SOCKET.IO
+var apps = require('express')();
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
+
+
+app.get('/socket',function(req,res){
+  //res.render('juego/jugarIndex',{ data : 'Hola mundo socket.io'});
+  res.sendfile(__dirname + '/index.html');
+});
+
+// emit con SOCKET
+io.on('connection', function(socket){
+  socket.emit('hello',{ data : 'Hola Socket.io desde el server'});
+  socket.on('otro evento',function(data){
+    console.log(data);
+  });
+});
 module.exports = app;

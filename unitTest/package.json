@@ -7,5 +7,8 @@
     "test": "mocha"
   },
   "author": "jorgeSantos",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.2"
+  }
 }

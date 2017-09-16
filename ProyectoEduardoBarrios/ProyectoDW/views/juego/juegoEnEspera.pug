@@ -1,4 +1,147 @@
 extends ../template/layoutEspera
 block content
-  div(class="container-fluid")
-    h1(class="text-center") Esperando a que el Administrador Inicie el Juego
+  style.
+    .jumbotron{
+      margin-top: 5%;    
+    }
+    #alerta-verde{
+      display:none;
+    }
+    #alerta-roja{
+      display:none;
+    }
+  if(terminado == undefined)
+    div(id="contenedor-preguntas")
+      div(class="container-fluid")
+        h1(class="text-center") Empiezaaa!!!!
+
+        div(id="resultado")
+        if(correct == undefined)
+          //no mostrat ninguna alerta
+
+        
+        .col-md-6.col-md-offset-3
+            div(class="alert alert-dismissible alert-success" id="alerta-verde")
+              button(type="button" class="close" data-dismiss="alert") ×            
+              a(href="javascript:void(0)" class="alert-link text-center") RESPUESTA CORRECTA :)
+
+        
+        .col-md-6.col-md-offset-3
+            div(class="alert alert-dismissible alert-danger" id="alerta-roja")
+              button(type="button" class="close" data-dismiss="alert") ×            
+              a(href="javascript:void(0)" class="alert-link text-center") RESPUESTA INCORRECTA :(
+            
+        div(class='jumbotron')
+          div(class='preguntas')
+            p= data[0][0].pregunta
+                
+          div(class='respuestas')
+            form(method="GET" action="/ProcesarJuego/"+data[0][0].idJuego+"/"+idPreguntaSiguiente id="form" name="form")
+              //input(type="hidden" name="preguntaSiguiente", id="preguntaSiguiente", value=idPreguntaSiguiente)
+              input(type="hidden" name="respuestaCorrecta", id="respuestaCorrecta", value=correcta)
+              input(type="hidden" name="respuestaMarcada", id="respuestaMarcada")
+              input(type="hidden" name="isCorrect", id="isCorrect" value="0")
+              
+              div(class="form-group")
+                label
+                  input(type="radio",name='respuesta',onChange="execute()" value=data[2][0].respuesta)
+                  =  data[2][0].respuesta
+                br
+                label
+                  input(type="radio",name='respuesta',onChange="execute()" value=data[2][1].respuesta)
+                  =  data[2][1].respuesta
+                br
+                label
+                  input(type="radio",name='respuesta',onChange="execute()" value=data[2][2].respuesta)
+                  =  data[2][2].respuesta
+                br
+                label
+                  input(type="radio",name='respuesta',onChange="execute()" value=data[2][3].respuesta)
+                  =  data[2][3].respuesta
+                br
+        
+              div(class="form-group")
+                input(type="submit" id="enviar-pregunta" class="btn btn-raised btn-success" value="Enviar")
+  else
+    div(class="container-fluid")
+      div(class='jumbotron')
+        h2(class="text-center") Juego Terminado           
+        p Total de Correctas 
+          strong()= cantidadCorrectas
+        p Total de Fallidas 
+          strong()= cantidadIncorrectas
+          
+        
+        
+  
+  script.        
+    //guardar_localStorage();
+    //get_localStorage();
+    var rCorrecta = document.getElementById('respuestaCorrecta').value;
+    var rMarcada = '';    
+    var acertada = false;
+    var cantidadCorrectas = 0;
+    var cantidadFallidas = 0;
+    function execute()
+    {
+      getRadioButtonSelectedValue(document.form.respuesta);      
+    }
+    
+    function getRadioButtonSelectedValue(NameRadio)
+    {
+        for(i=0;i<NameRadio.length;i++){
+          if(NameRadio[i].checked){
+            document.getElementById('respuestaMarcada').value = NameRadio[i].value;
+            rMarcada = document.getElementById('respuestaMarcada').value;
+
+            //desactivarRadios()
+            if(rCorrecta.toLowerCase() == rMarcada.toLowerCase()){
+              acertada = true;
+              cantidadCorrectas++;                
+              //guardar_localStorage(cantidadCorrectas);
+              //cambiar el valor a 1 si contesto correctamente el usuario
+              document.getElementById('isCorrect').value = 1;
+              document.getElementById('alerta-verde').style.display = 'block';
+              document.getElementById('alerta-roja').style.display = 'none';
+            }               
+            else{
+              acertada = false;
+              cantidadFallidas++;
+              document.getElementById('alerta-roja').style.display = 'block';
+              document.getElementById('alerta-verde').style.display = 'none';
+            }              
+            //alert("Correctas: "+cantidadCorrectas+" Fallidas: "+cantidadFallidas);              
+          }              
+        }                      
+    }
+
+    /*function desactivarRadios()
+    {
+      var opcionesRadios = document.getElementsByName('respuesta')
+      var marcada;
+      for(var i=0; i<opcionesRadios.length; i++)
+      {
+        if(opcionesRadios[i].checked)
+          marcada = opcionesRadios[i];
+        
+        marcada.checked = true;
+        opcionesRadios[i].checked = false;
+      }
+    }*/
+
+    function guardar_localStorage(param)
+    {    
+      let conteoCorrectas = param;
+      localStorage.setItem('Correctas',conteoCorrectas);
+    }
+
+    function get_localStorage()
+    {
+      let conteoCorrectas = localStorage.getItem("Correctas");
+      //console.log(conteoCorrectas);
+    }
+      
+          
+ 
+  
+  

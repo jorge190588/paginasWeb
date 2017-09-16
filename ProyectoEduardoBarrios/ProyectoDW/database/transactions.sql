@@ -74,6 +74,7 @@ select * from participantes
 
 insert into participantes (nombre,carne,idJuego) values ('Juan','12334',1) 
 
+/*TRANSACCION Y PROCEDIMIENTO PARA INSERTAR PARTICIPANTES*/
 DELIMITER $$
 CREATE PROCEDURE sp_ingresarParticipante
 (
@@ -106,9 +107,36 @@ END $$
 DROP PROCEDURE sp_ingresarParticipante;
 CALL sp_ingresarParticipante('Nichols3','Williams2',100);
 
+truncate table participantes
+
+DELIMITER $$
+CREATE PROCEDURE sp_getPreguntaRespuestas(IN IdJuego int,IN nRegistro int,IN correcta int)
+BEGIN
+	SELECT P.idPregunta,P.pregunta,P.idJuego FROM preguntas P WHERE P.idJuego = IdJuego LIMIT nRegistro,1;
+	SELECT @idPregunta := PR.idPregunta FROM preguntas PR WHERE PR.idJuego = IdJuego LIMIT nRegistro,1;
+	SELECT R.respuesta,R.correcta FROM respuestas R WHERE R.idPregunta = @idPregunta;
+    SELECT COUNT(p.idPregunta) numPreguntas from preguntas p WHERE p.idJuego = IdJuego;
+    SELECT r.idRespuesta,r.respuesta,r.correcta as respuestaCorrecta FROM respuestas r WHERE r.correcta = 1 AND r.idPregunta = @idPregunta;
+    SELECT @idUltimoParticipante := MAX(idParticipante) FROM participantes;
+    INSERT INTO resultados(idParticipante,idPregunta,correcta) SELECT @idUltimoParticipante,@idPregunta,correcta WHERE correcta > -1 AND correcta < 2;    
+    SELECT RS.idPregunta,
+		   (select count(correcta.correcta) from resultados correcta where correcta.correcta = 1 and correcta.idParticipante = @idUltimoParticipante) AS cantCorrectas,
+	       (select count(incorrecta.correcta) from resultados incorrecta where incorrecta.correcta = 0 and incorrecta.idParticipante = @idUltimoParticipante) AS cantIncorrectas 
+	FROM resultados RS WHERE RS.idParticipante = @idUltimoParticipante;	
+END $$
+
+CALL sp_getPreguntaRespuestas(19,2,0);
+DROP PROCEDURE sp_getPreguntaRespuestas;
+	
+truncate table resultados
+
+/* consulta para obtener la cantidad de respuestas correctas e incorrectas en un juego */
+SELECT RS.idPregunta,(select count(correcta) from resultados where correcta = 1 and idParticipante = 83) AS cantCorrectas,
+(select count(correcta) from resultados where correcta = 0 and idParticipante = 83) AS cantIncorrectas FROM resultados RS WHERE RS.idParticipante = 83	
+    
+SELECT  (select count(idParticipante) from participantes where idJuego = 19) as CantidadParticipantes,P.nombre,P.carne
+FROM participantes P WHERE P.idJuego = 19 ORDER BY P.idParticipante DESC
 
 
-
-SELECT @Juego := (SELECT J.idJuego FROM juegos J WHERE J.idJuego = 100);
-INSERT INTO participantes(nombre,carne,idJuego) SELECT 'nichols','111',@Juego WHERE @Juego > 0;			
-SELECT ROW_COUNT()
+INSERT INTO resultados (idParticipante,idPregunta,correcta) VALUES (1,1,0);
+SELECT * FROM resultados

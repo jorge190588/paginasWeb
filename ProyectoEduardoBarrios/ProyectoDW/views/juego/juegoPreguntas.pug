@@ -1,0 +1,30 @@
+div(class="container-fluid")          
+  div(class='jumbotron')
+    div(class='preguntas')
+      p= data[0][0].pregunta
+          
+    div(class='respuestas')
+      //action="/juegoEnEspera/"+data[0][0].idJuego id="form")
+      form(method="GET" action="/ProcesarJuego/"+data[0][0].idJuego+"/"+idPreguntaSiguiente)
+        //input(type="hidden" name="numPreguntas", id="numPreguntas", value=data[3][0].numPreguntas)
+        //input(type="hidden",name="incremento",id="incremento",value="1")
+        div(class="form-group")
+          label
+            input(type="radio",name='respuesta',value=data[2][0].respuesta)
+            =  data[2][0].respuesta
+          br
+          label
+            input(type="radio",name='respuesta',value=data[2][1].respuesta)
+            =  data[2][1].respuesta
+          br
+          label
+            input(type="radio",name='respuesta',value=data[2][2].respuesta)
+            =  data[2][2].respuesta
+          br
+          label
+            input(type="radio",name='respuesta',value=data[2][3].respuesta)
+            =  data[2][3].respuesta
+          br
+  
+        div(class="form-group")
+          input(type="submit" class="btn btn-raised btn-success" value="Enviar")
