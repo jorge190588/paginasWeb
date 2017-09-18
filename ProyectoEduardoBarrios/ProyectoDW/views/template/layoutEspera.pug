@@ -10,7 +10,7 @@ html(lang='en')
     link(rel='stylesheet', href='/stylesheets/ripples.css')
     link(rel='stylesheet', href='/stylesheets/material-icons.css')
     link(rel='stylesheet', href='/stylesheets/estilos.css')
-body
+body(OnLoad="notF5();")
               
   block content
 
@@ -35,5 +35,16 @@ body
         setTimeout(function(){
             $.LoadingOverlay("hide");
         }, 1000);
+
+        function notF5()
+        {
+          history.go(1);
+          
+          document.onkeydown = function(e){
+            tecla = (document.all) ? e.keyCode : e.which;
+            //alert(tecla)
+            if (tecla = 116) {return false;}    
+          }
+        }
 
     

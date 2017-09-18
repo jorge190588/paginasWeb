@@ -131,29 +131,19 @@ class Index{
                 }                
                 
                 else
-                    res.render('/notFound');
+                    res.redirect('/notFound');
 
                 
             })
-            : res.redirect('/notFound');//res.send("<h1>Error</h1>");//res.render('404');//
+            : res.redirect('/notFound');              
     }
 
-    
-    /*SaveResultadoPregunta(req,res,next)
+    // Cambiar a null el usuario en req.session.nombre
+    CerrarSesion(req,res,next)
     {
-        var idJuego = req.params.idJuego;
-        var idPregunta = parseInt(req.params.idPregunta)-1;
-        var preguntaSiguiente = parseInt(req.params.idPregunta)+1;
-
-        obj.SaveResultadoPreguta((error,data)=>{
-            if(!error)
-            {
-
-            }
-            else
-                res.send(error);
-        });
-    }*/
+        req.session.nombre = null;
+        res.redirect('/');
+    }
 
     default(req,res,next){
         res.render('default', {titulo : 'Default'});

@@ -72,13 +72,13 @@ block content
           strong()= cantidadCorrectas
         p Total de Fallidas 
           strong()= cantidadIncorrectas
+
+        a(href="/CerrarSesion", class=["btn","btn-default","btn-raised"]) Terminar
           
         
         
   
-  script.        
-    //guardar_localStorage();
-    //get_localStorage();
+  script.            
     var rCorrecta = document.getElementById('respuestaCorrecta').value;
     var rMarcada = '';    
     var acertada = false;
@@ -142,6 +142,8 @@ block content
       let conteoCorrectas = localStorage.getItem("Correctas");
       //console.log(conteoCorrectas);
     }
+
+    
       
           
  

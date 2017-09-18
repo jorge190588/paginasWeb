@@ -72,6 +72,9 @@ const notFound = require('../controllers/notFound404Controller');
 var not = new notFound();
 router.get('/notFound',not.getNotFound);
 
+// ruta para cambiar a null la session y cerrar sesion
+router.get('/CerrarSesion',home.CerrarSesion);
+
 // ruta de prueba
 router.get('/pruebaPreguntas',inst.getPreguntas);
 module.exports = router;
