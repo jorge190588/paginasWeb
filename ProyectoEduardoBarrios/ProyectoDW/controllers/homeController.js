@@ -19,8 +19,9 @@ class Index{
             nombre : req.body.nombre
         };
 
-        //req.session.nombre = req.body.nombre;
-        //console.log(session.nombre);
+        // almacenando el nombre del usuario en una variable de session
+        req.session.nombre = req.body.nombre;
+        console.log(req.session.nombre);
         obj.IndexPost(usuario,(error,data)=>{
             if(!error){            
                 var rowCount = data[1][0].rc;
@@ -91,48 +92,53 @@ class Index{
         var isCorrecta = queryString.isCorrect;
         console.log(isCorrecta+" <- controlador");
 
-        obj.GetPreguntasRespuestas(idJuego,idPregunta,isCorrecta,(error,data)=>{
-            if(!error){
-                //console.log(data);
-                //res.send(data);
-                //res.send(data[0].length.toString());                
-                let respuestaCorrecta = data[4][0].respuesta.toLowerCase();
+        return (req.session.nombre) 
+            ? obj.GetPreguntasRespuestas(idJuego,idPregunta,isCorrecta,(error,data)=>{
+                if(!error){
+                    //console.log(data);
+                    //res.send(data);
+                    //res.send(data[0].length.toString());                
+                    let respuestaCorrecta = data[4][0].respuesta.toLowerCase();
+
+                    
+                                    
+
+                    if(data[0].length > 0){                                    
+                        console.log("RESPUESTA CORRECTA ->"+respuestaCorrecta);                
+                        //console.log("CANTIDAD CORRECTAS -> "+data[6][0].cantCorrectas+" CANTIDAD INCORRECTAS -> "+data[6][0].cantIncorrectas);
+
+                        
+                        res.render('juego/juegoEnEspera',{data : data, idPreguntaSiguiente : preguntaSiguiente , correcta : respuestaCorrecta});
+                    }                    
+
+                    else{
+                        //cantidad de correctas e incorrrectas
+                        //console.log("Resp Correctas -> "+data[6].length);
+                        var cantCorrectas = 1;
+                        var cantIncorrectas = 1;
+                        // si no hay respuestas aun se incian en cero
+                        if(data[6].length > 0){
+                            cantCorrectas = data[6][0].cantCorrectas;
+                            cantIncorrectas = data[6][0].cantIncorrectas;                                        
+                        }
+                        else{
+                            cantCorrectas = 0;
+                            cantIncorrectas = 0;
+                        }
+                        res.render('juego/juegoEnEspera',{terminado : true, usuario : req.session.nombre ,cantidadCorrectas : cantCorrectas, cantidadIncorrectas : cantIncorrectas});
+                    }
+                        
+                }                
+                
+                else
+                    res.render('/notFound');
 
                 
-                                
-
-                if(data[0].length > 0){                                    
-                    console.log("RESPUESTA CORRECTA ->"+respuestaCorrecta);                
-                    //console.log("CANTIDAD CORRECTAS -> "+data[6][0].cantCorrectas+" CANTIDAD INCORRECTAS -> "+data[6][0].cantIncorrectas);
-
-                    
-                    res.render('juego/juegoEnEspera',{data : data, idPreguntaSiguiente : preguntaSiguiente , correcta : respuestaCorrecta});
-                }                    
-
-                else{
-                    //cantidad de correctas e incorrrectas
-                    //console.log("Resp Correctas -> "+data[6].length);
-                    var cantCorrectas = 1;
-                    var cantIncorrectas = 1;
-                    // si no hay respuestas aun se incian en cero
-                    if(data[6].length > 0){
-                        cantCorrectas = data[6][0].cantCorrectas;
-                        cantIncorrectas = data[6][0].cantIncorrectas;                                        
-                    }
-                    else{
-                        cantCorrectas = 0;
-                        cantIncorrectas = 0;
-                    }
-                    res.render('juego/juegoEnEspera',{terminado : true, cantidadCorrectas : cantCorrectas, cantidadIncorrectas : cantIncorrectas});
-                }
-                    
-            }                
-            else
-                res.send(error);
-        });
-        
+            })
+            : res.redirect('/notFound');//res.send("<h1>Error</h1>");//res.render('404');//
     }
 
+    
     /*SaveResultadoPregunta(req,res,next)
     {
         var idJuego = req.params.idJuego;

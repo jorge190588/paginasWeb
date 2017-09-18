@@ -66,6 +66,12 @@ var jugar = new juego();
 
 router.get('/jugar/:id',jugar.Index);
 
+
+// ruta error | 404 si no hay usuario con session
+const notFound = require('../controllers/notFound404Controller');
+var not = new notFound();
+router.get('/notFound',not.getNotFound);
+
 // ruta de prueba
 router.get('/pruebaPreguntas',inst.getPreguntas);
 module.exports = router;
