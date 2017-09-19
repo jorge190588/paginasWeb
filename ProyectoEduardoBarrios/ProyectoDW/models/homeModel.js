@@ -18,6 +18,11 @@ class homeModel{
         conn.query("CALL sp_getPreguntaRespuestas(?,?,?);",[idJuego,indiceRegistro,isCorrecta],Callback);
     }
 
+    ValidarExisteJuego(idJuego,Callback)
+    {
+        conn.query("SELECT idJuego FROM juegos WHERE idJuego = ?",idJuego,Callback);
+    }
+    //No usada
     SaveResultadoPreguta(registro,Callback)
     {
         conn.query("INSERT INTO resultados SET ?",registro,Callback);

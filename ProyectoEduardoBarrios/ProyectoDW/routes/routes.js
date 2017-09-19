@@ -7,6 +7,7 @@ router.get('/ajax/:id',function(req,res){
       console.log("DATOS POR AJAX EN EL SERVER "+data);            
       res.send(data);
 });
+
 // archivo para autocargar todos los controladores 
 var controllers = require('../controllers');
 
@@ -16,6 +17,9 @@ var home = new homeController();
 router.get('/', home.IndexGet);
 router.post('/irJuego', home.IndexPost);
 router.get('/juegoEnEspera/:id',home.JuegoEnEspera);
+
+//RUTA para validar si existe un juego por ajax en el inicio cuando se ingresa el id para empezar a jugar
+router.get('/ValidarExisteJuego/:idJuego',home.ValidarExisteJuego);
 
 //ruta en clase
 router.get('/ProcesarJuego/:idJuego/:idPregunta',home.ProcesarJuego);

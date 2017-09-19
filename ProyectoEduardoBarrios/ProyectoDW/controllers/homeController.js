@@ -79,7 +79,7 @@ class Index{
         
     }
 
-    ProcesarJuego(req,res,next){
+    ProcesarJuego(req,res,next){        
         //res.send('<h1>Prueba de procesar juego</h1>'+req.params.idJuego+" id Pregunta "+req.params.idPregunta);
         var idJuego = req.params.idJuego;
         var idPregunta = parseInt(req.params.idPregunta)-1;
@@ -134,7 +134,10 @@ class Index{
                     res.redirect('/notFound');
 
                 
-            })
+                /*setInterval(()=>{                        
+                    console.log("PREGUNTAS ");
+                },1000);*/
+            })            
             : res.redirect('/notFound');              
     }
 
@@ -143,6 +146,32 @@ class Index{
     {
         req.session.nombre = null;
         res.redirect('/');
+    }
+
+    ValidarExisteJuego(req,res,next){
+        let idJuego = req.params.idJuego;
+        //console.log("ID DEL JUEGO BACKEND "+idJuego);
+
+        obj.ValidarExisteJuego(idJuego,(error,results)=>{
+            if(!error){
+                //console.log("Si existe el juego "+results.length);
+                var respuestaAjax = false;
+
+                if(results.length > 0){
+                    console.log("Si existe el juego");
+                    respuestaAjax = true;
+                    res.send(respuestaAjax);
+                }                                
+                else{
+                    console.log("No existe el juego");                    
+                    res.send(respuestaAjax);
+                }
+                    
+            }                
+            else
+                res.send(error);
+        });
+
     }
 
     default(req,res,next){

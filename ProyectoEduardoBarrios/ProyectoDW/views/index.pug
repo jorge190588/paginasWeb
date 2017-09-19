@@ -31,11 +31,14 @@ html(lang='en')
                 .form-group.label-floating.has-success
                   label.control-label(for='focusedInput') 
                     i.mdi.mdi-fiber-pin  INGRESE EL PIN
-                  input#focusedInput.form-control(type='text', name='pin', required)
+                  input#pin.form-control(type='text', name='pin', required)
+                  label(id="noExisteJuego" class="label label-danger") Error este pin no pertenece a ningún juego, verifique!
+
                 .form-group.label-floating.has-success
                   label.control-label(for='focusedInput') 
                     i.mdi.mdi-fingerprint  INGRESE SU CARNE
                   input#focusedInput.form-control(type='text', name='carne', required)
+
                 .form-group.label-floating.has-success
                   label.control-label(for='focusedInput') 
                     i.mdi.mdi-face  INGRESE SU NOMBRE
