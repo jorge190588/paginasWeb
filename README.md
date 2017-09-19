@@ -10,6 +10,7 @@
 * [Routing]()
 * [Hapi package for create a nodejs backend](https://hapijs.com/api)
 * [Api best practices]()
+* [Swagger editor to create api dummy](https://swagger.io/swagger-editor/)
 * [CRUD](https://es.wikipedia.org/wiki/CRUD)
 * [Dependences inyection](https://elabismodenull.wordpress.com/2017/04/16/4-formas-de-manejar-dependencias-en-nodejs/)
 * [Arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
