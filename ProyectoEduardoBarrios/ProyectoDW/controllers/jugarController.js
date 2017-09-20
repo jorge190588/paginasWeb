@@ -8,8 +8,14 @@ class Jugar{
         modelo.jugarIndexGetParticipantes(idJuego,(error,data)=>{
             if(!error)
             {
-                console.log(data);
-                response.render('juego/jugarIndex',{data : data});
+                console.log;
+                if(data.length > 0){
+                    response.render('juego/jugarIndex',{data : data});
+                }
+                else{
+                    response.render('juego/jugarIndex',{sinDatos : true});
+                }
+                    
             }            
         });        
     }

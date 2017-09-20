@@ -37,13 +37,13 @@ html(lang='en')
                 .form-group.label-floating.has-success
                   label.control-label(for='focusedInput') 
                     i.mdi.mdi-fingerprint  INGRESE SU CARNE
-                  input#focusedInput.form-control(type='text', name='carne', required)
+                  input#focusedInput.form-control(type='text', name='carne', onkeypress="return validarCarne(event)", onpaste="return false",required)
 
                 .form-group.label-floating.has-success
                   label.control-label(for='focusedInput') 
                     i.mdi.mdi-face  INGRESE SU NOMBRE
                   input#focusedInput.form-control(type='text', name='nombre' ,required)
-                  button.btn.btn-raised.btn-success(type='submit') ENTRAR
+                  button.btn.btn-raised.btn-success(type='submit',id="btn-entrarJuego") ENTRAR
       
         .col-md-6.col-md-offset-3
           p.parrafoIndex.text-center
