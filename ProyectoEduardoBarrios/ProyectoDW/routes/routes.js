@@ -37,6 +37,7 @@ router.get('/nuevoRevoltijo', controllers.juegoController.nuevoRevoltijo);
 const auth = require('../controllers/authController');
 var authorize = new auth();
 router.get('/login', authorize.loginGet);
+router.post('/loginPost', authorize.loginPost);
 router.get('/crearCuenta', authorize.createAccountGet);
 router.post('/crearCuentaPost', authorize.createAccountPost);
 

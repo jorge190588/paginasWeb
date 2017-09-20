@@ -8,6 +8,33 @@ class Auth{
         res.render('ingreso/login', {title : 'Login'});
     }
 
+    loginPost(req, res, next)
+    {
+        var credencialesUsuario = {
+            email: req.body.correo,
+            password: req.body.password
+        };    
+        //console.log(credencialesUsuario);
+        inst.Login(credencialesUsuario,(error,results)=>{
+            if(!error)
+            {
+                //console.log("Controller ->"+results[0].Nombres);
+                if(results.length > 0){
+                    req.session.idUsuarioCreaJuegos = results[0].idUsuario;
+                    res.redirect('/default');
+                } 
+                else
+                {
+                    res.redirect('/login');
+                    //res.send("<h1>Su usuario no existe</h1>");
+                }               
+            }
+            else
+                res.send(error);
+
+        });
+    }
+
     createAccountGet(request, response, next)
     {
         response.render('ingreso/crearCuenta', {title : 'Crear Cuenta'});
