@@ -9,14 +9,21 @@
       .navbar-collapse.collapse.navbar-inverse-collapse
         ul.nav.navbar-nav
           li
-            a(href='/default') Juegos
-          li
-            a(href='javascript:void(0)') Link                
-        form.navbar-form.navbar-left
+            a(href='/default') Mis Juegos
+          
+        //form.navbar-form.navbar-left
           .form-group
             input.form-control.col-md-8(type='text', placeholder='Buscar')
-        ul.nav.navbar-nav.navbar-right
+
+        if(sessionUser == undefined)
+          ul.nav.navbar-nav.navbar-right        
+            li
+              a(href='/login') Ya Tienes Cuenta?
+            li
+              a(href='/crearCuenta') Registrate!
+        
+        else
           li
-            a(href='/login') Ya Tienes Cuenta?
-          li
-            a(href='/crearCuenta') Registrate!
+              a(href='/cerrarSesion') Salir!
+
+          

@@ -34,8 +34,11 @@ router.get('/nuevaDiscusion', controllers.juegoController.nuevaDiscusion);
 router.get('/nuevoRevoltijo', controllers.juegoController.nuevoRevoltijo);
 
 /* GET authController. */
-router.get('/login', controllers.authController.loginGet);
-router.get('/crearCuenta', controllers.authController.createAccountGet);
+const auth = require('../controllers/authController');
+var authorize = new auth();
+router.get('/login', authorize.loginGet);
+router.get('/crearCuenta', authorize.createAccountGet);
+router.post('/crearCuentaPost', authorize.createAccountPost);
 
 
 // llamar una ruta con mvc

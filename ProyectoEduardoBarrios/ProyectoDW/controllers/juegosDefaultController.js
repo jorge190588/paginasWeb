@@ -4,11 +4,21 @@ var moment = require('moment');
 
 class JuegosDefault{
     getJuegos(req, res, next){
-        inst.getJuegos((error, data) =>{
+        let idUsuarioCreaJuegos = req.session.idUsuarioCreaJuegos;
+        let nombreUsuarioCreaJuegos = req.session.usuarioCreaJuegos;
+        //console.log("Nombre del usuario recien-creado getJuegos -> "+req.session.usuarioCreaJuegos);
+        return (idUsuarioCreaJuegos) 
+        ? inst.getJuegos(idUsuarioCreaJuegos,(error, data) =>{
             if(!error){            
-                res.render('default', {titulo : 'Objeto', data : data, fecha: data.fechaCreacion});
+                if(data.length > 0)
+                    res.render('default', {titulo : 'Objeto', data : data, fecha: data.fechaCreacion});
+
+                else
+                    res.render('default', {titulo : 'Objeto', sinDatos : true, nombreUsuario : nombreUsuarioCreaJuegos });
+
             }
-        });
+        })
+        : res.redirect('/notFound');
     }
 
     crearJuegoGet(request, response, next)
@@ -23,10 +33,11 @@ class JuegosDefault{
         let juego = 
         {
             titulo: request.body.titulo,
-            descripcion: request.body.descripcion            
+            descripcion: request.body.descripcion,
+            idUsuarioCrea: request.session.idUsuarioCreaJuegos
         };
         
-        console.log(juego);
+        //console.log(juego);
 
         inst.nuevoJuegoPost(juego, (error)=>{
             if(!error)

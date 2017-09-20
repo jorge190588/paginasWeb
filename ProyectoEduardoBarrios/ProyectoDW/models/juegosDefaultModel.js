@@ -3,12 +3,13 @@
 const conn = require('./conexion');
 
 class Default{
-    getJuegos(Callback){
-        conn.query('SELECT * FROM juegos ORDER BY idJuego DESC', Callback);
+    getJuegos(idUsuarioCrea,Callback){
+        conn.query('SELECT * FROM juegos WHERE idUsuarioCrea = '+idUsuarioCrea+' ORDER BY idJuego DESC', Callback);
     }
 
     nuevoJuegoPost(juego, Callback)
     {
+        console.log(juego);
         conn.query('INSERT INTO juegos SET ?', juego, Callback );
     }
 
