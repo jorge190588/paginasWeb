@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+// Sockets
+
 // ruta para ajax de preguntas y respuestas
 router.get('/ajax/:id',function(req,res){
       var data = req.params.id;

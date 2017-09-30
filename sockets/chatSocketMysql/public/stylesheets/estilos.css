@@ -1,0 +1,33 @@
+body{
+    background-color: #64B5F6;
+    padding-bottom: 70px;
+}
+
+h1{
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 3%;
+}
+
+footer{
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.parrafoIndex{
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+#notFound{
+    padding: 80px;
+}
+
+#noExisteJuego{
+    color: #fff;
+    display: none;
+}

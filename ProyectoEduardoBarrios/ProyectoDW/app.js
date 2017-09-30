@@ -1,4 +1,5 @@
 var express = require('express');
+var http = require('http');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -52,7 +53,11 @@ app.use(function(err, req, res, next) {
 });
 
 // SOCKET.IO
-var apps = require('express')();
+
+/*server.listen(3000,function(){
+  console.log("Socket.io Corriendo");
+});
+/*var apps = require('express')();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
@@ -68,5 +73,5 @@ io.on('connection', function(socket){
   socket.on('otro evento',function(data){
     console.log(data);
   });
-});
+});*/
 module.exports = app;

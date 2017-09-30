@@ -1,0 +1,19 @@
+{
+  "name": "chatsocketmysql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eduardo Barrios",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.5",
+    "knockout": "^3.4.2",
+    "mysql": "^2.14.1",
+    "pug": "^2.0.0-rc.4",
+    "socket.io": "^2.0.3"
+  }
+}
