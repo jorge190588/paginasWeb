@@ -1,0 +1,40 @@
+extends layout
+block content    
+    div.container
+        div.row
+            br
+            div.col-xs-12
+                div.well
+                    h1.text-center= title
+                ol(class="breadcrumb")
+                    li
+                        a(href="/") INICIO
+                    li(class='active')= title
+                div.row
+                    div.col-xs-12.col-sm-6.col-sm-offset-3
+                        div.panel.panel-warning
+                            div.panel-heading
+                                p.text-title-create  CREAR UN QUIZ
+                            div.panel-body
+                                form(action='/guardar_encuesta',method='post')
+                                    div.form-group
+                                        input(type='text',class=['form-control'],name="titulo",placeholder="TITULO" required)
+                                    hr
+                                    button(type='submit', class=['btn','btn-preguntas-save']) GUARDAR
+                if (data.length != 0)
+                    each encuesta in data
+                        div.col-xs-12.col-sm-6
+                            div.media
+                                div.media-body.box-quiz
+                                    h2 #{encuesta.TITULO}
+                                    p.text-danger # Preguntas: 
+                                        span.badge #{encuesta.total_pregunta}
+                                    p.text-primary PIN: 
+                                        span.badge #{encuesta.CODIGO_ACCESO}
+                                    a(href="/editar/"+encuesta.ID,class=['btn','btn-preguntas-edit', 'btn-xs']) EDITAR 
+                                    span 
+                                    a(href="/eliminar/"+encuesta.ID,class=['btn','btn-danger', 'btn-xs']) ELIMINAR
+                                    span 
+                                    a(href="/preguntas/"+encuesta.ID,class=['btn','btn-preguntas-add', 'btn-xs']) INGRESAR PREGUNTAS             
+                else 
+                    p.alert.alert-danger No hay registros en la bd

@@ -1,0 +1,45 @@
+extends layout
+block content    
+    div.container
+        div.row
+            br
+            div.col-xs-12
+                div.well.text-center
+                    h1= title
+                ol(class="breadcrumb")
+                    li
+                        a(href="/") INICIO
+                    li
+                        a(href="/crear_encuesta") CREAR ENCUESTA
+                    li(class='active')= title
+                div.row
+                    div.col-xs-12.col-sm-4
+                        div.panel.panel-danger
+                            div.panel-body
+                                form(action='/agregar_pregunta' method='post')
+                                    input(type='hidden' name='id_encuesta' value=id_encuesta)
+                                    div.form-group
+                                        label.text-primary PREGUNTA
+                                        textarea(class=['form-control'], rows='5', name="pregunta", placeholder="INGRESE SU PREGUNTA" required)
+                                    div.form-group
+                                        label.text-danger RESPUESTA
+                                        input(type='text',class=['form-control'], name="respuesta",placeholder="INGRESE LA RESPUESTA CORRECTA" required)
+                                    hr
+                                    button(type='submit' class='btn btn-preguntas-save btn-block') AGREGAR
+                    div.col-xs-12.col-sm-8
+                        h1.text-center.text-question-title #{data[0].TITULO}
+                        hr
+                        table.table.text-question-table
+                            thead
+                                tr
+                                    th PREGUNTA
+                                    th RESPUESTA
+                            tbody
+                                if(respuestas.length == 0)
+                                    tr
+                                        td No hay registros.
+                                else
+                                    each respuesta in respuestas
+                                        tr
+                                            td #{respuesta.PREGUNTA}
+                                            td #{respuesta.RESPUESTA}

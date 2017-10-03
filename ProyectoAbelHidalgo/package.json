@@ -1,0 +1,19 @@
+{
+  "name": "cartas",
+  "version": "1.0.0",
+  "description": "Este proyecto desarrollara un juego web con NODEJS, MYSQL y Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Pedro",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mysql": "^2.14.0",
+    "pug": "^2.0.0-rc.2",
+    "serve-favicon": "^2.4.3"
+  }
+}

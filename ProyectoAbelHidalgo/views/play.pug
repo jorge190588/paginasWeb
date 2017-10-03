@@ -1,0 +1,12 @@
+extends layout
+block content
+    div.container
+        div.row
+            div.col-xs-12.col-sm-6.col-sm-offset-3
+                h1.text-question-title.text-center.page-header= titulo
+                form(method='post' action='/verificar_respuesta')
+                    each question in data
+                        label.text-question-play #{question.PREGUNTA} 
+                        div.form-group
+                            input(type='text' name='respuesta' id='respuesta' class='form-control' placeholder='Ingrese su respuesta unica' required)
+                    button(type='submit' class='btn btn-primary btn-block btn-lg') Verificar Respuesta

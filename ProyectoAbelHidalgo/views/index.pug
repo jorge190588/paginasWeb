@@ -1,0 +1,18 @@
+extends layout
+block content    
+    div.container
+        div.row
+            br
+            div.col-xs-12
+                div.well
+                    h1.page-header= title
+                    a(href="/crear_encuesta/",class=['btn','btn-info']) Empezar ahora
+                div.row
+                    div.col-xs-12.col-sm-4.col-sm-offset-4
+                        div.panel.panel-default
+                            div.panel-heading DirectQuiz 
+                            div.panel-body
+                                form(action='/verificando_pin', method='post')
+                                    div.form-group
+                                        input.form-control(type='text' name='pin' placeholder='INGRESE EL PIN DEL JUEGO' required)
+                                    button(type='submit' class='btn btn-warning btn-lg btn-block') Entrar
