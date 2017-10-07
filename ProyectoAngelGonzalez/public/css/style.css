@@ -58,7 +58,6 @@ header {
   position: relative;
   width: 100%;
   min-height: auto;
-  overflow-y: hidden;
   background: url("../img/bg-pattern.png"), #7b4397;
   /* fallback for old browsers */
   background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to left, #7b4397, #dc2430);
@@ -67,7 +66,7 @@ header {
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
   text-align: center;
-  padding: 150px 0 5px;
+  padding: 5px 0 5px;
   position: relative;
 }
 section{
@@ -79,12 +78,31 @@ section{
   -o-background-size: cover;
   background-position: center;
   background-image: url('../img/fondo2.jpg');
-  padding: 100px 0;
+  padding: 5px 0;
 color: black;}
 
 section p{font-family: 'Arial black';}
 
 img{width: 38px; height: 38px;}
+
+input#disabledInput{
+  padding: 5px 0 5px;
+  background-repeat;
+  text-align: justify;
+  font-family: 'Arial black';
+}
+
+section label{
+  font-family: 'Arial black';
+}
+form p{
+  text-align: justify;
+  font-family: 'Arial';
+}
+img alt='Siguiente'{
+  width: 1000px; height: 100px;
+}
+
 
 
 /*h1,h2,h3{ text-align: center; background: #008080; margin: 0}

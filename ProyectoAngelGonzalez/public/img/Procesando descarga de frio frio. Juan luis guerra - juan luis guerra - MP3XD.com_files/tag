@@ -1,0 +1,31 @@
+if (typeof tagCounter !== 'undefined') {
+var tagCounter=0;
+}else{
+}
+var rsvis=0;
+function makersid()
+{
+var text = "";
+var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+for (var i = 0; i < 10; i++){
+text += possible.charAt(Math.floor(Math.random() * possible.length));
+}
+return text;
+}
+var rstagtoken = makersid();
+var ult = Math.round(new Date().getTime() / 1000) ;
+var iif = 0;
+var x=0;
+if (window.self === window.top){iif = 0;}else{iif=1;}
+var rf = encodeURIComponent(document.domain);
+var cookie=0;
+var rsurl="http://imp.readserver.net/imp.php?section=3307&size=728x90&type=ad&sso=0&side=0&ext_cost=0&dvar=0&rmx_buyer_li=0&rmx_seller_li=0&smt=0"+"&ult="+ult+"&iif="+iif+"&rstagtoken="+rstagtoken+ "&rf="+rf+"&ssl=0";
+var trs= (0-(new Date().getTimezoneOffset())/60);
+var cookieEnabled=(navigator.cookieEnabled)?true:false;
+if(typeof navigator.cookieEnabled=="undefined"&&!cookieEnabled){document.cookie="testrscookie";cookieEnabled=(document.cookie.indexOf("testrscookie")!=-1)?true:false}
+if(cookieEnabled==true){rsurl+="&ck=1"}else{rsurl+="&ck=2"}
+var cachebust=Number(new Date());
+rsurl+="&trs="+trs;
+rsurl+="&cbu="+cachebust;
+                    rsurl += "&rsvis=" + rsvis;
+            document.write("<div style=\"width:728px; height: 90px;display: inline-block;\" class=\"" + rstagtoken + "\" id=\"" + rstagtoken + "\"></div>");var rs_tag = document.createElement("script");rs_tag.async = true;rs_tag.src = rsurl;document.getElementsByTagName("head")[0].appendChild(rs_tag);

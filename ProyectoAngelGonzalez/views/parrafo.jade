@@ -3,7 +3,7 @@ extends layout
 block content
 	section
 		p Ingresa Parrafos una pregunta y respuestas!
-
+		h1= idJuego
 		form(action='/nuevaparrafo', method='post')
 			label Párrafo:
 			input(name='parrafo')

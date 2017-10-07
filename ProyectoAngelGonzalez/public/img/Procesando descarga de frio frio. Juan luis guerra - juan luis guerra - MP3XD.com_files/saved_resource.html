@@ -1,0 +1,429 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0113)http://anonymixer.blogspot.com/?refresh=false&rm=false&m=0&to=http://mp3.zing.vn/html5/song/LmJGtSbWZCRayZDJtFmZn -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Anonymixer</title>
+<meta name="ROBOTS" content="NOINDEX">	
+<script src="./cb=gapi(1).loaded_1" async=""></script><script src="./cb=gapi.loaded_0" async=""></script><script type="text/javascript" src="./jquery.min.js(1).descarga"></script>
+<script type="text/javascript">
+
+var mainUrl = window.location.href;
+if (mainUrl.indexOf("#") != -1) {
+    mainUrl = mainUrl.substr(0, mainUrl.indexOf("#"))
+} else if (mainUrl.indexOf("?") != -1) {
+    mainUrl = mainUrl.substr(0, mainUrl.indexOf("?"))
+}
+$(document).ready(function() {
+    var g = {
+        _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+        encode: function(e) {
+            var t = "";
+            var n, r, i, s, o, u, a;
+            var f = 0;
+            e = g._utf8_encode(e);
+            while (f < e.length) {
+                n = e.charCodeAt(f++);
+                r = e.charCodeAt(f++);
+                i = e.charCodeAt(f++);
+                s = n >> 2;
+                o = (n & 3) << 4 | r >> 4;
+                u = (r & 15) << 2 | i >> 6;
+                a = i & 63;
+                if (isNaN(r)) {
+                    u = a = 64
+                } else if (isNaN(i)) {
+                    a = 64
+                }
+                t = t + this._keyStr.charAt(s) + this._keyStr.charAt(o) + this._keyStr.charAt(u) + this._keyStr.charAt(a)
+            }
+            return t
+        },
+        decode: function(e) {
+            var t = "";
+            var n, r, i;
+            var s, o, u, a;
+            var f = 0;
+            e = e.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+            while (f < e.length) {
+                s = this._keyStr.indexOf(e.charAt(f++));
+                o = this._keyStr.indexOf(e.charAt(f++));
+                u = this._keyStr.indexOf(e.charAt(f++));
+                a = this._keyStr.indexOf(e.charAt(f++));
+                n = s << 2 | o >> 4;
+                r = (o & 15) << 4 | u >> 2;
+                i = (u & 3) << 6 | a;
+                t = t + String.fromCharCode(n);
+                if (u != 64) {
+                    t = t + String.fromCharCode(r)
+                }
+                if (a != 64) {
+                    t = t + String.fromCharCode(i)
+                }
+            }
+            t = g._utf8_decode(t);
+            return t
+        },
+        _utf8_encode: function(e) {
+            e = e.replace(/\r\n/g, "\n");
+            var t = "";
+            for (var n = 0; n < e.length; n++) {
+                var r = e.charCodeAt(n);
+                if (r < 128) {
+                    t += String.fromCharCode(r)
+                } else if (r > 127 && r < 2048) {
+                    t += String.fromCharCode(r >> 6 | 192);
+                    t += String.fromCharCode(r & 63 | 128)
+                } else {
+                    t += String.fromCharCode(r >> 12 | 224);
+                    t += String.fromCharCode(r >> 6 & 63 | 128);
+                    t += String.fromCharCode(r & 63 | 128)
+                }
+            }
+            return t
+        },
+        _utf8_decode: function(e) {
+            var t = "";
+            var n = 0;
+            var r = c1 = c2 = 0;
+            while (n < e.length) {
+                r = e.charCodeAt(n);
+                if (r < 128) {
+                    t += String.fromCharCode(r);
+                    n++
+                } else if (r > 191 && r < 224) {
+                    c2 = e.charCodeAt(n + 1);
+                    t += String.fromCharCode((r & 31) << 6 | c2 & 63);
+                    n += 2
+                } else {
+                    c2 = e.charCodeAt(n + 1);
+                    c3 = e.charCodeAt(n + 2);
+                    t += String.fromCharCode((r & 15) << 12 | (c2 & 63) << 6 | c3 & 63);
+                    n += 3
+                }
+            }
+            return t
+        }
+    };
+
+    function anonym_autocheck(a) {
+        if (/anonymixer.blogspot.com|anonym.to|anonymixer/i.test(a) && a.indexOf(mainUrl) != -1) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    function validate_url(a) {
+	
+        var myRegExp =/^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/[^\s]*)?$/i;
+		
+		if(!myRegExp.test(a)){
+			return false;
+		}else{
+			return true;
+		}
+    }
+
+    function gup(a) {
+        var b = "[\\?&]" + a + "=([^&#]*)";
+        var c = new RegExp(b);
+        var d = window.location.href;
+        var e = c.exec(d);
+        if (e == null) return "";
+        else return e[1].replace(' ', '%20')
+    }
+
+    function grabUserUrl(a) {
+        if (a.indexOf('to=') != -1) {
+            a = a.substr(a.indexOf('to=') + 3, a.length);
+            if (a.indexOf('&') != -1) {
+                a = a.substr(0, a.indexOf('&'))
+            }
+        }
+        a = decodeURIComponent(a);
+        if (!validate_url(a)) {
+            a = g.decode(a);
+            a = decodeURIComponent(a)
+        }
+        return a
+    }
+
+    function buildUrl(a) {
+        urlResult = mainUrl + '?';
+        var b = false;
+        var c = false;
+        a = encodeURIComponent(a);
+        if ($('input[name=refresh]').attr('checked')) {
+            urlResult += 'refresh=false';
+            b = true
+        }
+        if ($('input[name=encode]').attr('checked')) {
+            c = true
+        }
+        if (b) {
+            urlResult += '&'
+        }
+        urlResult += 'to=';
+        if (c) {
+            urlResult += g.encode(a)
+        } else {
+            urlResult += a
+        }
+        return urlResult
+		
+    }
+	
+    var h = gup('to');
+    var j = gup('refresh');
+    var k = "";
+	
+    if (h != '') {
+	
+		if (!validate_url(h)) {
+			//alert(h);
+			h = decodeURIComponent(h.replace(/\+/g, " "));
+		}
+	
+        if (!validate_url(h)) {
+            h = g.decode(h);
+            h = decodeURIComponent(h)
+        }
+		
+		
+        if (!validate_url(h)) {
+		
+			//alert(h);
+		
+            $('#lg-1').html('Unable to retrieve the original URL');
+            $('#lg-2').html('Kann nicht die Original-URL abrufen');
+            $('#lg-3').html('Imposible recuperar la URL original');
+			
+        } else {
+		
+            var l = h;
+            var m = 90;
+            var p = h.length;
+            if (p > m) {
+                var q = h.substr(0, p - m);
+                var v = h.substr(m, p);
+                var l = q + '...' + v
+            }
+            $('a.link').text(l);
+            $('a.link').attr('href', h);
+            if (j == '' || j == 'true') {
+                setTimeout(function() {
+                    location.href = h
+                }, 2000)
+            } else {
+                var w = gup('rm');
+                $('#lg-1').html('Please click the link below');
+                $('#lg-2').html('Bitte klicken Sie auf den untenstehenden Link');
+                if (w != '' || /mp3xd.com/i.test(document.referrer)) {
+                    if ($.browser.msie) {
+                        k = 'Haga click derecho en el enlace de abajo, seleccione "Guardar destino como" y listo.'
+                    } else {
+                        k = 'Haga click derecho en el enlace de abajo, seleccione "Guardar enlace como" y listo.'
+                    }
+                } else {
+                    k = 'Por favor, haga click en el enlace de abajo.'
+                }
+                $('#lg-3').html(k)
+            }
+        }
+    } else {
+        $('.goto').hide();
+        $('.form').show()
+    }
+    $('input[name=refresh]').click(function() {
+        url_input = $('input[type=text]').val();
+        if (validate_url(url_input)){
+		
+			//alert('url valida codificamos');
+            url_input = grabUserUrl(url_input);
+			
+			//alert(url_input);
+			
+            if (url_input == "" || url_input == false || !validate_url(url_input)) {
+                alert('Unable to retrieve the original URL')
+            } else {
+                $('input[type=text]').val(buildUrl(url_input))
+            }
+			
+        }
+		
+    });
+    $('input[name=encode]').click(function() {
+        url_input = $('input[type=text]').val();
+        if (validate_url(url_input)) {
+            url_input = grabUserUrl(url_input);
+			
+			
+			
+            if (url_input == "" || url_input == false || !validate_url(url_input)) {
+                alert('Unable to retrieve the original URL')
+            } else {
+                $('input[type=text]').val(buildUrl(url_input))
+            }
+        }
+    });
+    $('input[type=text]').click(function() {
+        if (anonym_autocheck($(this).val())) {
+            $(this).select()
+        }
+    });
+    $('#anonym').submit(function() {
+        url_input = $('input[type=text]').val();
+        if (validate_url(url_input)) {
+            url_input = grabUserUrl(url_input);
+            if (url_input == "" || url_input == false || !validate_url(url_input)) {
+                alert('Unable to retrieve the original URL')
+            } else {
+                if (anonym_autocheck(url_input)) {
+                    alert('You can\'t  anonymize this URL')
+                } else {
+                    $('input[type=text]').val(buildUrl(url_input))
+                }
+            }
+        } else {
+            alert('Enter a valid URL')
+        }
+        return false
+    })
+});
+
+</script>
+<style type="text/css">
+#navbar-iframe {
+height:0px;
+visibility:hidden;
+display:none
+}
+body {
+font-family: Lucida Sans, Verdana, Geneva, sans-serif;
+font-size: 1.1em;
+color: #FFF;
+text-align:center;
+background: #404040;
+}
+
+h1 {
+margin-top:80px;
+}
+		
+#container {
+width:800px;
+margin:0 auto;
+background: #292929;
+line-height: 2.4;
+padding: 1em;
+margin-top:35px;
+max-width:800px;
+}
+
+#container .form {
+display:none;
+margin-bottom:20px;
+}
+
+input[type=text] {
+border:1px solid #666;
+padding:8px 5px;
+font-family: Lucida Sans, Verdana, Geneva, sans-serif;
+font-size:14px;
+width:650px
+}
+
+input[type=submit]{
+padding:7px 9px;
+font-family: Lucida Sans, Verdana, Geneva, sans-serif;
+}
+
+p#url {
+margin-bottom:35px;
+line-height:24px;
+width:780px;
+max-width:780px;
+}
+
+p#url a{
+font-family:Tahoma, Geneva, sans-serif;
+color:#FF8301;
+width:780px;
+max-width:780px;
+}
+p#footer{
+	padding:2px 10px;
+	color:#FFF;
+	font-weight:700;
+	width:240px;
+	text-align:center;
+	margin:0 auto;
+}
+p#footer a {
+	color:#FFF;
+	text-decoration:none;
+}
+
+hr {
+	margin-bottom:15px;
+}
+</style>
+<link rel="me" href="https://plus.google.com/+ErickOspino">
+<link rel="openid.server" href="https://www.blogger.com/openid-server.g">
+<!-- --><style type="text/css">@import url(https://www.blogger.com/static/v1/v-css/navbar/3334278262-classic.css);
+div.b-mobile {display:none;}
+</style>
+
+<style>.gc-bubbleDefault{background-color:transparent !important;text-align:left;padding:0 !important;margin:0 !important;border:0 !important;table-layout:auto !important}.gc-reset{background-color:transparent !important;border:0 !important;padding:0 !important;margin:0 !important;text-align:left}.pls-bubbleTop{border-bottom:1px solid #ccc !important}.pls-topTail,.pls-vertShimLeft,.pls-contentLeft{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/border_3.gif) !important}.pls-topTail{background-repeat:repeat-x !important;background-position:bottom !important}.pls-vertShim{background-color:#fff !important;text-align:right}.tbl-grey .pls-vertShim{background-color:#f5f5f5 !important}.pls-vertShimLeft{background-repeat:repeat-y !important;background-position:right !important;height:4px}.pls-vertShimRight{height:4px}.pls-confirm-container .pls-vertShim{background-color:#fff3c2 !important}.pls-contentWrap{background-color:#fff !important;position:relative !important;vertical-align:top}.pls-contentLeft{background-repeat:repeat-y;background-position:right;vertical-align:top}.pls-dropRight{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropR_3.png) !important;background-repeat:repeat-y !important;vertical-align:top}.pls-vert,.pls-tailleft,.pls-dropTR .pls-dropBR,.pls-dropBL,.pls-vert img{vertical-align:top}.pls-dropBottom{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropB_3.png) !important;background-repeat:repeat-x !important;width:100%;vertical-align:top}.pls-topLeft{background:inherit !important;text-align:right;vertical-align:bottom}.pls-topRight{background:inherit !important;text-align:left;vertical-align:bottom}.pls-bottomLeft{background:inherit !important;text-align:right}.pls-bottomRight{background:inherit !important;text-align:left;vertical-align:top}.pls-tailtop,.pls-tailright,.pls-tailbottom,.pls-tailleft{display:none;position:relative}.pls-tailbottom,.pls-tailtop,.pls-tailright,.pls-tailleft,.pls-dropTR,.pls-dropBR,.pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite_3.png) !important;background-repeat:no-repeat}.tbl-grey .pls-tailbottom,.tbl-grey .pls-tailtop,.tbl-grey .pls-tailright,.tbl-grey .pls-tailleft,.tbl-grey .pls-dropTR,.tbl-grey .pls-dropBR,.tbl-grey .pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite-grey.png) !important}.pls-tailbottom{background-position:-23px 0}.pls-confirm-container .pls-tailbottom{background-position:-23px -10px}.pls-tailtop{background-position:-19px -20px}.pls-tailright{background-position:0 0}.pls-tailleft{background-position:-10px 0}.pls-tailtop{vertical-align:top}.gc-bubbleDefault td{line-height:0;font-size:0}.pls-topLeft img,.pls-topRight img,.pls-tailbottom{vertical-align:bottom}.pls-bottomLeft img,.bubbleDropTR,.pls-dropBottomL img,.pls-dropBottom img,.pls-dropBottomR img,.pls-bottomLeft{vertical-align:top}.pls-dropTR{background-position:0 -22px}.pls-dropBR{background-position:0 -27px}.pls-dropBL{background-position:0 -16px}.pls-spacertop,.pls-spacerright,.pls-spacerbottom,.pls-spacerleft{position:static !important}.pls-spinner{bottom:0;position:absolute;left:0;margin:auto;right:0;top:0} </style></head>
+
+<body><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="" tabindex="0" vspace="0" width="100%" id="navbar-iframe" name="navbar-iframe" src="./navbar.html"></iframe></div>
+<script type="text/javascript" src="./plusone.js.descarga" gapi_processed="true"></script>
+<script type="text/javascript">
+      gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+        if (gapi.iframes && gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: 'https://www.blogger.com/navbar.g?targetBlogID\x3d8621916378952785182\x26blogName\x3dAnonymixer\x26publishMode\x3dPUBLISH_MODE_BLOGSPOT\x26navbarType\x3dBLUE\x26layoutType\x3dCLASSIC\x26searchRoot\x3dhttp://anonymixer.blogspot.com/search\x26blogLocale\x3des\x26v\x3d2\x26homepageUrl\x3dhttp://anonymixer.blogspot.com/?m%3D0\x26vt\x3d6152520488006436383',
+              where: document.getElementById("navbar-iframe-container"),
+              id: "navbar-iframe"
+          });
+        }
+      });
+    </script>
+
+	<h1>Anonymixer</h1>
+	<div id="container">
+    	<noscript>
+        	&lt;style&gt;.goto,.form {display:none;} h3 {color:#F90; padding:0;margin:0;}&lt;/style&gt;
+            &lt;h3&gt;You must have JavaScript enabled to view this site&lt;/h3&gt;
+            &lt;h3&gt;Debes tener JavaScript activado para ver este sitio&lt;/h3&gt;
+        </noscript>
+    	<div class="goto">
+            <p><span id="lg-1">Please click the link below</span> ...<br>
+            <span id="lg-2">Bitte klicken Sie auf den untenstehenden Link</span> ...<br>
+            <span id="lg-3">Haga click derecho en el enlace de abajo, seleccione "Guardar enlace como" y listo.</span> ...</p>
+            <p id="url"><script>document.write('<a href="'+mainUrl+'" class="link" title="Go Home">'+mainUrl+'</a>');</script><a href="http://mp3.zing.vn/html5/song/LmJGtSbWZCRayZDJtFmZn" class="link" title="Go Home">http://mp3.zing.vn/html5/song/LmJGtSbWZCRayZDJtFmZn</a></p>
+        </div>
+        <div class="form">
+        	<form action="http://anonymixer.blogspot.com/?refresh=false&amp;rm=false&amp;m=0&amp;to=http://mp3.zing.vn/html5/song/LmJGtSbWZCRayZDJtFmZn" method="get" id="anonym">
+        		<label>Enter the URL</label><br>
+            	<input type="text" id="to" name="to">
+            	<input type="submit" value="Anonym It"><br>
+                <input type="checkbox" name="refresh" id="goto" value="false"> <label for="goto"><small>Do you want the user clicks on the link? (They not will be redirected automatically)</small></label><br>
+				<input type="checkbox" name="encode" id="encode"> <label for="encode"><small>Do you want to encode the link? (The decode version will show in the click or redirect page)</small></label>
+            </form>
+        </div>
+		<hr>
+		<p id="footer"><script>document.write('<a href="'+mainUrl+'" title="Go Home">Free Anonym</a>');</script><a href="http://anonymixer.blogspot.com/" title="Go Home">Free Anonym</a></p>		
+	</div>
+
+
+</body></html>

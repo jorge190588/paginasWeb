@@ -19,6 +19,8 @@ var client = mysql.createClient({
 
 client.database = 'juegos';
 
+//FUNCION PRINCIPAL
+
 app.get('/', function(req, res) {
 	
 	client.query('SELECT id, nombre, tipo FROM juegos',
@@ -32,6 +34,8 @@ app.get('/', function(req, res) {
 		);
 });
 
+
+//FUNCION PRINCIPAL SE TOMO PARA CREAR OTRA FUNCION DIFERENTE
 app.get('/crear', function(req, res) {
 	
 	client.query('SELECT id, nombre, tipo FROM juegos',
@@ -45,6 +49,7 @@ app.get('/crear', function(req, res) {
 		);
 });
 
+//FUNCION PARA MOSTRAR DATOS DE JUEGO
 app.get('/jugar', function(req, res) {
 	
 	client.query('SELECT id, nombre, tipo FROM juegos',
@@ -58,26 +63,30 @@ app.get('/jugar', function(req, res) {
 		);
 });
 
-app.get('/parrafo', function(req, res) {
+
+
+//FUNCION PARA MOSTRAR DATOS DE LOS PARRAFOS
+app.get('/parrafo/:idJuego', function(req, res) {
 	
+	var idJuego = req.params.idJuego;
+	console.log(idJuego);
 	client.query('SELECT id, parrafo, pregunta, respuesta1, respuesta2, idjuego FROM parrafos',
 			function selectCb(err, results, fields) {
 				if (err) {
 					throw err;					
 				}
-
-				res.render('parrafo.jade', { parrafos: results });
+				//console.log(results);
+				res.render('parrafo.jade', { parrafos: results , idJuego : idJuego});
 			}
 		);
 });
-//enviar base datos
+//FUNCION PARA ENVIAR DATOS DE JUEGO A BASE DE DATOS
 
 app.post('/nueva', function(req, res) {
 
 	client.query('INSERT INTO juegos (nombre, tipo) VALUES (?, ?)', [req.body.nombre, req.body.tipo],
 			function() {
 				res.redirect('/crear');
-
 			}
 		);
 });
@@ -87,26 +96,10 @@ app.post('/nuevaparrafo', function(req, res) {
 
 	client.query('INSERT INTO parrafos (parrafo, pregunta, respuesta1, respuesta2, idjuego) VALUES (?, ?, ?, ?, ?)', [req.body.parrafo, req.body.pregunta, req.body.respuesta1, req.body.respuesta2, req.body.idjuego],
 			function() {
-				res.redirect('/parrafo.jade');
+				res.redirect('/');
 			}
 		);
 });
-
-//funcion obtener id del juego de la base de datos
-app.get('/codigo', function(req, res) {
-	
-	client.query('SELECT id, nombre, tipo FROM juegos',
-			function selectCb(err, results, fields) {
-				if (err) {
-					throw err;					
-				}
-				//res.send(results)
-				res.render('parrafo.jade', { juegos: results});
-			}
-		);
-});
-
-
 
 
 // funciones editar, actualizar y elminiar
@@ -166,7 +159,7 @@ app.get('/mostrarjuego/:idjuego/:idPregunta', function(req, res) {
 					res.render('mostrarjuego.jade', { juego: results[0] , idJuego: idJuego ,siguientePregunta : siguientePregunta}); 
 
 				else
-					res.send("Fin del juego");
+					res.send("<h1>Juego Finalizado</h1>");
 				
 
 			}
