@@ -1,0 +1,67 @@
+extends layout
+block content
+    div.container
+        div.row
+            div.col-xs-12
+                nav(class="navbar navbar-default navbar-fixed-top color")
+                    label.texto-login Di Facebook
+                    div.row
+                        div.col-xs-12.col-sm-5.col-sm-offset-6
+                            div(class="margen")
+                                div.panel.panel-primary.center-block.color
+                                    div.panel-body.margen-login      
+                                        form(action='', method='post',class="form-inline")
+                                            div(class="form-group")
+                                                h4.text.color NOMBRE
+                                                input(type='text',class=['form-control', 'ident'],name="nombre",placeholder="NOMBRE")
+                                            span                 
+                                            div(class="form-group")
+                                                h4.text.color PASSWORD
+                                                input(type='text',class=['form-control'],name="password",placeholder="PASSWORD")  
+                                                div(class='form-group') 
+                                                span 
+                                                a(href="/",class=['btn','btn-primary']) ENTRAR
+                                                
+                div.row             
+                    div.col-xs-12.col-sm-6.primerbloque
+                        form(action='' method='post')
+                            div.form-group
+                                label.texto-primer-bloque INGRESA TU CODIGO DE ACCESO
+                                input(type='text',class=['form-control'],name="carnet",placeholder="CODIGO") 
+                            a(href="/jugando/",class=['btn','btn-primary']) EMPEZAR  
+                    form(action='' method='post')
+                        div.col-xs-12.col-sm-6.segundobloque
+                            h1 ABRE UNA CUENTA
+                            div(class="form-inline")
+                                div.row
+                                    div.col-xs-12.col-sm-6
+                                        div(class="form-group")
+                                            h4.text NOMBRES
+                                            input(type='text',class=['form-control'],name="nombre",placeholder="NOMBRE")
+                                    div.col-xs-12.col-sm-6               
+                                        div(class="form-group")
+                                            h4.text APELLIDOS
+                                            input(type='text',class=['form-control'],name="apellidos",placeholder="APELLIDOS")
+                                br
+                            div.col-xs-12.col-sm-12
+                                div.form-group
+                                    input(type='text',class=['form-control'],name="correo",placeholder='Correo electrónico')
+                                div.form-group
+                                    input(type='text',class=['form-control'],name="pase",placeholder='Contraseña nueva')
+                            div.col-xs-12.col-sm-12                        
+                                div(class="form-inline")
+                            div.col-xs-12.col-sm-6                                                
+                                        div(class="form-group")
+                                            div.input-group 
+                                                h4.text-primary Hombre 
+                                                span.input-group
+                                                input(type='radio',name='radioOption')
+                            div.col-xs-12.col-sm-6            
+                                        div(class="form-group")
+                                            div.input-group
+                                                h4.text-primary Mujer 
+                                                span.input-group
+                                                input(type='radio',name='radioOption')
+                                                br
+                                                br
+                            button(type='submit', class=['btn','btn-primary']) Abrir una cuenta

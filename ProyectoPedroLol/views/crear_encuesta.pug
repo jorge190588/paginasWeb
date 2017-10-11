@@ -1,0 +1,24 @@
+extends layout
+block content    
+    div.container
+        div.row
+            div.col-xs-12
+                br
+                div.jumbotron.color
+                    h1= title 
+                        div.col-xs-12.col-sm-6.col-sm-offset-3.margencrear 
+                            div.panel.panel-primary
+                                div.panel-heading  
+                                    h2 TITULO
+                                        div.panel-body
+                                            form(action='/guardar_encuesta',method='post')
+                                                input(type='text',class=['form-control'],name="titulo",placeholder="TITULO")
+                                                h4 DESCRIPCION
+                                                textarea(type='text',class=['form-control'],name="descripcion",placeholder="DESCRIPCION")
+                                                h4 CODIGO ACCESO
+                                                input(type='text',class=['form-control'],name="acceso",placeholder="INGRESE EL CODIGO ACCESO")  
+                                                br
+                                                div.panel-footer-primary
+                                                    button(type='submit', class=['btn','btn-success']) GUARDAR
+                                                    span 
+                                                    input(type='reset', class=['btn','btn-warning'] , value="CANCELAR")

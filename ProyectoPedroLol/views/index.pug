@@ -1,0 +1,29 @@
+extends layout
+block content    
+    div.container
+        div.row
+            br
+            div.col-xs-12
+                div.jumbotron.color
+                    h1= title
+                    a(href="/crear_encuesta/",class=['btn','btn-danger']) CREAR ENCUESTA
+                if (data.length != 0)
+                    each encuesta in data
+                        div.col-xs-12.col-sm-6
+                            div.panel.panel-primary
+                                div.panel-heading #{encuesta.TITULO}
+                                a(href="/detalles/",class=['btn','btn-default','btn-block'])
+                                    div.panel-body
+                                        p CODIGO ACCESO: 
+                                            span.label.label-info #{encuesta.CODIGO_ACCESO}
+                                        p DESCRIPCION: 
+                                            p #{encuesta.DESCRIPCION}
+                                div.panel-footer
+                                    form(action='/eliminar_encuesta/'+encuesta.ID,method='post', class='inline-form')
+                                        a(href="/editar/"+encuesta.ID,class=['btn','btn-warning']) EDITAR
+                                        span                                      
+                                        button(type='submit',class=['btn','btn-danger']) ELIMINAR
+                                        span 
+                                        a(href="/preguntas/"+encuesta.ID,class=['btn','btn-primary']) INGRESAR PREGUNTAS             
+                else 
+                    p no hay registros en la bd 

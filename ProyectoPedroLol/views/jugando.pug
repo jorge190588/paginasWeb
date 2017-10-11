@@ -1,0 +1,30 @@
+extends layout
+block content    
+    div.container
+        div.row
+            br
+            div.col-xs-12
+                div.jumbotron.color
+                    h1= title
+            div.col-xs-12.col-sm-6.col-sm-offset-3        
+                    div.panel.panel-primary.center-block
+                        div.panel-body
+                            form(action='',method='post')
+                                h3.text-warning RESPUESTAS
+                                div.input-group
+                                    span.input-group-addon
+                                        button(type='submit', class=['btn','btn-primary','btn-block']) 1 
+                                        span 
+                                    h4 RESPUESTA 1
+                                div.input-group
+                                    span.input-group-addon
+                                        button(type='submit', class=['btn','btn-primary','btn-block']) 2
+                                    h4 RESPUESTA 2
+                                div.input-group
+                                    span.input-group-addon
+                                        button(type='submit', class=['btn','btn-primary','btn-block']) 3
+                                    h4 RESPUESTA 3
+                                div.input-group
+                                    span.input-group-addon
+                                        button(type='submit', class=['btn','btn-primary','btn-block']) 4
+                                    h4 RESPUESTA 4

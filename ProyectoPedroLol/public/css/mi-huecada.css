@@ -1,0 +1,54 @@
+.color{   
+    background: #5cb85c;
+    color: white;  
+    text-align: start;
+    text-align: initial;
+    margin-top: 5px;
+    padding-top: 5px;   
+}
+
+.margen{
+    margin-top: -35px;
+    padding-top: -35px;
+}
+
+.margen-login{
+    margin-top: -20 px;
+    padding-top: 0px;
+    margin-block-start: -5px;
+    margin-block-end: 5px;
+
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.primerbloque{
+    margin-top: 225px;
+    padding-top: 100px;
+}
+
+.texto-primer-bloque{
+    font-size: 25px;
+    text-align: center;
+}
+
+.margencrear{
+    margin-top: 40px;
+    padding-top: 75px;
+    
+}
+
+.segundobloque{
+    margin-top: 100px;
+    padding-top: 100px;
+}
+
+.texto-login{
+    font-size: 75px;
+    margin-top: -25px;
+    padding-top: -100px;
+}

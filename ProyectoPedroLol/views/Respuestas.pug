@@ -1,0 +1,33 @@
+extends layout
+block content    
+    div.container
+        div.row
+            br
+            div.col-xs-12
+                div.jumbotron.color
+                    h1 INGRESANDO RESPUESTAS
+                div.col-xs-12.col-sm-6.col-sm-offset-3        
+                    div.panel.panel-primary.center-block
+                        div.panel-body
+                            form(action='',method='post')
+                                h3.text-warning RESPUESTAS
+                                div.input-group
+                                    span.input-group-addon
+                                        input(type='radio',name='radioOption')
+                                    input(type='text',class=['form-control'],name="respuesta1",placeholder="INGRESE LA RESPUESTA 1")
+                                div.input-group
+                                    span.input-group-addon
+                                        input(type='radio',name='radioOption')
+                                    input(type='text',class=['form-control'],name="respuesta2",placeholder="INGRESE LA RESPUESTA 2")
+                                div.input-group
+                                    span.input-group-addon
+                                        input(type='radio',name='radioOption')
+                                    input(type='text',class=['form-control'],name="respuesta3",placeholder="INGRESE LA RESPUESTA 3")
+                                div.input-group
+                                    span.input-group-addon
+                                        input(type='radio',name='radioOption')
+                                    input(type='text',class=['form-control'],name="respuesta4",placeholder="INGRESE LA RESPUESTA 4")
+                                div.panel-footer 
+                                    input(type='reset', class=['btn','btn-warning'] , value="CANCELAR")
+                                    span 
+                                    button(type='submit', class=['btn','btn-success ']) GUARDAR                            

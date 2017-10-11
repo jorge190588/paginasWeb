@@ -1,0 +1,40 @@
+extends layout
+block content    
+    div.container
+        div.row
+            br
+            div.col-xs-12
+                div.jumbotron.color
+                    h1= title 
+                div.col-xs-12.col-sm-6.col-sm-offset-3        
+                    div.panel.panel-primary.center-block
+                        form(method='post', action='/guardar_pregunta')
+                            input(type='hidden', name='id_encuesta', value=id_encuesta)
+                            div.panel-body  
+                                h2.text-info PREGUNTA  
+                                textarea(rows='2',class=['form-control'],name="pregunta",placeholder="INGRESE SU PREGUNTA")
+                            div.panel-footer 
+                                button(type='submit', class=['btn','btn-success ']) GUARDAR
+                                span 
+                                input(type='reset', class=['btn','btn-warning'] , value="CANCELAR")
+                table.table
+                    thead
+                        tr
+                            th Titulo Encuesta
+                            th Preguntas
+                            th Acciones
+                    tbody
+                        if (data.length != 0)
+                            each preguntas in data
+                                tr
+                                    td #{preguntas.TITULO}
+                                    td #{preguntas.PREGUNTA}
+                                    td
+                                        form(action='/eliminar_preguntas/',+pregunta.ID,method='post', class='inline-form') 
+                                            button(type='submit',class=['btn','btn-danger']) ELIMINAR
+                                            span 
+                                            a(href="/Respuestas/",class=['btn','btn-primary']) INGRESAR RESPUESTAS
+                        else
+                            tr
+                                td 
+                                    div.well No hay preguntas ingresadas
