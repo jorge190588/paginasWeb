@@ -9,8 +9,11 @@
   "author": "Denis Rosales",
   "license": "MIT",
   "dependencies": {
+    "bootstrap-material-design": "^4.0.0-beta.3",
     "chai": "^4.1.1",
     "express": "^4.15.3",
-    "pug": "^2.0.0-rc.2"
+    "material-design-icons": "^3.0.1",
+    "pug": "^2.0.0-rc.2",
+    "pug-material": "^1.0.1"
   }
 }

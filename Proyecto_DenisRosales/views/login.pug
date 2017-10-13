@@ -1,28 +1,16 @@
-doctype html
-html
-  head
-    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css')
-    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
-    script(type='text/javascript', src='https://code.jquery.com/jquery-2.1.1.min.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title LOGIN
+  extends ../Proyecto_DenisRosales/views/template/layout
+title LOGIN
+block content
+
     .container
-      style.
-        body{
-        background-image:url('imagenes/fondocolores.gif');
-        background-position: center;
-        }
-  body
-    .container
-      h3.center
+      h1.center
         font(color='#FF8000', size='10') CIERTO O FALSO!!!
       p.center
         font(color='#01DF01', size='4')
           | El juego consiste en decidir si es falso o verdadero, nos ayuda a aprender y a tomar decisiones.
       .row
         .input-field.col.s6
-          i.material-icons.prefix account_circle
+          i.material-icons.prefix usuario
           input#Usuario.validate(type='text', style='color:aqua')
           label(for='usuario') Usuario
       .row
@@ -47,5 +35,3 @@ html
                 | REGISTRATE
                 br
                 | NO TIENES UNA CUENTA?
-    script(type='text/javascript', src='https://code.jquery.com/jquery-2.1.1.min.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js')
