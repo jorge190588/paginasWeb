@@ -1,0 +1,61 @@
+doctype html
+html
+  head
+    title LISTA DE JUEGOS
+    |         
+    link(href='/stylesheets/bootstrap.css', rel='stylesheet')
+  body
+    .container
+      style.
+        body{
+        background-image:url('/mipagina/imagenes/azul.jpg');
+        background-position: center;
+        }
+    |     
+    |     
+    |             
+    nav#menu.navbar.navbar-toggleable-md.navbar-inverse.bg-primary.navbar-fixed-top(role='navigation')
+      .container-fluid
+        a.navbar-brand(href='/mipagina/vistas/listaJuegos.html') INICIO
+        |             
+        |              
+        ul.nav.navbar-nav.navbar-right
+          li.dropdown
+            a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+              | OPCIONES 
+              span.caret
+            |                          
+            ul.dropdown-menu
+              li
+                a(href='#') perfil
+              |                              
+              li
+                a(href='#') otra accion
+              |                              
+              li.divider(role='separator')
+              |                              
+              li
+                a(href='/mipagina/vistas/login.html') Salir
+    |  
+    br
+    br
+    |         
+    .container
+      .row
+        .col-md-8.col-md-offset-2
+          .jumbotron.jumbotron-fluid
+            h1.display-3 PREGUNTA!!!
+            |             
+            p.lead DOS ES UN NUMERO PAR?.
+            |             
+            hr.my-4
+            |            
+            |             
+            p.lead
+              a.btn.btn-primary.btn-lg(href='/mipagina/vistas/gameindividual.html', role='button') CIERTO
+              |               
+              a.btn.btn-danger.btn-lg(href='/mipagina/vistas/gameindividual.html', role='button') FALSO
+    |           
+    script(src='/javascripts/jquery.js')
+    |           
+    script(src='/javascripts/bootstrap.js')

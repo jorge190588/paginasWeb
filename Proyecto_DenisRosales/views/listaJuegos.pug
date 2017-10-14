@@ -2,7 +2,7 @@ doctype html
 html
   head
     title LISTA DE JUEGOS
-    link(href='/css/bootstrap.min.css', rel='stylesheet')
+    link(href='/stylesheets/bootstrap.css', rel='stylesheet')
     .container
       style.
         body{
@@ -116,8 +116,8 @@ html
           button.btn.btn-danger(type='button', data-dismiss='modal') Cancelar
           a(href='/crearJuego')
             button#btnGuardar.btn.btn-primary(type='button') Guardar Nombre
-    script(src='/js/jquery.min.js')
-    script(src='/js/bootstrap.min.js')
+    script(src='/javascripts/jquery.min.js')
+    script(src='/javascripts/bootstrap.min.js')
   script.
     $(function(){
     $('#btnGuardar').click(function(){

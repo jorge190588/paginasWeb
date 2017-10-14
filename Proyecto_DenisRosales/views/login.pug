@@ -1,37 +1,73 @@
-  extends ../Proyecto_DenisRosales/views/template/layout
-title LOGIN
-block content
-
+doctype html
+html
+  head
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css')
+    |        
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    |        
+    script(type='text/javascript', src='https://code.jquery.com/jquery-2.1.1.min.js')
+    |        
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js')
+    |        
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    |             
+    title LOGIN
+  body
     .container
-      h1.center
+      style.
+        body{
+        background-image:url('/mipagina/imagenes/fondocolores.gif');
+        background-position: center;
+        }
+    |   
+    |     
+    |   
+    .container
+      h3.center
         font(color='#FF8000', size='10') CIERTO O FALSO!!!
+      |     
       p.center
         font(color='#01DF01', size='4')
           | El juego consiste en decidir si es falso o verdadero, nos ayuda a aprender y a tomar decisiones.
+      |    
+      |         
       .row
         .input-field.col.s6
-          i.material-icons.prefix usuario
+          i.material-icons.prefix account_circle
+          |             
           input#Usuario.validate(type='text', style='color:aqua')
+          |             
           label(for='usuario') Usuario
+      |         
       .row
         .input-field.col.s6
           i.material-icons.prefix email
+          |             
           input#email.validate(type='email', style='color:aqua')
+          |             
           label(for='email', data-error='email incorrecto', data-success='email valido') Email
+      |           
       .row
         .input-field.col.s6
           i.material-icons.prefix lock
+          |             
           input#password.validate(type='password', style='color:aqua')
+          |             
           label(for='password') Password
-      
-      div(class="container-fluid")
-        div(class="row")
-          div(class="col s3")
-            a(href='/listaJuegos')
-              button.btn.btn-primary(type='button') INICIAR SESION
-          div(class="col s3")
-            a(href='/crearUsuario')
-              button.btn.btn-primary(type='button')
-                | REGISTRATE
-                br
-                | NO TIENES UNA CUENTA?
+      |         
+      .row
+        a(href='/mipagina/vistas/listaJuegos.html')
+          button.btn.btn-primary(type='button') INICIAR SESION
+        |             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        |             
+        a(href='/mipagina/vistas/crearUsuario.html')
+          button.btn.btn-primary(type='button')
+            | REGISTRATE
+            br
+            | NO TIENES UNA CUENTA?
+    |                
+    |   
+    |        
+    script(type='text/javascript', src='https://code.jquery.com/jquery-2.1.1.min.js')
+    |        
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js')
