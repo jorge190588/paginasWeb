@@ -4,8 +4,8 @@
   "description": "En este proyecto desarrollaremos un proyecto web con NODEJS, SOCKET.IO, MYSQL y Express",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "test": "mocha",
+    "start": "nodemon app.js"
   },
   "author": "Elvin Morales <elvinmorales48@gmail.com>",
   "license": "MIT",
@@ -14,13 +14,18 @@
     "chai": "^4.1.1",
     "express": "^4.15.3",
     "express-session": "^1.15.4",
+    "formidable": "^1.1.1",
+    "googleapis": "^20.1.0",
     "moment": "^2.18.1",
-    "morgan": "^1.8.2",
     "mysql": "^2.13.0",
     "pug": "^2.0.0-rc.2",
-    "serve-favicon": "^2.4.3"
+    "serve-favicon": "^2.4.3",
+    "socket.io": "^2.0.3"
   },
   "engines": {
     "node": "6.11.0"
+  },
+  "devDependencies": {
+    "supervisor": "^0.12.0"
   }
 }

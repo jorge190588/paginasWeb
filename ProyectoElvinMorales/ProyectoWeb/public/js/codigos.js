@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    
     function enabledLogin(){
         if($('#username').val() != "" && $('#password').val() != ""){
             $('#btn_continue').removeAttr('disabled');
@@ -62,7 +63,7 @@ $(document).ready(function(){
     //verificamos cada ves que se teclea en el campo de comentario
     $('#comment').keyup(enabledComment);
 
-    $('#btnComentar, #btnComentar_xs').on('click', function(){
+    /*$('#btnComentar, #btnComentar_xs').on('click', function(){
         $.ajax({
             data: $('#formDataComment').serialize(),
             url: '/comentar',
@@ -71,12 +72,18 @@ $(document).ready(function(){
                 $('#comment').val('');
             }
         });
-    });
+    });*/
 
     //metodos para agregar un nuevo video y su funcionalidad dinamica
     $('input[type=radio][name=categoria]').on('click', function(){
         $("#soloCategorias").slideUp('slow');
         $("#masDatos").slideDown('slow');
+    });
+
+    //metodo para regresar a seleccionar las categorias
+    $('#btn_back_categoria').on('click',function(){
+        $("#soloCategorias").slideDown('slow');
+        $("#masDatos").slideUp('slow');
     });
 
     //metodo para eliminar una publicacion
@@ -89,5 +96,14 @@ $(document).ready(function(){
     $('.nav-tabs a').click(function (e) {
         e.preventDefault();
         $(this).tab('show');
+    });
+
+    $('#btn_categoria_all').on('click', function(){
+        
+    });
+
+    $('#search_str').on('click', function(){
+        var string = $('#search').val();
+        console.log(string);
     });
 });

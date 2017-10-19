@@ -1,4 +1,4 @@
-nav(class=['navbar','navbar-personalizado'])
+nav(class=['navbar','navbar-personalizado','navbar-fixed-top'])
     div.container
         div(class="navbar-header")
             button(class="navbar-toggle", data-toggle="collapse", data-target="#menu")
@@ -8,14 +8,16 @@ nav(class=['navbar','navbar-personalizado'])
             a(href="/inicio", class=["navbar-brand","link-personalizado"]) UMGTeam
         div(class=['collapse','navbar-collapse'], id="menu")
             ul(class=['nav','navbar-nav','navbar-right','nav-personalizado'])
-                li
-                    a(href="/inicio") Inicio
-                li
-                    a(href="/perfil") #{user}
-                li
-                    a(href="/logout") Desconectarse
+                li: a(href="/inicio") Inicio
+                li: a(href="/message") Usuarios: 
+                    span#usersOnline
+                li: a(href="/perfil") 
+                    div.app-userActive
+                        figure.app-activado
+                            img(src=`/image/avatars/${avatar}` class="img-responsive img-circle")
+                        span #{user}
+                li: a(href="/logout") Desconectarse
 section(class=['app-principal'])
     div.container
         h1= title
         p Sube tu video para que el UMGteam vea tu trabajo!!
-    

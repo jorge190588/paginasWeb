@@ -1,9 +1,10 @@
 body{
+    background-color: #E7E7DE;
     padding-bottom: 70px;
 }
 
 .navbar-personalizado{
-    background-color: #0e7ac4;
+    background-color: #00587A;
     border-radius: 0;
     margin-bottom: 0;
 }
@@ -23,7 +24,26 @@ body{
 }
 
 .nav-personalizado>li>a:hover{
-    background-color: #0e68b8;
+    background-color: #34495e;
+}
+
+/** avatar navbar **/
+.app-userActive{
+    width: 100%;
+    height: 20px;
+}
+
+.app-activado{
+    width: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-top: -0.3em;
+}
+
+.avatar{
+    height:106px;
+    width:106px;
 }
 
 .app-bar{
@@ -31,7 +51,8 @@ body{
 }
 
 .app-principal{
-    background: #0e7ac4;
+    margin-top: 50px;
+    background: #00587A;
     color: white;
     text-align: center;
 }
@@ -131,7 +152,7 @@ body{
 }
 
 .app-footer{
-    background-color: #0e7ac4;
+    background-color: #00587A;
     color: white;
     font-size: 20px;
     text-align: center;
@@ -211,4 +232,175 @@ body{
     box-sizing: border-box;
     text-align: center;
     vertical-align: middle;
+}
+
+/*Categorias*/
+.card-categoria {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    background-color: white;
+}
+
+.title-categoria {
+    color: grey;
+    font-size: 18px;
+    padding-bottom: 1.5em;
+    margin-top: -0.1em;
+}
+
+.search {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 10px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    margin-top: -0.5em;
+    margin-bottom: 0.5em;
+}
+
+.search_btn {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('/image/search.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    margin-top: -0.5em;
+    margin-bottom: 0.5em;
+}
+
+/*login*/
+.btn-login{
+    background-color: #e67e22;
+    color: white;
+}
+
+.btn-login:hover{
+    background-color: #d35400;
+    color: white;
+}
+
+.btn-signin{
+    background-color: #1abc9c;
+    color: white;
+}
+
+.btn-signin:hover{
+    background-color: #16a085;
+    color: white;
+}
+
+.app-login{
+    background: #00587A;
+    color: white;
+    text-align: center;
+}
+
+/*float button*/
+.floatbutton{
+    height: 60px;
+    width: 60px;
+    color: white;
+    background-color: #e67e22;
+    box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 1em;
+    position: fixed;
+    bottom: 2%;
+    right: 0%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+}
+
+.floatbutton_icon{
+    font-size: 2em;
+}
+
+.floatbutton:hover{
+    background-color: #d35400;
+    color: white;
+    cursor: pointer;
+}
+
+/*MESSAGES*/
+.chat-messages{
+    height: 380px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.chat-messages .chat{
+    padding: 1em;
+    font-size: 1.2em;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+}
+
+.chat .chat-content .messages{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    background: white;
+    padding: 1em;
+    padding-bottom: 1.5em;
+    box-shadow: 2px 2px 20px -2px rgba(60,51,176,0.2);
+    color: rgba(60,51,176,1);
+    border-radius: 1.5em;
+    margin-bottom: 0.2em;
+}
+
+.chat .chat-content .messages .time{
+    position: absolute;
+    display: block;
+    right: 0;
+    margin-top: 3px;
+    margin-right: 15px;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(60,51,176,0.5);
+}
+
+.enter-message{
+    font-size: 14px;
+    color: #8e44ad;
+    box-shadow: 0px 0px 5px #333;    
+}
+
+/* COMMENTS */
+.comentarios{
+    background-color: #eee;
+}
+
+.contenido{
+    background-color: white;
+	border-radius: 5px;
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+	display: inline-block;
+	font-size: 14px;
+	padding: 15px;
+	vertical-align: top;
+}
+
+.flecha-izquierda{
+    display: inline-block;
+	margin-right: -6px;
+	margin-top: 10px;
+	width: 0; 
+	height: 0; 
+	border-top: 0px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-right: 15px solid white;
 }

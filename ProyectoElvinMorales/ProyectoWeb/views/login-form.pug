@@ -1,6 +1,6 @@
 extends layout.pug
 block content    
-    section(class=['app-principal'])
+    section(class=['app-login'])
         div.container
             h1= title
             p Sube tu video para que el UMGteam vea tu trabajo!!
@@ -38,7 +38,10 @@ block content
                                         button(class=['btn', 'btn-default','active'], type="button", id="show_pass")
                                             span(class=['glyphicon','glyphicon-eye-open'], id="icon_eye")
                         
-                            input(type="submit", id='btn_continue' disabled, class=['btn','btn-success'] value="Identificate")
+                            input(type="submit", id='btn_continue' disabled, class=['btn','btn-login'] value="Identificate")
                     div.panel-footer
                         span ¿No tienes una cuenta?  
-                        a(href="/signin", class=['btn','btn-primary']) Crear Cuenta
+                        a(href="/signin", class=['btn','btn-signin']) Crear Cuenta
+    footer(class=['app-footer','navbar-fixed-bottom'])
+            div.container
+                p Derechos Reservados @TeamUMG

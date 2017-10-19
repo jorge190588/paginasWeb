@@ -1,6 +1,6 @@
 extends layout.pug
 block content
-    section(class=['app-principal'])
+    section(class=['app-login'])
         div.container
             h1= title
             p Sube tu video para que el UMGteam vea tu trabajo!!
@@ -21,6 +21,16 @@ block content
                                         label Apellido(s)*
                                         input(type="text",class="form-control", name="last_name", placeholder="Apellido(s)", required)
                             div.form-group
+                                label Género*
+                                div.input-group
+                                    span.input-group-addon
+                                        input(type="radio" name="gender" value=1)
+                                    input(type="text" class="form-control" value="Hombre" disabled)
+                                div.input-group
+                                    span.input-group-addon
+                                        input(type="radio" name="gender" value=0)
+                                    input(type="text" class="form-control" value="Mujer" disabled)
+                            div.form-group
                                 label Correo Electrónico*
                                 div.input-group
                                     span(class=['input-group-addon'])
@@ -32,7 +42,11 @@ block content
                                     span(class=['input-group-addon'])
                                         span(class=['glyphicon','glyphicon-asterisk'])
                                     input(type="password", class=['form-control'], id="password", name="password", placeholder="Contraseña", required)
-                            input(type="submit", class=['btn','btn-success'] value="Registrar")
+                            input(type="submit", class=['btn','btn-signin'] value="Registrar")
                     div.panel-footer
                         span ¿Ya tienes una cuenta? 
-                        a(href="/login", class=['btn','btn-primary']) Inicia Sesión
+                        a(href="/login", class=['btn','btn-login']) Inicia Sesión
+                br
+    footer(class=['app-footer','navbar-fixed-bottom'])
+            div.container
+                p Derechos Reservados @TeamUMG

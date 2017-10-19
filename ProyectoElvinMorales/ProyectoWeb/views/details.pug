@@ -1,21 +1,12 @@
 extends layout.pug
 block content
     include templates/nav
-    section(class="app-subirvideo")
-        div.container
-            div.row
-                div(class=['hidden-xs','col-sm-6'])
-                    div(class=['app-datos'])
-                        div(class=['gl-usuario'])
-                            span(class=['glyphicon glyphicon-user'])
-                            span  Usuarios conectados: 
-                                span(id="usuarios_conectados" class="badge")
-                        div(class=['gl-archivos'])
-                            span(class=['glyphicon glyphicon-upload'])
-                            span  Publicaciones: 
-                                span(id="videos_subidos" class="badge")
-                div(class=['col-xs-12','col-sm-offset-2','col-sm-4'])
-                    a.button.add(href="/agregar", type="button", class=['btn','btn-subirvideo','btn-block','btn-lg']) Subir video
+    a.button.add(href="/agregar")
+        div.floatbutton
+            p.text-center
+                span(class=['glyphicon glyphicon-upload floatbutton_icon']) 
+                br
+                span video
     div.container
         div.row
             div(class=['col-xs-12'])
@@ -60,12 +51,10 @@ block content
                                         input(type='radio', name='rating', value='5')
                                         i
                             div.col-xs-12.col-sm-4
-                                div.row
-                                    div.col-xs-12.col-sm-8
-                                        h3.text-right
-                                            strong Cantidad de estrellas obtenidas
-                                    div.col-xs-12.col-sm-4
-                                        h1(id='total_votos')
+                                div.text-right
+                                    h3                                    
+                                        strong Total de votos 
+                                        span(id='total_votos')
                                             - var votos = data[0].votos
                                             if(votos == null)
                                                 span.label.label-success 0
@@ -73,28 +62,35 @@ block content
                                                 span.label.label-success #{data[0].votos}
                 div(class="well")
                     h3
+                        span.glyphicon.glyphicon-user
+                        span 
                         strong #{data[0].name} #{data[0].last_name}
-                    p Fecha Publicación: #{data[0].fecha_publicacion}
+                    h5
+                        span.glyphicon.glyphicon-time
+                        span 
+                        strong
+                            span= moment(data[0].fecha_publicacion).fromNow()
                     strong
                         p.text-danger Descripción: 
                     p #{data[0].descripcion}
-                div(class="well")
+                div(class="well comentarios")
                     div.page-header 
                         h1 Comentarios 
-                            small Escribe un comentario constructivo
+                            small Que tú comentario sea constructivo para el usuario
                     //********************Formulario para los comentarios*********************
                     div.row
                         div.col-xs-12.col-sm-6.col-sm-offset-3
-                            form(method='post', id="formDataComment")
+                            form(onsubmit="return sendComment(this)")
                                 input(type='hidden', id='id_video_comment', value=data[0].id_video, name="id_video_comment")
                                 input(type="hidden", id='id_auth_comment', value=id_auth, name="id_auth_comment")
+                                input(type="hidden", id="full_name", value=full_name, name="full_name")
                                 div.form-group
                                     label(for='comment')
                                     textarea(class='form-control', rows="3", cols="20", name="comment", id="comment")
                                 div(class=['hidden-xs','col-sm-6','col-sm-offset-3'])
-                                    button(type='button', id="btnComentar" class=['btn','btn-primary','btn-block'], disabled) Comentar
+                                    button(type='submit', id="btnComentar" class=['btn','btn-primary','btn-block'], disabled) Comentar
                                 div(class=['hidden-lg','hidden-sm'])
-                                    button(type='button', id="btnComentar_xs" class=['btn','btn-primary','btn-block'], disabled) Comentar
+                                    button(type='submit', id="btnComentar_xs" class=['btn','btn-primary','btn-block'], disabled) Comentar
 
                     //********************Fin de Formulario para los comentarios****************
                     
@@ -102,20 +98,19 @@ block content
                     br.hidden-xs
                     br.hidden-xs
                     br
-                    ul(class=['media-list'])
-                        li(class=['media media1'])
-                            div(class=['media-body'])
-                                p
-                                    strong Comentario de 
-                                        span.text-primary Elvin 
-                                        span - #{data[0].fecha_publicacion}
-                                p.well.muro-white Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, cum, ex alias unde repellendus blanditiis perspiciatis! Vero consequuntur temporibus minus tempora quo, nostrum, autem, ratione praesentium ipsa voluptates dolores, sit.
-                        li(class=['media media1'])                            
-                            div(class=['media-body'])
-                                p
-                                    strong Comentario de 
-                                        span.text-primary Elvin 
-                                        span - #{data[0].fecha_publicacion}
-                                p.well.muro-white Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, cum, ex alias unde repellendus blanditiis perspiciatis! Vero consequuntur temporibus minus tempora quo, nostrum, autem, ratione praesentium ipsa voluptates dolores, sit.
-                        
+                    ul(class=['media-list'] id="comments")
+                        if(comments.length == 0)
+                            div.well.muro-white
+                                p No hay comentarios
+                        else
+                            each messageData in comments
+                                li(class=['media media1'])
+                                    div(class=['media-body'])
+                                        p
+                                            strong Comentario de - 
+                                                span.text-primary #{`${messageData.user_name} ${messageData.user_lastName}`} 
+                                                span - 
+                                                span= moment(messageData.fecha).fromNow()
+                                        div(class="flecha-izquierda")
+                                        div.contenido #{messageData.mensaje}
                     //********************Fin de Lista de comentarios****************

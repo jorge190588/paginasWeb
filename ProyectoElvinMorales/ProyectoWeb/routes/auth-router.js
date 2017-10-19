@@ -11,6 +11,7 @@ router
     .post('/login', ac.logInPost)
     .get('/signin', ac.signInGet)
     .post('/signin', ac.signInPost)
-    .get('/logout', ac.logOut);
+    .get('/logout', ac.logOut)
+    .get('/message', ac.chat);
 
 module.exports = router;

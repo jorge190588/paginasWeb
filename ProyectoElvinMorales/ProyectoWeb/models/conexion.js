@@ -1,20 +1,21 @@
-'use strict';
+var mysql   = require('mysql');
+var config  = require('../database/db-conf');
 
-const   mysql = require('mysql'),
-        conf = require('./db-conf'),
-        dbOptions = {
-            host : conf.mysql.host,
-            user : conf.mysql.user,
-            password : conf.mysql.password,
-            port : conf.mysql.port,
-            database : conf.mysql.database
-        },
-        conn = mysql.createConnection(dbOptions);
+var dbOptions = {
+    host: config.mysql.host,
+    user: config.mysql.user,
+    password: config.mysql.password,
+    port: config.mysql.port,
+    database: config.mysql.database
+};
 
-conn.connect((error) => {
-    return (error)
-        ? console.log(`Error al conectarse a MySQL: ${error.stack}`)
-        : console.log(`Conexión establecida con MySQL N°: ${conn.threadId}`)
+var connection = mysql.createConnection(dbOptions);
+connection.connect((error)=>{
+    if(error){
+        console.log(`Error al conectarse a MySQL: ${error.stack}`)
+    }else{
+        console.log(`Conexión establecida con MySQL N°: ${connection.threadId}`)
+    }
 });
 
-module.exports = conn;
+module.exports = connection;

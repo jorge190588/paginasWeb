@@ -1,0 +1,31 @@
+extends layout
+block content
+    include templates/nav
+    div.container
+        div.row
+            div.col-xs-12.col-sm-6
+                h1 Usuarios Activos
+                ul#NicknamesUsersOnline.list-group
+            div.col-xs-12.col-sm-6
+                br
+                form(onsubmit="return sendMessage(this)")
+                    div.input-group
+                        input(type="hidden" id="id_auth" value=id_auth)
+                        input(type="text" id="message" class="form-control enter-message" planceholder="Escribe un mensaje...")
+                        span.input-group-btn
+                            button(type="submit" class="btn btn-primary")
+                                span(class="glyphicon glyphicon-send")
+                div.chat-messages
+                    div.chat
+                        div.chat-content
+                            span#messages
+    script.
+        io.on('usernames', function(username){
+            var html = '';
+            for(var i=0; i<username.length; i++){
+                html += `<li class="list-group-item"><span class="glyphicon glyphicon-user"> ${username[i]}<span></li>`;
+                console.log(username);
+            }
+            $('#NicknamesUsersOnline').html(html);
+        });
+        
