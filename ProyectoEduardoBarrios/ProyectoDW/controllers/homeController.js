@@ -20,8 +20,8 @@ class Index{
         };
 
         // almacenando el nombre del usuario en una variable de session
-        req.session.nombre = req.body.nombre;
-        console.log(req.session.nombre);
+        req.session.nombre = usuario.nombre;        
+        console.log("Creando sesion -> "+req.session.nombre);
         obj.IndexPost(usuario,(error,data)=>{
             if(!error){            
                 var rowCount = data[1][0].rc;
@@ -36,6 +36,10 @@ class Index{
                     res.redirect("/ProcesarJuego/"+usuario.idJuego+"/1");
                     //console.log('correcto');
                 }
+            }
+            else
+            {
+                console.log("No se guardo el usuario");
             }
         });
     }
@@ -92,6 +96,7 @@ class Index{
         var isCorrecta = queryString.isCorrect;
         console.log(isCorrecta+" <- controlador");
 
+        console.log("Sesion -> "+req.session.nombre);
         return (req.session.nombre) 
             ? obj.GetPreguntasRespuestas(idJuego,idPregunta,isCorrecta,(error,data)=>{
                 if(!error){
@@ -106,9 +111,8 @@ class Index{
                     if(data[0].length > 0){                                    
                         console.log("RESPUESTA CORRECTA ->"+respuestaCorrecta);                
                         //console.log("CANTIDAD CORRECTAS -> "+data[6][0].cantCorrectas+" CANTIDAD INCORRECTAS -> "+data[6][0].cantIncorrectas);
-
-                        
-                        res.render('juego/juegoEnEspera',{data : data, idPreguntaSiguiente : preguntaSiguiente , correcta : respuestaCorrecta});
+                                                
+                        res.render('juego/juegoEnEspera',{data : data, idPreguntaSiguiente : preguntaSiguiente , correcta : respuestaCorrecta, usuario : req.session.nombre});
                     }                    
 
                     else{
@@ -144,7 +148,8 @@ class Index{
     // Cambiar a null el usuario en req.session.nombre
     CerrarSesion(req,res,next)
     {
-        req.session.nombre = null;
+        //req.session.nombre = null;
+        req.session.destroy();
         res.redirect('/');
     }
 

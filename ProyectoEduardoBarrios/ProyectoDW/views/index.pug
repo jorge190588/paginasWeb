@@ -11,7 +11,7 @@ html(lang='en')
     link(rel='stylesheet', href='/stylesheets/material-icons.css')
     link(rel='stylesheet', href='/stylesheets/estilos.css')
   body
-    .container-fluid
+    div(class='container-fluid',id='contenedor')
       h1.text-center GAME-APP
       br
       .row
@@ -27,7 +27,7 @@ html(lang='en')
               h3.panel-title.text-center
                 b PIN DEL JUEGO
             .panel-body
-              form(action='/irJuego', method='post')
+              form(action='/irJuego', method='post',id="form-ingresa-jugador")
                 .form-group.label-floating.has-success
                   label.control-label(for='focusedInput') 
                     i.mdi.mdi-fiber-pin  INGRESE EL PIN
@@ -37,13 +37,13 @@ html(lang='en')
                 .form-group.label-floating.has-success
                   label.control-label(for='focusedInput') 
                     i.mdi.mdi-fingerprint  INGRESE SU CARNE
-                  input#focusedInput.form-control(type='text', name='carne', onkeypress="return validarCarne(event)", onpaste="return false",required)
+                  input#carne.form-control(type='text', name='carne', onkeypress="return validarCarne(event)", onpaste="return false",required)
 
                 .form-group.label-floating.has-success
                   label.control-label(for='focusedInput') 
                     i.mdi.mdi-face  INGRESE SU NOMBRE
-                  input#focusedInput.form-control(type='text', name='nombre' ,required)
-                  button.btn.btn-raised.btn-success(type='submit',id="btn-entrarJuego") ENTRAR
+                  input#jugador.form-control(type='text', name='nombre' ,required)
+                  button.btn.btn-raised.btn-success(type='submit',id="btn-entrar") ENTRAR
       
         .col-md-6.col-md-offset-3
           p.parrafoIndex.text-center
@@ -58,7 +58,54 @@ html(lang='en')
     script(src='/javascripts/bootstrap.js')
     script(src='/javascripts/material.js')
     script(src='/javascripts/ripples.js')
+    script(src="/socket.io/socket.io.js")
     script.
       $.material.init();
     
     script(src="/javascripts/ajaxValidarExisteJuego.js")
+    //script(src="/javascripts/miSocket.js");
+    script.
+
+      //var yo = require('yo-yo');      
+      var socket = io();
+
+      var jugadorClient;
+
+      /*$("#btn-entrarJuego").click(function(){
+        //guardar el nombre del jugador en localStorage
+        localStorage.setItem('name-jugador',$('#jugador').val());
+        localStorage.setItem('admin','Administrador');
+        jugadorClient = $('#jugador').val();
+        //Enviando al servidor el nombre del jugador y el carne socket.emit('new jugador,jugador,carne');
+        socket.emit('new jugador', $('#jugador').val(),$('#carne').val()); 
+        //$("#form-ingresa-jugador").submit();
+        //window.location.href = '/Chat';
+
+        var contentChat =  "<h1 class='text-center'> Chat Jugadores y Administrador</h1>";
+            contentChat += "<br><div class='jumbotron'>";        
+            contentChat += "<div class='form-group'>";
+            contentChat += "<label for='message'> Mensaje </label>";
+            contentChat += "<textarea name='message' cols='10' rows='5' id='message' class='form-control'></textarea>";            
+            contentChat += "<button type='button' id='send-message' class='btn btn-warning btn-raised'> Enviar Mensaje </button></div>";
+            contentChat += "<div class='form-group'>";
+            contentChat += "<h3> Mensajes</h3>";
+            contentChat += "<ul id='messages'</ul></div></div>";
+              
+        $("#contenedor").html(contentChat);
+
+        $("#send-message").click(function(){
+          //socket.emit('new message',localStorage.getItem("name-jugador"),$("#message").val());          
+          socket.emit('new message',jugadorClient,$("#message").val());          
+          //alert("Click");
+          $("#message").val("")
+        });
+
+        //Recibir el mensaje procesado del server y pintarlo en todos los clientes
+        socket.on('new message',function(nameJugador,message){
+          console.log(message);
+          var liMessages = $('<li>').append("<strong>"+nameJugador+": </strong> "+message);
+          $("#messages").append(liMessages);
+        });
+      });*/
+      
+      

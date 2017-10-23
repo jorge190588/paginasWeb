@@ -1,6 +1,6 @@
 const Model = require('../models/juegosDefaultModel'),
       inst = new Model();
-var moment = require('moment');      
+//var moment = require('moment');      
 
 class JuegosDefault{
     getJuegos(req, res, next){

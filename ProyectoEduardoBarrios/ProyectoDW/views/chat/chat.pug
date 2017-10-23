@@ -1,0 +1,54 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-material-design.css')
+    link(rel='stylesheet', href='/stylesheets/ripples.css')
+    link(rel='stylesheet', href='/stylesheets/material-icons.css')
+    link(rel='stylesheet', href='/stylesheets/estilos.css')
+  body
+    div(class='container-fluid')
+
+      h1(class='text-center') Chat Jugadores y Administrador
+
+      div(class='jumbotron')        
+        div(class="form-group")
+          label(for="message") Mensaje
+          textarea(name="message", cols="10", rows="5", id="message", class="form-control")
+            
+          button(type="button", id="send-message", class="btn btn-warning btn-raised") Enviar Mensaje
+
+
+        div(class="form-group")
+          h3 Mensajes
+          ul(id="messages")
+            
+
+
+    footer.navbar-fixed-bottom
+      hr
+      p © 2017 Proyecto Desarrollo-Web, UMG / Eduardo Barrios.
+
+    script(src='/javascripts/jquery.js')
+    script(src='/javascripts/bootstrap.js')
+    script(src='/javascripts/material.js')
+    script(src='/javascripts/ripples.js')
+    script(src="/socket.io/socket.io.js")
+    script.
+      $.material.init();
+    
+    script(src="/javascripts/ajaxValidarExisteJuego.js")
+    //script(src="/javascripts/miSocket.js");
+    script.
+      var socket = io();
+
+      $("#btn-entrarJuego").click(function(){
+        //Enviando al servidor el nombre del jugador y el carne socket.emit('new jugador,jugador,carne');
+        socket.emit('new jugador', $('#jugador').val(),$('#carne').val()); 
+        //$("#form-ingresa-jugador").submit();
+      });
+      

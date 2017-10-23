@@ -1,27 +1,24 @@
 {
-  "name": "proyectodw",
+  "name": "dwsocket",
   "version": "1.0.0",
-  "private": true,
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "start": "node ./bin/www",
-    "test": "mocha"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "Eduardo Barrios",
+  "license": "MIT",
   "dependencies": {
-    "body-parser": "~1.17.1",
-    "bootstrap-material-design": "^0.5.10",
-    "bootstrap-material-design-icons": "^2.2.0",
-    "chai": "^4.1.1",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.3",
-    "express": "~4.15.2",
-    "express-session": "^1.15.5",
-    "jade": "~1.11.0",
-    "moment": "^2.18.1",
-    "morgan": "~1.8.1",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.1",
+    "express-session": "^1.15.6",
+    "morgan": "^1.9.0",
     "mysql": "^2.14.1",
-    "pug": "^2.0.0-rc.2",
-    "serve-favicon": "~2.4.2",
+    "path": "^0.12.7",
+    "pug": "^2.0.0-rc.4",
     "socket.io": "^2.0.3",
-    "url": "^0.11.0"
+    "url": "^0.11.0",
+    "yo-yo": "^1.4.1"
   }
 }

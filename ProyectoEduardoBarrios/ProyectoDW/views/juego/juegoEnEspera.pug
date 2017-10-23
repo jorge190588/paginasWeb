@@ -10,6 +10,10 @@ block content
     #alerta-roja{
       display:none;
     }
+  
+  //Session del usuario oculta
+  input(type="hidden",id="sessionUsuario",value=usuario)  
+    
   if(terminado == undefined)
     div(id="contenedor-preguntas")
       div(class="container-fluid")
@@ -62,6 +66,8 @@ block content
         
               div(class="form-group")
                 input(type="submit" id="enviar-pregunta" class="btn btn-raised btn-success" value="Enviar")
+  
+    //a(href="/CerrarSesion", id="desconectarJugador", class=["btn","btn-default","btn-raised"]) Desconectar
   else
     div(class="container-fluid")
       div(class='jumbotron')
@@ -73,12 +79,14 @@ block content
         p Total de Fallidas 
           strong()= cantidadIncorrectas
 
-        a(href="/CerrarSesion", class=["btn","btn-default","btn-raised"]) Terminar
-          
-        
-        
-  
-  script.            
+        a(href="/CerrarSesion", id="desconectarJugador", class=["btn","btn-default","btn-raised"]) Terminar
+                          
+  script(src="/socket.io/socket.io.js")
+  script.  
+    var socket = io();        
+
+    var nickname = $("#sessionUsuario").val();    
+    
     var rCorrecta = document.getElementById('respuestaCorrecta').value;
     var rMarcada = '';    
     var acertada = false;
@@ -88,6 +96,9 @@ block content
     {
       getRadioButtonSelectedValue(document.form.respuesta);      
     }
+
+    //console.log(nickname);
+    socket.emit("nuevo jugador",nickname);    
     
     function getRadioButtonSelectedValue(NameRadio)
     {
@@ -133,13 +144,13 @@ block content
 
     function guardar_localStorage(param)
     {    
-      let conteoCorrectas = param;
-      localStorage.setItem('Correctas',conteoCorrectas);
+      //let conteoCorrectas = param;
+      //localStorage.setItem('Correctas',conteoCorrectas);
     }
 
     function get_localStorage()
     {
-      let conteoCorrectas = localStorage.getItem("Correctas");
+      //let conteoCorrectas = localStorage.getItem("Correctas");
       //console.log(conteoCorrectas);
     }
 
