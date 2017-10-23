@@ -1,28 +1,11 @@
-doctype html
-html
-  head
-    title NUEVO JUEGO
-    link(href='/stylesheets/bootstrap.css', rel='stylesheet')
+extends template/layout
+block content
     .container
-      style.
-        body{
-        background-image:url('imagenes/fondocolores.gif');
-        background-position: center;
-        }
-        h1{
-        color: #FFFF00;
-        }
-        h3{
-        color: #FF8000;
-        }
-        label{
-        color: #FF8000;
-        }
-        label1{
-        color: #0000FF;
-        }
-  body
-    .container
+      br
+      br
+      br
+      br
+      br
       h1.text-center ESCRIBE TUS PREGUNTAS
       .row
         .col-md-6.col-md-offset-3
@@ -56,5 +39,4 @@ html
               a#nuevaPregunta.btn.btn-primary(href='/crearJuego', <button='', type='button') SI, Nueva Pregunta
               a(href='/listaJuegos')
                 button#btnTerminarPreguntas.btn.btn-danger(type='button') NO, Terminar Preguntas
-        script(src='/javascripts/jquery.js')
-        script(src='/javascripts/bootstrap.js')
+        

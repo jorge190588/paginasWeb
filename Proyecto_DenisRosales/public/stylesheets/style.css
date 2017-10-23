@@ -1,3 +1,27 @@
+h1{
+    color: #fff;
+}
+h2{
+    color: #fff;
+}
+h3{
+    color: #fff;
+}
+h4{
+    color: #088A68;
+}
+
+p{
+    color: #424242;
+}
+label{
+    color: #fff;
+}
+
+body{
+    background: #2E2E2E;    
+}
+
 footer{
    
     font-family: Verdana, Geneva, Tahoma, sans-serif;

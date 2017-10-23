@@ -1,0 +1,22 @@
+nav#menu.navbar.navbar-toggleable-md.navbar-primary.bg-inverse.navbar-fixed-top(role='navigation')
+    .container-fluid
+      a.navbar-brand(href='/listaJuegos') INICIO
+      a.navbar-brand(data-toggle='modal', data-target='#nuevojuego') CREAR JUEGO
+      form.navbar-form.navbar-left
+        .form-group
+          input.form-control(type='text', placeholder='Buscar juego')
+        button.btn.btn-default(type='submit') Buscar
+      ul.nav.navbar-nav.navbar-right
+        li.dropdown
+          a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+            i.material-icons more_vert
+            span.caret
+          ul.dropdown-menu
+            li
+              a(href='#') perfil
+            li
+              a(href='#') otra accion
+            li.divider(role='separator')
+            li
+              a(href='/login') Salir
+                  
