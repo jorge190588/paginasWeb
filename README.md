@@ -175,3 +175,4 @@ tion/ Continuos deployment]()
 
 ### Youtube
 * [Api with nodejs](https://www.npmjs.com/package/youtube-video-api)
+* [Upload video to youtube with nodejs](https://www.youtube.com/watch?v=Wwuu4tA2l9Q)
