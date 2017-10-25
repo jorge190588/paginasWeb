@@ -1,27 +1,28 @@
-  doctype html
+doctype html
 html(lang='en')
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
     title= title
-    link(rel='stylesheet', href='C:/Users/Denis Rosales/Desktop/paginasWeb/Proyecto_DenisRosales/public/stylesheets/bootstrap.css')
-    link(rel='stylesheet', href='C:/Users/Denis Rosales/Desktop/paginasWeb/Proyecto_DenisRosales/public/stylesheets/bootstrap-material-design.css')
-    link(rel='stylesheet', href='C:/Users/Denis Rosales/Desktop/paginasWeb/Proyecto_DenisRosales/public/stylesheets/ripples.css')
-    link(rel='stylesheet', href='C:/Users/Denis Rosales/Desktop/paginasWeb/Proyecto_DenisRosales/public/stylesheets/material-icons.css')
-    link(rel='stylesheet', href='C:/Users/Denis Rosales/Desktop/paginasWeb/Proyecto_DenisRosales/public/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-material-design.css')
+    link(rel='stylesheet', href='/stylesheets/ripples.css')
+    link(rel='stylesheet', href='/stylesheets/material-icons.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/javascripts/jquery.js')
+    script(src='/javascripts/bootstrap.js')
+    script(src='/javascripts/material.js')
+    script(src='/javascripts/ripples.js')
+    script.
+      $.material.init();
+
 body
-  //include nav
+  //include navbar
+  include navprincipal
             
   block content
 
-    //footer.navbar-fixed-bottom
-    //hr
-    p © 2017 Proyecto Desarrollo-Web, UMG / Eduardo Barrios.
-
-    script(src='C:/Users/Denis Rosales/Desktop/paginasWeb/Proyecto_DenisRosales/public/javascripts/jquery.js')
-    script(src='C:/Users/Denis Rosales/Desktop/paginasWeb/Proyecto_DenisRosales/public/javascripts/bootstrap.js')
-    script(src='C:/Users/Denis Rosales/Desktop/paginasWeb/Proyecto_DenisRosales/public/javascripts/material.js')
-    script(src='C:/Users/Denis Rosales/Desktop/paginasWeb/Proyecto_DenisRosales/public/javascripts/ripples.js')
-    script.
-      $.material.init();
+    footer.navbar-fixed-bottom
+    hr
+    p © 2017 Proyecto Desarrollo-Web, UMG / Denis Rosales.

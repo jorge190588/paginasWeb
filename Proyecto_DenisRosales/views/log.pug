@@ -1,0 +1,27 @@
+extends template/layout
+block content
+.row           
+        input#Usuario.validate(type='text', style='color:aqua')
+        |             
+        label(for='usuario') Usuario
+    |         
+    .row
+        input#email.validate(type='email', style='color:aqua')
+        |             
+        label(for='email', data-error='email incorrecto', data-success='email valido') Email
+    |           
+    .row
+        input#password.validate(type='password', style='color:aqua')
+        |             
+        label(for='password') Password
+    |         
+    .row
+      a(href='/ListaJuegos')
+        button.btn.btn-primary(type='button') INICIAR SESION
+      |             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      |             
+      a(href='/CrearUsuario')
+        button.btn.btn-primary(type='button')
+          | REGISTRATE
+          br
+          | NO TIENES UNA CUENTA?

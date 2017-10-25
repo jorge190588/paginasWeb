@@ -1,41 +1,52 @@
-doctype html
-html
-  head
-    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css')
-    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
-    script(type='text/javascript', src='https://code.jquery.com/jquery-2.1.1.min.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title CREAR USUARIO
+extends template/layout
+block content
     .container
-      style.
-        body{
-        background-image:url('imagenes/fondocolores.gif');
-        background-position: center;
-        }
-  body
-    .container
-      h3.center
-        font(color='#FE2E2E') REGISTRATE GRATIS
-      p.center
-        font(color='#2E64FE') Registrate para poder disfrutar del juego cierto o falso!!!
+      br
+      br
+      br
+      br
+      br
+      br
       .row
-        .input-field.col.s6
-          i.material-icons.prefix account_circle
-          input#Usuario.validate(type='text', style='color:#FFFF00')
-          label(for='usuario') Usuario
+        .col-md-6.col-md-offset-3
+          h1.
+            REGISTRATE GRATIS
+          |
+        .col-md-6.col-md-offset-3
+          h4.
+            Registrate para poder disfrutar del juego cierto o falso!!!
+      |
+      br
+      form#needs-validation.container(novalidate='')
       .row
-        .input-field.col.s6
-          i.material-icons.prefix email
-          input#email.validate(type='email', style='color:#FFFF00')
-          label(for='email', data-error='email incorrecto', data-success='email valido') Email
+        .col-md-6.col-md-offset-3
+          label(for='usuariocrearusuario') USUARIO
+          |       
+          input#usuariocrearusuario.form-control(type='text',style='color:#81F7F3', placeholder='Ingrese su usuario', required='')
+          p.
+            favor de ingresar su Usuario correcto.
+        |
+        |
+        .col-md-6.col-md-offset-3
+          label(for='emailcrearusuario', data-error='email incorrecto', data-success='email valido') CORREO ELECTRONICO
+          |       
+          input#emailcrearusuario.form-control(type='email',style='color:#81F7F3', placeholder='Ingrese su correo', required='',class='validate')       
+          .invalid-feedback
+          p.
+            favor de ingresar su Correo Electronico correcto.
+        |     
+        .col-md-6.col-md-offset-3
+          label(for='contraseniacrearusuario') CONTRASEÑA
+          |       
+          input#contraseniacrearusuario.form-control(type='password',style='color:#81F7F3', placeholder='Ingrese su contraseña', required='')       
+          .invalid-feedback
+          p.
+            favor de ingresar su Contraseña correcta.
+        |
       .row
-        .input-field.col.s6
-          i.material-icons.prefix lock
-          input#password.validate(type='password', style='color:#FFFF00')
-          label(for='password') Password
-      .row
-        a(href='/listaJuegos')
-          button.btn.btn-primary(type='button') CREAR USUARIO
-    script(type='text/javascript', src='https://code.jquery.com/jquery-2.1.1.min.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js')
+        .col-md-1.col-md-offset-3
+          a(href='/listaJuegos')   
+           button(type='button',class='btn btn-primary btn-raised') 
+            |CREAR USUARIO
+            i(class='mdi mdi-account-circle')
+        |

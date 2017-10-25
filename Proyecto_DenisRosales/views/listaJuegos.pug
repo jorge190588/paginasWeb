@@ -1,50 +1,14 @@
-doctype html
-html
-  head
-    title LISTA DE JUEGOS
-    link(href='/stylesheets/bootstrap.css', rel='stylesheet')
-    .container
-      style.
-        body{
-        background-image:url('imagenes/fondocolores.gif');
-        background-position: center;
-        }
-        h1{
-        color:#40FF00;
-        }
-        h2{
-        color: #FE2E2E;
-        }
-        ul{
-        color: #FE9A2E;
-        }
-        body  
-  nav#menu.navbar.navbar-toggleable-md.navbar-inverse.bg-primary.navbar-fixed-top(role='navigation')
-    .container-fluid
-      a.navbar-brand(href='/listaJuegos') INICIO
-      a.navbar-brand(data-toggle='modal', data-target='#nuevojuego') CREAR JUEGO
-      form.navbar-form.navbar-left
-        .form-group
-          input.form-control(type='text', placeholder='Buscar juego')
-        button.btn.btn-default(type='submit') Buscar
-      ul.nav.navbar-nav.navbar-right
-        li.dropdown
-          a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
-            | OPCIONES 
-            span.caret
-          ul.dropdown-menu
-            li
-              a(href='#') perfil
-            li
-              a(href='#') otra accion
-            li.divider(role='separator')
-            li
-              a(href='/login') Salir
-  br
-  br
+extends template/layout
+block content
   .container
+    br
+    br
+    br
+    br
+    br
+    br
     .row
-      .col-md-6.col-md-offset-3
+      .col-md-6.col-md-offset-3      
         h1.text-center
           | BIENVENIDOS A LA LISTA DE JUEGOS
           br
@@ -58,12 +22,12 @@ html
     .row
       .col-md-10.col-md-offset-1
         p
-          button.btn.btn-lg.btn-success(type='button', data-toggle='modal', data-target='#myModal')
+          button(type='button',class='btn btn-primary btn-raised', data-toggle='modal', data-target='#myModal')
             | asignarme al juego 
-            span.glyphicon.glyphicon-pencil(aria-hidden='true')
-          button.btn.btn-lg.btn-primary(type='button', data-toggle='modal', data-target='#modaloption')
+            i(class='mdi mdi-add-circle')
+          button(type='button',class='btn btn-primary btn-raised', data-toggle='modal', data-target='#modaloption')
             | iniciar el juego 
-            span.glyphicon.glyphicon-play(aria-hidden='true')
+            i(class='mdi mdi-play-circle-filled')
         br
         .panel.panel-primary
           .panel-heading GAME PLAYERS
@@ -98,7 +62,7 @@ html
         .modal-footer
           a(href='/gameindividual')
             button.btn.btn-primary(type='button') INDIVIDUAL
-          a(href='juegomultijugador.html')
+          a(href='/gamemultijugador')
             button.btn.btn-primary(type='button') MULTIJUGADOR
   // Modal de nombre del nuevo juego
   #nuevojuego.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
@@ -115,9 +79,7 @@ html
         .modal-footer
           button.btn.btn-danger(type='button', data-dismiss='modal') Cancelar
           a(href='/crearJuego')
-            button#btnGuardar.btn.btn-primary(type='button') Guardar Nombre
-    script(src='/javascripts/jquery.min.js')
-    script(src='/javascripts/bootstrap.min.js')
+            button#btnGuardar.btn.btn-primary(type='button') Guardar Nombre    
   script.
     $(function(){
     $('#btnGuardar').click(function(){
