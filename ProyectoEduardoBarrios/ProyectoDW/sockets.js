@@ -38,5 +38,11 @@ exports.handle = function(server, session)
             updateNicknames();
             //console.log("Cantidad de conexiones al Desconectar "+contadorConexiones);
         });
+
+        //Evento para cuando el administrador inicia el juego
+        socket.on('empezar juego',function(empezar){
+            //console.log('EMPEZAR EL JUEGO -> '+empezar);
+            io.sockets.emit('empezar',empezar);
+        });
     });
 }

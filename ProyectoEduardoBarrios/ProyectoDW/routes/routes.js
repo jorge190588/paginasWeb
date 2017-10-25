@@ -48,6 +48,11 @@ var jugar = new juego();
 
 router.get('/jugar/:id',jugar.Index);
 
+//Ruta para actualizar el campo juegoIniciado con ajax en la tabla juegos
+router.get('/iniciarJuego/:id',jugar.IniciarJuego);
+
+//Ruta para obtener el resultado de un juego AJAX
+router.get('/ResultadoFinalJuego',jugar.ResultadoFinalJuego);
 
 // ruta error | 404 si no hay usuario con session
 const notFound = require('../controllers/notFound404Controller');
@@ -57,6 +62,11 @@ router.get('/notFound',not.getNotFound);
 // ruta para cambiar a null la session y cerrar sesion
 router.get('/CerrarSesion',home.CerrarSesion);
 
+//Ruta para los resultados con graficas
+var Resultados = require('../controllers/resultadosController');
+var result = new Resultados();
+
+router.get('/resultados',result.getResultados);
 
 // ruta para el chat entre jugadores y admin
 const Chat = require('../controllers/chatController');

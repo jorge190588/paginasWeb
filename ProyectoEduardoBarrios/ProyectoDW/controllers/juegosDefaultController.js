@@ -34,7 +34,8 @@ class JuegosDefault{
         {
             titulo: request.body.titulo,
             descripcion: request.body.descripcion,
-            idUsuarioCrea: request.session.idUsuarioCreaJuegos
+            idUsuarioCrea: request.session.idUsuarioCreaJuegos,
+            juegoIniciado: 0
         };
         
         //console.log(juego);

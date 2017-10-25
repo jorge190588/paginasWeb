@@ -1,0 +1,68 @@
+doctype html
+html
+  head    
+  body
+    div(class="container-fluid")        
+      div(id="chart-resultados-timeline",style="margin-left:auto;margin-right:auto;")
+
+    script(src='/javascripts/jquery.js')
+    script(type="text/javascript", src="https://www.gstatic.com/charts/loader.js")
+    script.
+      
+      function getResultadoAjax()
+      {
+        $.ajax
+        (
+            {
+                url : "/ResultadoFinalJuego",
+                type : "GET"
+            }
+        ).done(function(resp){          
+            //console.log(resp);
+            //console.log(resp[0][1].nombre);            
+            localStorage.setItem('ResultadoFinal',JSON.stringify(resp));
+        });
+      }
+
+      getResultadoAjax();
+      var guardado = localStorage.getItem('ResultadoFinal');
+      
+      //console.log('Objeto Obtenido: ', JSON.parse(guardado));
+      console.log(guardado);
+
+      //$.each(JSON.parse(guardado),function(index,value){
+        //console.log("Llave: "+index+" Valor: "+value);
+      //});
+      //console.log("Resultado: "+resultado.toString());
+      /*for(var i=0; i<guardado.length; i++)
+      {
+        for(var j=0; guardado.length; j++){
+          console.log(guardado);
+        }        
+      }*/
+      console.log(guardado[0][0])
+      //Grafica de tiempo
+      google.charts.load('current',{'packages':['timeline']});
+
+      google.charts.setOnLoadCallback(drawChartTimeLine);
+
+      function drawChartTimeLine()
+      {
+        var container = document.getElementById('chart-resultados-timeline');
+        var chart = new google.visualization.Timeline(container);
+        var data = new google.visualization.DataTable();
+
+        data.addColumn('string','Participante');
+        data.addColumn('number','Start');
+        data.addColumn('number','End');
+
+        data.addRows([
+          //['Washington',0,9]                  
+          //[resultado[0][0].nombre,0,resultado[0][0].sumaCorrectas]                  
+        ]);
+
+        
+        chart.draw(data);
+      }
+
+    

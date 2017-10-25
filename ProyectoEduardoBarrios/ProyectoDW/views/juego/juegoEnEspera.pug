@@ -12,12 +12,15 @@ block content
     }
   
   //Session del usuario oculta
-  input(type="hidden",id="sessionUsuario",value=usuario)  
-    
+  input(type="hidden",id="sessionUsuario",value=usuario)    
+
   if(terminado == undefined)
+    //Empezar el juego campo oculto
+    input(type="hidden",id="empezar",value=data[7][0].juegoIniciado)  
+
     div(id="contenedor-preguntas")
       div(class="container-fluid")
-        h1(class="text-center") Empiezaaa!!!!
+        h1(class="text-center",id="titulo") Esperando a que el Administrador inicie el Juego
 
         div(id="resultado")
         if(correct == undefined)
@@ -70,6 +73,7 @@ block content
     //a(href="/CerrarSesion", id="desconectarJugador", class=["btn","btn-default","btn-raised"]) Desconectar
   else
     div(class="container-fluid")
+      input(type="hidden",id="empezar-en-terminado",value=1)  
       div(class='jumbotron')
         h2(class="text-center") Juego Terminado           
         h3() Resultado del usuario 
@@ -79,10 +83,16 @@ block content
         p Total de Fallidas 
           strong()= cantidadIncorrectas
 
-        a(href="/CerrarSesion", id="desconectarJugador", class=["btn","btn-default","btn-raised"]) Terminar
-                          
+        a(href="/CerrarSesion", id="desconectarJugador", class=["btn","btn-default","btn-raised"]) Terminar                          
+    
+  script(src='https://cdn.jsdelivr.net/jquery.loadingoverlay/latest/loadingoverlay.min.js')
+  script(src='https://cdn.jsdelivr.net/jquery.loadingoverlay/latest/loadingoverlay_progress.min.js')                          
   script(src="/socket.io/socket.io.js")
+
   script.  
+
+    validarInicio();
+    var segundos = 1000000000;
     var socket = io();        
 
     var nickname = $("#sessionUsuario").val();    
@@ -100,6 +110,30 @@ block content
     //console.log(nickname);
     socket.emit("nuevo jugador",nickname);    
     
+    //Recibir el evento empezar juego
+    socket.on('empezar',function(empezar){
+      console.log("Evento socket empezar recibido: "+empezar);
+      $("#empezar").val(empezar);      
+      
+      segundos = 0;
+      
+      if($("#empezar").val() == 1){
+        setTimeout(function(){
+          $.LoadingOverlay("hide");
+        }, segundos);
+      }      
+    });    
+
+    function validarInicio()
+    {
+      if($("#empezar").val() == 1 || $("#empezar-en-terminado").val() == 1){
+        setTimeout(function(){
+          $.LoadingOverlay("hide");
+        }, 0);
+
+        $("#titulo").html("Empieza!!!!");
+      }      
+    }
     function getRadioButtonSelectedValue(NameRadio)
     {
         for(i=0;i<NameRadio.length;i++){
@@ -154,7 +188,30 @@ block content
       //console.log(conteoCorrectas);
     }
 
-    
+  //Script de loading configuración  
+  script.
+
+    $.LoadingOverlay("show");
+
+    //if($("#empezar").val() == 'ok'){
+      //segundos = 0
+    //}
+      
+    // Hide it after 3 seconds    
+    setTimeout(function(){
+        $.LoadingOverlay("hide");
+    }, segundos);
+
+    function notF5()
+    {
+      history.go(1);
+          
+      document.onkeydown = function(e){
+        tecla = (document.all) ? e.keyCode : e.which;
+        //alert(tecla)
+        if (tecla = 116) {return false;}    
+      }
+    }
       
           
  

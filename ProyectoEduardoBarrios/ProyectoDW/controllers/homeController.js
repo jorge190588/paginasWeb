@@ -23,10 +23,14 @@ class Index{
         req.session.nombre = usuario.nombre;        
         console.log("Creando sesion -> "+req.session.nombre);
         obj.IndexPost(usuario,(error,data)=>{
-            if(!error){            
+            //console.log("RESULT INGRESAR PARTICIPANTE: "+data[2][0].idParticipante);
+            if(!error){                            
                 var rowCount = data[1][0].rc;
 
-                console.log(rowCount);                
+                //Capturando en una session el id del participante creado ultimamente
+                req.session.idParticipante = data[2][0].idParticipante
+                //console.log("SESSION ID PARTICIPANTE: "+req.session.idParticipante);
+                //console.log(rowCount);                
                 if(rowCount <= 0){                
                     res.render('index',{mensaje : "El pin del juego no existe o es incorrecto"});
                     //console.log('incorrecto');
@@ -96,17 +100,16 @@ class Index{
         var isCorrecta = queryString.isCorrect;
         console.log(isCorrecta+" <- controlador");
 
+        var idParticipante = req.session.idParticipante;
         console.log("Sesion -> "+req.session.nombre);
         return (req.session.nombre) 
-            ? obj.GetPreguntasRespuestas(idJuego,idPregunta,isCorrecta,(error,data)=>{
+            ? obj.GetPreguntasRespuestas(idJuego,idPregunta,isCorrecta,idParticipante,(error,data)=>{
                 if(!error){
-                    //console.log(data);
+                    //console.log("JUEGO INICIADO: "+data[7][0].juegoIniciado);
                     //res.send(data);
                     //res.send(data[0].length.toString());                
-                    let respuestaCorrecta = data[4][0].respuesta.toLowerCase();
-
-                    
-                                    
+                    let respuestaCorrecta = data[4][0].respuesta.toLowerCase();                      
+                    //let juegoIniciado = data[7][0].juegoIniciado;
 
                     if(data[0].length > 0){                                    
                         console.log("RESPUESTA CORRECTA ->"+respuestaCorrecta);                
