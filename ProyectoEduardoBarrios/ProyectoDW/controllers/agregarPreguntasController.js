@@ -6,20 +6,22 @@ class addPreguntas
     getOneGame(req, res, next){
         var idJuego = req.params.id;
         //console.log("Id "+idJuego);
-        inst.getOneGameQuestionsModel(idJuego,(error, data) =>{            
+        return(req.session.emailUserAdmin)
+        ? inst.getOneGameQuestionsModel(idJuego,(error, data) =>{            
             if(!error){            
                 if(data.length < 1){
                     console.log("Data viene vacío :(");
                     inst.getOneGameModel(idJuego,(error,data)=>{
-                        res.render('juego/agregarPreguntas',{data : data});
+                        res.render('juego/agregarPreguntas',{data : data, sesion : req.session.emailUserAdmin});
                     });                    
                 }                    
                 else{
                     console.log("Data NO viene vacio :)");
-                    res.render('juego/agregarPreguntas',{data : data});
+                    res.render('juego/agregarPreguntas',{data : data, sesion : req.session.emailUserAdmin});
                 }                
             }
-        });
+          })
+        : res.redirect('/notFound');
 
         /*inst.getPreguntasDeJuegos(idJuego,(err,data)=>{
             if(!err)
@@ -32,7 +34,9 @@ class addPreguntas
 
     nuevaPreguntaGet(req, res, next)
     {
-        res.render('juego/insertarNuevaPregunta', {title : 'Nueva pregunta'});
+        return(req.session.emailUserAdmin)
+        ? res.render('juego/insertarNuevaPregunta', {title : 'Nueva pregunta', sesion : req.session.emailUserAdmin})
+        : res.redirect('/notFound');
     }
 
     nuevaPreguntaPost(req,res,next)

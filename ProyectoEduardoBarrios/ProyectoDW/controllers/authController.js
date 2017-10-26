@@ -14,6 +14,8 @@ class Auth{
             email: req.body.correo,
             password: req.body.password
         };    
+
+        req.session.emailUserAdmin = credencialesUsuario.email;
         //console.log(credencialesUsuario);
         inst.Login(credencialesUsuario,(error,results)=>{
             if(!error)

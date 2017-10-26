@@ -1,9 +1,6 @@
 extends ../template/layoutEspera
 block content
   style.
-    .jumbotron{
-      margin-top: 5%;    
-    }
     #alerta-verde{
       display:none;
     }
@@ -26,18 +23,18 @@ block content
         if(correct == undefined)
           //no mostrat ninguna alerta
 
-        
-        .col-md-6.col-md-offset-3
-            div(class="alert alert-dismissible alert-success" id="alerta-verde")
-              button(type="button" class="close" data-dismiss="alert") ×            
-              a(href="javascript:void(0)" class="alert-link text-center") RESPUESTA CORRECTA :)
+        div(class="row")
+          .col-md-6.col-md-offset-3
+              div(class="alert alert-dismissible alert-success" id="alerta-verde")
+                button(type="button" class="close" data-dismiss="alert") ×            
+                a(href="javascript:void(0)" class="alert-link text-center") RESPUESTA CORRECTA :)
 
-        
-        .col-md-6.col-md-offset-3
-            div(class="alert alert-dismissible alert-danger" id="alerta-roja")
-              button(type="button" class="close" data-dismiss="alert") ×            
-              a(href="javascript:void(0)" class="alert-link text-center") RESPUESTA INCORRECTA :(
-            
+          
+          .col-md-6.col-md-offset-3
+              div(class="alert alert-dismissible alert-danger" id="alerta-roja")
+                button(type="button" class="close" data-dismiss="alert") ×            
+                a(href="javascript:void(0)" class="alert-link text-center") RESPUESTA INCORRECTA :(
+              
         div(class='jumbotron')
           div(class='preguntas')
             p= data[0][0].pregunta
@@ -90,7 +87,7 @@ block content
   script(src="/socket.io/socket.io.js")
 
   script.  
-
+    bloquearRadios();
     validarInicio();
     var segundos = 1000000000;
     var socket = io();        
@@ -160,6 +157,13 @@ block content
             //alert("Correctas: "+cantidadCorrectas+" Fallidas: "+cantidadFallidas);              
           }              
         }                      
+    }
+
+    function bloquearRadios()
+    {
+      $('input:radio[name=respuesta]').click(function(){
+        $('input:radio[name=respuesta]').attr('disabled','disabled');
+      });
     }
 
     /*function desactivarRadios()

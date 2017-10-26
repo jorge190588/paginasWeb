@@ -8,19 +8,23 @@ class Jugar{
         //Guardo el id del juego en una variable de sesion porque se usara para el resultado final
         request.session.idJuegoAdmin = idJuego;
         
-        modelo.jugarIndexGetParticipantes(idJuego,(error,data)=>{
-            if(!error)
-            {
-                console.log;
-                if(data.length > 0){
-                    response.render('juego/jugarIndex',{data : data, idJuego : idJuego});
-                }
-                else{
-                    response.render('juego/jugarIndex',{sinDatos : true, idJuego : idJuego});
-                }
-                    
-            }            
-        });        
+        var sesionUsuario = request.session.emailUserAdmin;
+
+        return(request.session.emailUserAdmin)
+            ? modelo.jugarIndexGetParticipantes(idJuego,(error,data)=>{
+                if(!error)
+                {
+                    console.log;
+                    if(data.length > 0){
+                        response.render('juego/jugarIndex',{data : data, idJuego : idJuego, sesion : sesionUsuario});
+                    }
+                    else{
+                        response.render('juego/jugarIndex',{sinDatos : true, idJuego : idJuego, sesion : sesionUsuario});
+                    }
+                        
+                }            
+            })
+            : response.redirect('/notFound');        
     }
 
     IniciarJuego(req,res,next)

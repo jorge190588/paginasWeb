@@ -13,10 +13,12 @@ html(lang='en')
 
     script(src='/javascripts/jquery.js')
 body
-  include nav
-            
+  if(sesion != undefined)
+    include navSiLogueado
+  else
+    include navNoLogueado            
   block content
-
+  
   footer.navbar-fixed-bottom
     //hr
     p © 2017 Proyecto Desarrollo-Web, UMG / Eduardo Barrios.

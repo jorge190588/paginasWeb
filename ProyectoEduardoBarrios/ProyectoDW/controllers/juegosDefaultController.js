@@ -7,14 +7,14 @@ class JuegosDefault{
         let idUsuarioCreaJuegos = req.session.idUsuarioCreaJuegos;
         let nombreUsuarioCreaJuegos = req.session.usuarioCreaJuegos;
         //console.log("Nombre del usuario recien-creado getJuegos -> "+req.session.usuarioCreaJuegos);
-        return (idUsuarioCreaJuegos) 
+        return (req.session.emailUserAdmin) 
         ? inst.getJuegos(idUsuarioCreaJuegos,(error, data) =>{
             if(!error){            
                 if(data.length > 0)
-                    res.render('default', {titulo : 'Objeto', data : data, fecha: data.fechaCreacion});
+                    res.render('default', {titulo : 'Objeto', data : data, fecha: data.fechaCreacion, sesion : req.session.emailUserAdmin});
 
                 else
-                    res.render('default', {titulo : 'Objeto', sinDatos : true, nombreUsuario : nombreUsuarioCreaJuegos });
+                    res.render('default', {titulo : 'Objeto', sinDatos : true, nombreUsuario : nombreUsuarioCreaJuegos, sesion : req.session.emailUserAdmin});
 
             }
         })
@@ -23,8 +23,11 @@ class JuegosDefault{
 
     crearJuegoGet(request, response, next)
     {
-        response.render('juego/nuevoJuego',{title : 'Nuevo Juego GET'});
-        console.log("Entraste a crear un juego nuevo");
+        return(request.session.emailUserAdmin)
+        ? response.render('juego/nuevoJuego',{title : 'Nuevo Juego GET', sesion : request.session.emailUserAdmin})
+          //console.log("Entraste a crear un juego nuevo")
+        : response.redirect('/notFound');
+        
     }
 
     crearJuegoPost(request, response, next)
@@ -62,13 +65,15 @@ class JuegosDefault{
             Titulo: request.body.titulo,
             Descripcion: request.body.descripcion        
         };
-        console.log(juego);
-        inst.editarJuego(juego, (error)=>{
+        //console.log(juego);
+        return(request.session.emailUserAdmin)
+        ? inst.editarJuego(juego, (error)=>{
             if(!error)
             {
                 response.redirect('/default');
             }
-        });
+         })
+        : response.redirect('/notFound');
         
     }
 
@@ -78,12 +83,16 @@ class JuegosDefault{
         let idJuego = request.params.id;
         
         console.log("Id "+idJuego);
-        inst.eliminarJuego(idJuego, (error)=>{
-            if(!error)
-            {
-                response.redirect('/default');
-            }
-        });
+
+        return(request.session.emailUserAdmin)
+        ?
+            inst.eliminarJuego(idJuego, (error)=>{
+                if(!error)
+                {
+                    response.redirect('/default');
+                }
+            })
+        : response.redirect('/notFound');
         
     }
 }
