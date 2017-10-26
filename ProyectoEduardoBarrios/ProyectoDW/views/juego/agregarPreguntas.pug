@@ -1,0 +1,73 @@
+extends ../template/layout
+
+block content
+  div(class='container-fluid')
+    div(class='jumbotron')
+      .list-group
+        .list-group-item
+          .row-action-primary
+            i.material-icons folder
+          .row-content
+            .least-content= data[0].fechaCreacion
+            h4(class=['list-group-item-heading'])                
+              strong= data[0].Titulo              
+            p.list-group-item-text= data[0].Descripcion                                                          
+              button(type='button', class=['btn','btn-success','btn-raised','btn-xs','pull-right'],data-toggle="tooltip" data-placement="right" title="Editar" data-original-title="Editar") 
+                i(class='material-icons') create
+      hr
+      div(class='row')                
+        h3(class='text-left textoCreandoJuego') CREANDO JUEGO 
+          br        
+          h3(class='text-center') 
+            span(class="label label-default") Agregar Pregunta
+          a(href='/agregarPregunta/id='+data[0].idJuego)  
+            button(type='button', class=['btn','btn-warning','btn-raised','centrar'],data-toggle="tooltip" data-placement="right" title="Agregar Pregunta" data-original-title="Agregar Pregunta") 
+              i(class='material-icons') exposure_plus_1
+      
+      // mostrando los datos de preguntas    if(data[0].pregunta.length > 0)
+      //p= data[0].idJuego
+      br
+      for datos in data
+        div(class="panel panel-default")
+          div(class="panel-heading")           
+            div(class="row")
+              div(class="col-md-5")
+                  h4
+                    strong Pregunta
+              
+              div(class="col-md-3")
+                  h4 
+                    strong Limite de Tiempo
+              
+              div(class=["col-md-4"])
+                h4(class="pull-right") 
+                  strong Opciones
+
+          div(class="panel-body")
+            div(class="row")
+              div(class="col-md-5")
+                if(datos.pregunta == undefined)
+                  p() No hay preguntas asociadas a este juego
+                else
+                  p #{datos.pregunta}
+
+              div(class="col-md-3")
+                if(datos.limiteTiempo == undefined)
+                  p() No hay datos 
+                else  
+                  p #{datos.limiteTiempo}
+
+              div(class="col-md-4")
+                if(datos.pregunta == undefined && datos.limiteTiempo == undefined)
+                  p(class="pull-right") No hay Datos
+                else
+                  div(class="btn-group-vertical pull-right")
+                    a.btn.btn-raised.btn-default(href='#',data-toggle="tooltip" data-placement="right" title="Ver" data-original-title="Ver") 
+                      i(class='material-icons') remove_red_eye
+                    a.btn.btn-raised.btn-default(href='#',data-toggle="tooltip" data-placement="right" title="Editar" data-original-title="Editar") 
+                      i(class='material-icons') create
+                    
+                  //button(class=["btn","btn-raised","btn-xs","btn-danger","pull-right"],data-toggle="tooltip" data-placement="right" title="Borrar" data-original-title="Borrar")
+                    i(class='material-icons') delete
+        
+        

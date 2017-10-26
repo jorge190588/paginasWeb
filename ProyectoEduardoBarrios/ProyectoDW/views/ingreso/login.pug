@@ -1,0 +1,25 @@
+extends ../template/layout
+block content
+  .container
+    .row
+      br
+      .col-md-6.col-md-offset-3
+        .panel.panel-success
+          .panel-heading
+            h3.panel-title.text-center
+              b ENTRAR
+          .panel-body
+            form(action='/loginPost', method='post')              
+              .form-group.label-floating.has-success
+                label.control-label(for='focusedInput') 
+                  i.mdi.mdi-email  CORREO ELECTRONICO
+                input#focusedInput.form-control(type='text', name='correo')
+
+              .form-group.label-floating.has-success
+                label.control-label(for='focusedInput') 
+                  i.mdi.mdi-vpn-key  CONTRASEÑA
+                input#focusedInput.form-control(type='password', name='password')
+
+              .col-md-9.col-md-offset-3
+                button.btn.btn-raised.btn-default(type='button') Cancelar
+                button.btn.btn-raised.btn-success(type='submit') Entrar

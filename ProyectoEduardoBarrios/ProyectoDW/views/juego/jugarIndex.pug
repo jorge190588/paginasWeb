@@ -4,8 +4,10 @@ block content
   //Id del juego oculto
   input(type="hidden",id="idJuego",value=idJuego)
   
-  div(class=["container-fluid"])
+  div(class=["container-fluid"])        
     div(class="jumbotron")      
+      h1(class="text-center") PIN PARA PARTICIPANTES 
+        strong(class="text-warning")=idJuego
       div(class='row')        
 
         div(class="col-md-6 col-sm-6 col-xs-12")
@@ -14,7 +16,8 @@ block content
           
         div(class="col-md-6 col-sm-6 col-xs-12")
           //button(class=["btn","btn-raised","btn-info","pull-right"],data-toggle="modal", data-target="#ResultModal") Ver Resultados        
-          button(class=["btn","btn-raised","btn-info","pull-right"],id="btn-resultado") Ver Resultados        
+            i(class="material-icons") pie_chart        
+          a(class=["btn","btn-raised","btn-info","pull-right"], href="/resultados") Ver Resultados        
             i(class="material-icons") pie_chart        
 
       div(class="row")
@@ -111,7 +114,7 @@ block content
             span(aria-hidden="true") &times;
           
         div(class="modal-body")                              
-          //include ../graficasResultados/resultados
+          include ../graficasResultados/resultados
         
         div(class="modal-footer")          
           button(type="button" class="btn btn-info" data-dismiss="modal") Cerrar

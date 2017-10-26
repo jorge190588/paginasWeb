@@ -1,0 +1,70 @@
+extends ../template/layout
+
+block content
+  div(class='container-fluid')
+    div(class='jumbotron')
+      div(class='row')
+        div(class=['col-md-6','col-md-offset-3','col-xs-12','col-sm-10'])
+          div(class=['panel','panel-success'])
+            div(class='panel-heading')
+              h3(class=['panel-title','text-center'])
+                b AGREGAR PREGUNTA
+            .panel-body
+              form(action='/crearPregunta', method='post')
+                div(class='row')
+                  input(type='hidden' name='idJuego' id='idJuego')
+                  div(class=['form-group','label-floating','has-success','col-md-12'])
+                    label.control-label(for='pregunta') 
+                      i.mdi.mdi-account-circle  PREGUNTA (*)
+                    textarea(id='pregunta' class='form-control',name='pregunta',required) 
+                  
+                  div(class=["form-group","has-success",'col-md-12'])
+                    label(for="selectTiempo" class="control-label") 
+                      i.mdi.mdi-account-circle  LIMITE DE TIEMPO                    
+                    select(id="selectTiempo", class="form-control",name='tiempo', required)
+                      option(id='0') Seleccione
+                      option(id='1') 20 segundos
+                      option(id='2') 40 segundos
+                      option(id='3') 1 minuto                                          
+                                      
+                  div(class=['form-group','label-floating','has-success','col-md-10'])
+                    label(class='control-label' for='respuesta1') 
+                      i(class=['mdi','mdi-account-circle'])  PRIMER RESPUESTA (*)
+                    input(class='form-control', type='text', name='respuesta1', required)
+                  div(class=['form-group','col-md-2'])
+                    div(class="radio radio-success")
+                      label
+                        input(type="radio" name="optionsRadios" id="optionsRadios1" value="1" checked="")                        
+
+                  div(class=['form-group','label-floating','has-success','col-md-10'])
+                    label(class='control-label' for='respuesta2') 
+                      i(class=['mdi','mdi-account-circle'])  SEGUNDA RESPUESTA (*)
+                    input(class='form-control', type='text', name='respuesta2',required)
+                  div(class=['form-group','col-md-2'])
+                    div(class="radio radio-success")
+                      label
+                        input(type="radio" name="optionsRadios" id="optionsRadios2" value="2")                        
+
+                  div(class=['form-group','label-floating','has-success','col-md-10'])
+                    label(class='control-label' for='respuesta3') 
+                      i(class=['mdi','mdi-account-circle'])  TERCERA RESPUESTA(*)
+                    input(class='form-control', type='text', name='respuesta3',required)
+                  div(class=['form-group','col-md-2'])
+                    div(class="radio radio-success")
+                      label
+                        input(type="radio" name="optionsRadios" id="optionsRadios3" value="3")                        
+
+                  div(class=['form-group','label-floating','has-success','col-md-10'])
+                    label(class='control-label' for='respuesta4') 
+                      i(class=['mdi','mdi-account-circle'])  CUARTA RESPUESTA(*)
+                    input(class='form-control', type='text', name='respuesta4',required)
+                  div(class=['form-group','col-md-2'])
+                    div(class="radio radio-success")
+                      label
+                        input(type="radio" name="optionsRadios" id="optionsRadios4" value="4")                                                
+                  
+                  //boton del formulario
+                  div(class=['col-md-9','col-md-offset-3'])
+                    button.btn.btn-raised.btn-default(type='submit') AGREGAR PREGUNTA
+  script(src='/javascripts/jquery.js')
+  script(src='/javascripts/getParametroUrl.js')              

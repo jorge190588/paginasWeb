@@ -1,14 +1,35 @@
 doctype html
 html
   head    
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-material-design.css')
+    link(rel='stylesheet', href='/stylesheets/ripples.css')
+    link(rel='stylesheet', href='/stylesheets/material-icons.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
   body
     div(class="container-fluid")        
-      div(id="chart-resultados-timeline",style="margin-left:auto;margin-right:auto;")
+      h1(class="text-center") RESULTADO FINAL!
+      div(class="row")
+        div(class="col-md-12 col-sm-12 col-xs-12" id="chart-resultados-timeline",style="height:100%;")
+
+      footer.navbar-fixed-bottom
+        //hr
+        p © 2017 Proyecto Desarrollo-Web, UMG / Eduardo Barrios.
 
     script(src='/javascripts/jquery.js')
+    script(src='/javascripts/bootstrap.js')
+    script(src='/javascripts/material.js')
+    script(src='/javascripts/ripples.js')
+    script.
+      $.material.init();    
+
     script(type="text/javascript", src="https://www.gstatic.com/charts/loader.js")
     script.
-      
+      var resultado;
       function getResultadoAjax()
       {
         $.ajax
@@ -17,30 +38,25 @@ html
                 url : "/ResultadoFinalJuego",
                 type : "GET"
             }
-        ).done(function(resp){          
-            //console.log(resp);
-            //console.log(resp[0][1].nombre);            
+        ).done(function(resp){                      
             localStorage.setItem('ResultadoFinal',JSON.stringify(resp));
+            /*$.each(resp[0],function(key,value){
+              console.log(value.nombre);
+            });*/
         });
       }
 
       getResultadoAjax();
       var guardado = localStorage.getItem('ResultadoFinal');
-      
+      resultado = JSON.parse(guardado);
       //console.log('Objeto Obtenido: ', JSON.parse(guardado));
-      console.log(guardado);
-
-      //$.each(JSON.parse(guardado),function(index,value){
-        //console.log("Llave: "+index+" Valor: "+value);
-      //});
-      //console.log("Resultado: "+resultado.toString());
-      /*for(var i=0; i<guardado.length; i++)
-      {
-        for(var j=0; guardado.length; j++){
-          console.log(guardado);
-        }        
-      }*/
-      console.log(guardado[0][0])
+      
+      //console.log(resultado);      
+      /*resultado[0].map(function(el){
+        console.log(el.nombre);
+      });*/
+      //console.log(guardado[0][0])
+      
       //Grafica de tiempo
       google.charts.load('current',{'packages':['timeline']});
 
@@ -55,11 +71,13 @@ html
         data.addColumn('string','Participante');
         data.addColumn('number','Start');
         data.addColumn('number','End');
-
-        data.addRows([
-          //['Washington',0,9]                  
-          //[resultado[0][0].nombre,0,resultado[0][0].sumaCorrectas]                  
-        ]);
+        $.each(resultado[0],function(key,value){
+          data.addRows([
+          //['Washington',0,9]           
+            //console.log(value.nombre);
+            [value.nombre,0,value.sumaCorrectas],                            
+          ]);
+        })          
 
         
         chart.draw(data);

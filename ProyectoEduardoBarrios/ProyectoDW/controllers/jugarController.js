@@ -7,7 +7,7 @@ class Jugar{
         //console.log("Id del juego REQUEST.PARAMS.ID "+idJuego);
         //Guardo el id del juego en una variable de sesion porque se usara para el resultado final
         request.session.idJuegoAdmin = idJuego;
-
+        
         modelo.jugarIndexGetParticipantes(idJuego,(error,data)=>{
             if(!error)
             {
@@ -41,6 +41,8 @@ class Jugar{
 
     ResultadoFinalJuego(req,res,next)
     {
+        //verificar que exista el idJuego en session
+        console.log("idJuegoAdmin-Session: "+req.session.idJuegoAdmin);
         modelo.ResultadoFinalJuego(req.session.idJuegoAdmin,(error,data)=>{
             (!error)
             {

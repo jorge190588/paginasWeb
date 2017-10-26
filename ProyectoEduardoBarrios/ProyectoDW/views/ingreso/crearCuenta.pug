@@ -1,0 +1,34 @@
+extends ../template/layout
+block content
+  .container
+    .row
+      .col-md-6.col-md-offset-3
+        .panel.panel-info
+          .panel-heading
+            h3.panel-title.text-center
+              b CREA UNA CUENTA
+          .panel-body
+            form(action='/crearCuentaPost', method='post')
+              .form-group.label-floating.has-info
+                label.control-label(for='focusedInput') 
+                  i.mdi.mdi-account-circle  NOMBRES
+                input#focusedInput.form-control(type='text', name='nombres')
+
+              .form-group.label-floating.has-info
+                label.control-label(for='focusedInput') 
+                  i.mdi.mdi-face  APELLIDOS
+                input#focusedInput.form-control(type='text', name='apellidos')
+
+              .form-group.label-floating.has-info
+                label.control-label(for='focusedInput') 
+                  i.mdi.mdi-email  CORREO ELECTRONICO
+                input#focusedInput.form-control(type='text', name='correo')
+
+              .form-group.label-floating.has-info
+                label.control-label(for='focusedInput') 
+                  i.mdi.mdi-vpn-key  CONTRASEÑA
+                input#focusedInput.form-control(type='password', name='password')
+
+              .col-md-9.col-md-offset-3
+                button.btn.btn-raised.btn-default(type='button') Cancelar
+                button.btn.btn-raised.btn-info(type='submit') Crear Cuenta
