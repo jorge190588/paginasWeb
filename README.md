@@ -141,6 +141,7 @@ tion/ Continuos deployment]()
 * [Docker]()
 * [Git](https://github.com/git-school/visualizing-git)
 * [Express](https://expressjs.com/), [Manual 1](https://codeforgeek.com/2015/01/render-html-file-expressjs/)
+* [Web pack](https://webpack.github.io/docs/node.js-api.html)
 
 ## PEOPLE
 * [clean coder](http://blog.christoffer.me/9-things-i-learned-from-reading-the-clean-coder-by-robert-c-martin-on-how-professional-developers-conduct-themselves/)
@@ -166,6 +167,7 @@ tion/ Continuos deployment]()
 * [First progresive app](https://developers.google.com/web/fundamentals/getting-started/codelabs/your-first-pwapp/?hl=es-419)
 * [Efects to progressive web apps](https://medium.com/mobify-design-team/designing-for-the-appearance-of-speed-aaabc7f568c2)
 * [Progressive web apps catalog](https://pwa.rocks/)
+
 # STORAGE
 
  * [Q-gram index](http://seqan.readthedocs.io/en/master/Tutorial/DataStructures/Indices/QgramIndex.html)
