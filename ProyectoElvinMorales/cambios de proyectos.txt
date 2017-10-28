@@ -1,0 +1,42 @@
+VIDEOS
+Confirmar clave del usuario en el registros de usuarios
+
+Permitir correos con dominio miumg.edu.gt en el formulario de registro de usuarios
+
+buscar videos por titulo o descripcion en la pagina de inicio.
+
+Subir videos a youtube por medio de api.
+
+Agregar categorias de videos
+
+Asignar nombre la proyecto
+
+PREGUNTAS
+Asignar nombre la proyecto
+
+Cuando el jugador inicia esta esperando a que el administrador inicie el juego, debe mostrar el mensaje "Esperando a que inicie el juego"
+
+Cuando el administrador inicial el juego, el titulo de juego deberia ser "Juego iniciado" y debe mostrar el tiempo
+
+Cuando se muestra una pregunta al jugador debe mostrar el total de preguntas (valor absoluto) y el progreso en valores relativos.
+
+Cuando se muestra una pregunta al jugador debe mostrar la barra de progreso segun el tiempo definido por el administrador, si el tiempo es cumplido debe asignar la pregunta como incorrecta.
+
+Cuando el juego esta finalizado, los resultados debe ser ordenados de menor a mayor punto y de menor a mayor tiempo.
+
+Cuando el juego es finalizado debe mostrar el jugador ganador con color verde, el ultimo jugador con color rojo y el resto con azul.
+
+Validacion de correo (15 dias)
+
+
+
+
+
+
+
+
+
+
+
+
+
