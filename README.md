@@ -29,6 +29,14 @@ tion/ Continuos deployment]()
 * [Cookies](https://github.com/js-cookie/js-cookie)
 * [Localstorage](https://rolandocaldas.com/html5/localstorage-en-html5)
 
+### PRINCIPLES
+* [SOLID - 5 Principles of Object Oriented Design]()
+* [DRY - Don't Repeat Yourself]()
+* [KISS - Keep it simple, Stupid!]()
+* [YAGNI - You aren't gonna need it]()
+* [TDD - Test Driven Development]()
+
+
 ## UNIT TEST
 * [Manual testing with Postman](https://www.getpostman.com/docs/postman/scripts/test_examples)
 * [Unit test with Nodejs](https://www.npmjs.com/package/mocha-cucumber)
