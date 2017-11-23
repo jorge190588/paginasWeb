@@ -26,7 +26,7 @@ tion/ Continuos deployment]()
 * [Mobile first]()
 * [Use variables by value and reference Nodejs](http://orizens.com/wp/topics/javascript-arrays-passing-by-reference-or-by-value/)
 * [Unnecessary variables are bad your code](https://techbeacon.com/why-unnecessary-variables-are-bad-your-code)
-* [Cookies](https://github.com/js-cookie/js-cookie)
+* [Cookies](https://github.com/js-cookie/js-cookie),[Cookies en Javascript](https://cybmeta.com/cookies-en-javascript)
 * [Localstorage](https://rolandocaldas.com/html5/localstorage-en-html5)
 
 ### PRINCIPLES
