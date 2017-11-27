@@ -10,7 +10,6 @@
 ## BASIC DEFINITIONS
 * [Backend and FrontEnd]()
 * [Clean code - spanish book](https://drive.google.com/file/d/0BzN9B489_64CeUt4MGJPR21PZkE/view?usp=sharing)
-* [Design pattern]()
 * [Routing]()
 * [Hapi package for create a nodejs backend](https://hapijs.com/api)
 * [Api best practices]()
@@ -28,6 +27,9 @@ tion/ Continuos deployment]()
 * [Unnecessary variables are bad your code](https://techbeacon.com/why-unnecessary-variables-are-bad-your-code)
 * [Cookies](https://github.com/js-cookie/js-cookie),[Cookies en Javascript](https://cybmeta.com/cookies-en-javascript)
 * [Localstorage](https://rolandocaldas.com/html5/localstorage-en-html5)
+
+### DESIGN PATTERNS
+* [Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
 
 ### PRINCIPLES
 * [SOLID - 5 Principles of Object Oriented Design]()
