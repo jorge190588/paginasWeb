@@ -173,6 +173,9 @@ tion/ Continuos deployment]()
 * [Making Facebook 2x Faster](https://www.facebook.com/note.php?note_id=307069903919)
 * [Site Speed Monitoring in A/B Testing and Feature Ramp-up](https://engineering.linkedin.com/blog/2017/06/site-speed-monitoring-in-a-b-testing-and-feature-ramp-up)
 
+### Progressive Web App PWA Pinterest 
+* [A Pinterest Progressive Web App Performance Case Study](https://medium.com/dev-channel/a-pinterest-progressive-web-app-performance-case-study-3bd6ed2e6154)
+
 ## The Service Worker Lifecycle 
 * [video](https://www.youtube.com/watch?v=TF4AB75PyIc)
 * [First progresive app](https://developers.google.com/web/fundamentals/getting-started/codelabs/your-first-pwapp/?hl=es-419)
