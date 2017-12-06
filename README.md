@@ -50,9 +50,11 @@ tion/ Continuos deployment]()
 ## ACCEPTANCE TEST
 * [Selenium](http://www.seleniumhq.org/)
 * [Sikuli](http://www.sikuli.org/)
-* [Gherkin](https://github.com/cucumber/cucumber/wiki/Gherkin)
 * [Seledroid emulator](http://selendroid.io/)
 
+### GHERKIN
+* [Gherkin](https://github.com/cucumber/cucumber/wiki/Gherkin)
+* [Writing Features - Gherkin Language](http://docs.behat.org/en/v2.5/guides/1.gherkin.html)
 
 ## DEPLOY APPS
 
