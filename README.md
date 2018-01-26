@@ -118,7 +118,6 @@ tion/ Continuos deployment]()
 
 * [Visual Studio Diagnostic Tools]
 * [Google Analitics]
-* [static code analyzer - SonarQube](https://www.sonarqube.org/)
 * [18 Tips for Website Performance Optimization](https://www.keycdn.com/blog/website-performance-optimization/)
 * [Test a website's performance with webpagetest](http://www.webpagetest.org/)
 * [Test a website's performance with pingdom](https://tools.pingdom.com)
@@ -130,6 +129,9 @@ tion/ Continuos deployment]()
 * [Let's test your website speed.](https://www.giftofspeed.com/)
 * [Chrome Dev-tool timeline view](https://chromedevtools.github.io/timeline-viewer/)
 
+### Code Quality
+* [http://ghv.artzub.com](http://ghv.artzub.com) 
+* [static code analyzer - SonarQube](https://www.sonarqube.org/)
 
 ### Courses
 * [Website Performance Optimization by Google](https://www.udacity.com/course/website-performance-optimization--ud884)
