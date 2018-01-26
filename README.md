@@ -133,6 +133,7 @@ tion/ Continuos deployment]()
 * [http://ghv.artzub.com](http://ghv.artzub.com) 
 * [static code analyzer - SonarQube](https://www.sonarqube.org/)
 * [code quality list](https://github.com/marketplace/category/code-quality)
+* [code quality analyzer](https://codebeat.co/)
 
 ### Courses
 * [Website Performance Optimization by Google](https://www.udacity.com/course/website-performance-optimization--ud884)
