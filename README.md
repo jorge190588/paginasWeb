@@ -176,6 +176,7 @@ tion/ Continuos deployment]()
 * [Scrum](https://www.scrumalliance.org)
 * [Scrum - mountain goat software](https://www.mountaingoatsoftware.com)
 * [PROYECTOS ÁGILES CON SCRUM](http://media.kleer.la/kleer-proyecto-agiles-con-scrum.pdf)
+* [Agile Estimating and Planning](http://www.accelinnova.com/docs/est_plan.pdf)
 
 # CASE OF STUDY
 ## Making Facebook 2x Faster
