@@ -177,6 +177,7 @@ tion/ Continuos deployment]()
 * [Scrum - mountain goat software](https://www.mountaingoatsoftware.com)
 * [PROYECTOS ÁGILES CON SCRUM](http://media.kleer.la/kleer-proyecto-agiles-con-scrum.pdf)
 * [Agile Estimating and Planning](http://www.accelinnova.com/docs/est_plan.pdf)
+* [Control predictivo vs control empírico](https://proyectosagiles.org/control-predictivo-control-empirico/)
 
 # CASE OF STUDY
 ## Making Facebook 2x Faster
