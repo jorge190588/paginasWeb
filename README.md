@@ -209,3 +209,7 @@ tion/ Continuos deployment]()
 
 # Validations
 * [input validations](https://www.w3.org/TR/html5/sec-forms.html#dom-htmlinputelement-setcustomvalidity)
+
+# Benchmark between technologies
+* [Performance Comparison of Java EE and ASP.NET
+Core Technologies for Web API Development ](https://www.degruyter.com/downloadpdf/j/acss.2018.23.issue-1/acss-2018-0005/acss-2018-0005.pdf)
