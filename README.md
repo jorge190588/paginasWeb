@@ -214,3 +214,7 @@ tion/ Continuos deployment]()
 # Benchmark between technologies
 * [Performance Comparison of Java EE and ASP.NET
 Core Technologies for Web API Development ](https://www.degruyter.com/downloadpdf/j/acss.2018.23.issue-1/acss-2018-0005/acss-2018-0005.pdf)
+
+# Devices
+* [How capture camera in html5](https://www.html5rocks.com/es/tutorials/getusermedia/intro/)
+* [Capturing images from the camera](https://developers.google.com/web/fundamentals/media/capturing-images/?hl=es)
