@@ -138,7 +138,8 @@ tion/ Continuos deployment]()
 ### Courses
 * [Website Performance Optimization by Google](https://www.udacity.com/course/website-performance-optimization--ud884)
 
-
+## Exceptions
+* [Try catch finally in Javascript](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/try...catch)
 
 ## LOGS
 
@@ -150,7 +151,7 @@ tion/ Continuos deployment]()
 * [Error Types.  Operational and Programmer](https://www.joyent.com/node-js/production/design/errors)
 
 ### Tools
-
+* [Kibana](https://github.com/deviantony/docker-elk)
 * [Datadog](https://www.datadoghq.com)
 * [Run code online c#](https://github.com/ServiceStackApps/LiveDemos#live-servicestack-demos)
  
