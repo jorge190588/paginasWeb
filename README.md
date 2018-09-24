@@ -186,6 +186,8 @@ tion/ Continuos deployment]()
 * [BigPipe: Pipelining web pages for high performance](https://www.facebook.com/notes/facebook-engineering/bigpipe-pipelining-web-pages-for-high-performance/389414033919/)
 * [Making Facebook 2x Faster](https://www.facebook.com/note.php?note_id=307069903919)
 * [Site Speed Monitoring in A/B Testing and Feature Ramp-up](https://engineering.linkedin.com/blog/2017/06/site-speed-monitoring-in-a-b-testing-and-feature-ramp-up)
+* [Removing jQuery from GitHub.com frontend](https://githubengineering.com/removing-jquery-from-github-frontend/)
+
 
 ### Progressive Web App PWA Pinterest 
 * [A Pinterest Progressive Web App Performance Case Study](https://medium.com/dev-channel/a-pinterest-progressive-web-app-performance-case-study-3bd6ed2e6154)
