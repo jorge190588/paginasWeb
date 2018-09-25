@@ -218,6 +218,12 @@ tion/ Continuos deployment]()
 Core Technologies for Web API Development ](https://www.degruyter.com/downloadpdf/j/acss.2018.23.issue-1/acss-2018-0005/acss-2018-0005.pdf)
 * [A Real-World Comparison of Front-End Frameworks with Benchmarks (2018 update)](https://medium.freecodecamp.org/a-real-world-comparison-of-front-end-frameworks-with-benchmarks-2018-update-e5760fb4a962)
 * [The Best JS Frameworks for Front End](https://rubygarage.org/blog/best-javascript-frameworks-for-front-end)
+* [UNOPINIONATED COMPARISON OF GLIMMER AND REACT](https://wyeworks.com/blog/2017/12/20/unopinionated-comparison-of-glimmer-and-react)
+* [Nodejs vs spring boot backend](https://stackshare.io/stackups/nodejs-vs-spring-boot)
+* [Compilers are the New Frameworks](https://medium.com/@tomdale/compilers-are-the-new-frameworks-355aca60de82)
+* [A Real-World Comparison of Front-End Frameworks with Benchmarks (2018 update)](https://medium.freecodecamp.org/a-real-world-comparison-of-front-end-frameworks-with-benchmarks-2018-update-e5760fb4a962)
+* [Universal/Isomorphic Applications](https://www.quora.com/What-are-some-good-web-back-end-stacks-to-use-with-React-and-Flux-front-end-architecture)
+
 
 # Devices
 * [How capture camera in html5](https://www.html5rocks.com/es/tutorials/getusermedia/intro/)
