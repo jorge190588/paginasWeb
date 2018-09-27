@@ -228,3 +228,6 @@ Core Technologies for Web API Development ](https://www.degruyter.com/downloadpd
 # Devices
 * [How capture camera in html5](https://www.html5rocks.com/es/tutorials/getusermedia/intro/)
 * [Capturing images from the camera](https://developers.google.com/web/fundamentals/media/capturing-images/?hl=es)
+
+# Stack tech
+* [Tech Stacks(https://stackshare.io/stacks)
