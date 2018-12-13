@@ -31,6 +31,9 @@ tion/ Continuos deployment]()
 * [Cookies](https://github.com/js-cookie/js-cookie),[Cookies en Javascript](https://cybmeta.com/cookies-en-javascript)
 * [Localstorage](https://rolandocaldas.com/html5/localstorage-en-html5)
 
+### Arquitectura
+* [Arquitecturas de aplicaciones web comunes](https://docs.microsoft.com/es-es/dotnet/standard/modern-web-apps-azure-architecture/common-web-application-architectures)
+
 ### DESIGN PATTERNS
 * [Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
 
