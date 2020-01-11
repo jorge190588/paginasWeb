@@ -83,6 +83,7 @@ tion/ Continuos deployment]()
 * [Components structure with BEM](https://en.bem.info/)
 * [No me hagas pensar](http://www.disenomovil.mobi/multimedia_un/01_intro_ux/no_me_hagas_pensar_steve%20_krug_2da%20ed.pdf)
 * [HTML5 Semantic Elements](https://guide.freecodecamp.org/html/html5-semantic-elements/)
+* [HTML Tags](https://www.w3schools.com/tags)
 
 ### CSS
 * [Responsive]()
