@@ -77,6 +77,10 @@ tion/ Continuos deployment]()
 * [Device resolutions - mydevice.io](https://mydevice.io/devices/#sortOthers)
 * [Device resolutions - Material.io](https://material.io/devices/)
 
+### Javascript
+* [Master the JavaScript Interview: What is a Closure?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36)
+* [Master the JavaScript Interview: What is a Promise?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261)
+
 ### HTML
 * [Components structure with BEM](https://en.bem.info/)
 * [No me hagas pensar](http://www.disenomovil.mobi/multimedia_un/01_intro_ux/no_me_hagas_pensar_steve%20_krug_2da%20ed.pdf)
