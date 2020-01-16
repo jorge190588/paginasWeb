@@ -78,6 +78,7 @@ tion/ Continuos deployment]()
 * [Device resolutions - Material.io](https://material.io/devices/)
 
 ### Javascript
+* [10 Interview Questions Every JavaScript Developer Should Know](https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95)
 * [Programming JavaScript Applications Book](http://index-of.es/Varios/OReilly.Programming.JavaScript.Applications.Jul.2014.ISBN.1491950293.pdf)
 * [Master the JavaScript Interview: What is a Closure?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36)
 * [Master the JavaScript Interview: What is a Promise?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261)
