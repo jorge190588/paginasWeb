@@ -101,6 +101,7 @@ tion/ Continuos deployment]()
 * [Real World Use of CSS with SVG](https://www.sitepoint.com/real-world-use-of-css-with-svg/)
 * [30 Free Sketch Gradient Color Palette Plugins for UI/UX Designers – Grab Right Now](https://www.thehotskills.com/free-gradient-sketch-plugins)
 * [Pure CSS Gradient Background Animation](https://codepen.io/jorge190588/pen/ZEYPWdW)
+* [Gradient generator tool](https://cssgradient.io/)
 
 ### Medias
 * [Image compression GZIP](https://checkgzipcompression.com/)
