@@ -94,6 +94,13 @@ tion/ Continuos deployment]()
 * [Responsive]()
 * [Transition]()
 * [Transform]()
+* [Gradient Color in App Design: Trends, Examples & Resources](https://codeburst.io/gradient-color-in-app-design-trends-examples-resources-bf9f259cea09)
+* [Gradiente with webkul.github.io](https://webkul.github.io/coolhue/)
+* [10 CSS Gradient Libraries & Webapps for UI developers](https://webilicious.xyz/10-css-gradient-libraries-webapps-for-ui-developers/)
+* [Gradient with uigradients.com](https://uigradients.com/)
+* [Real World Use of CSS with SVG](https://www.sitepoint.com/real-world-use-of-css-with-svg/)
+* [30 Free Sketch Gradient Color Palette Plugins for UI/UX Designers – Grab Right Now](https://www.thehotskills.com/free-gradient-sketch-plugins)
+* [Pure CSS Gradient Background Animation](https://codepen.io/jorge190588/pen/ZEYPWdW)
 
 ### Medias
 * [Image compression GZIP](https://checkgzipcompression.com/)
