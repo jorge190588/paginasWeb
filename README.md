@@ -102,6 +102,9 @@ tion/ Continuos deployment]()
 * [30 Free Sketch Gradient Color Palette Plugins for UI/UX Designers – Grab Right Now](https://www.thehotskills.com/free-gradient-sketch-plugins)
 * [Pure CSS Gradient Background Animation](https://codepen.io/jorge190588/pen/ZEYPWdW)
 * [Gradient generator tool](https://cssgradient.io/)
+* [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+* [Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+
 
 ### Medias
 * [Image compression GZIP](https://checkgzipcompression.com/)
