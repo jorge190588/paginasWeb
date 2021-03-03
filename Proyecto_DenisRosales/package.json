@@ -13,7 +13,7 @@
     "chai": "^4.1.1",
     "express": "^4.15.3",
     "material-design-icons": "^3.0.1",
-    "pug": "^2.0.0-rc.2",
+    "pug": "^3.0.1",
     "pug-material": "^1.0.1"
   }
 }
